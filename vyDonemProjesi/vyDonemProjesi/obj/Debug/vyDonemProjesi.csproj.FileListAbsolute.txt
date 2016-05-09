@@ -1,3 +1,9 @@
 c:\users\ahmet\documents\visual studio 2013\Projects\vyDonemProjesi\vyDonemProjesi\obj\Debug\vyDonemProjesi.csprojResolveAssemblyReference.cache
 c:\users\ahmet\documents\visual studio 2013\Projects\vyDonemProjesi\vyDonemProjesi\obj\Debug\vyDonemProjesi.Properties.Resources.resources
 c:\users\ahmet\documents\visual studio 2013\Projects\vyDonemProjesi\vyDonemProjesi\obj\Debug\vyDonemProjesi.csproj.GenerateResource.Cache
+C:\Users\Ahmet\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\obj\Debug\vyDonemProjesi.Properties.Resources.resources
+C:\Users\Ahmet\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\obj\Debug\vyDonemProjesi.csproj.GenerateResource.Cache
+C:\Users\Ahmet\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\bin\Debug\vyDonemProjesi.exe
+C:\Users\Ahmet\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\bin\Debug\vyDonemProjesi.pdb
+C:\Users\Ahmet\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\obj\Debug\vyDonemProjesi.exe
+C:\Users\Ahmet\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\obj\Debug\vyDonemProjesi.pdb

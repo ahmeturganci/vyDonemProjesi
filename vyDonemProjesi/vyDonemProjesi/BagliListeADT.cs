@@ -5,7 +5,7 @@ using System.Text;
 
 namespace vyDonemProjesi
 {
-    class BagliListeADT
+   public abstract class BagliListeADT
     {
         public Node Head;
         public int Size = 0;
