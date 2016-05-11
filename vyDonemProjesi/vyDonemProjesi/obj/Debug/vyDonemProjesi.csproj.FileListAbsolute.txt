@@ -7,3 +7,5 @@ C:\Users\Ahmet\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\bin\Debug\vyDonemPro
 C:\Users\Ahmet\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\bin\Debug\vyDonemProjesi.pdb
 C:\Users\Ahmet\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\obj\Debug\vyDonemProjesi.exe
 C:\Users\Ahmet\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\obj\Debug\vyDonemProjesi.pdb
+C:\Users\ADMIN\git\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\obj\Debug\vyDonemProjesi.exe
+C:\Users\ADMIN\git\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\obj\Debug\vyDonemProjesi.pdb
