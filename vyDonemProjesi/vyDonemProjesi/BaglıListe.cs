@@ -7,7 +7,7 @@ namespace vyDonemProjesi
 {
     public class BaglıListe:BagliListeADT
     {
-        public override void InsertFirst(int value)
+        public override void InsertFirst(object value)
         {
             Node tmpHead = new Node
             {
@@ -27,7 +27,7 @@ namespace vyDonemProjesi
             Size++;
         }
 
-        public override void InsertLast(int value)
+        public override void InsertLast(object value)
         {
             //insert last işlemi başarı ile gerçekleşiyor.
             Node newLast = new Node();
@@ -48,7 +48,7 @@ namespace vyDonemProjesi
 
         }
 
-        public override void InsertPos(int position, int value)
+        public override void InsertPos(int position, object value)
         {
             Node newNode = new Node { Data = value };
             Node posNode = null;

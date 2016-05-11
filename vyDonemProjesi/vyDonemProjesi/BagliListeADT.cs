@@ -9,9 +9,9 @@ namespace vyDonemProjesi
     {
         public Node Head;
         public int Size = 0;
-        public abstract void InsertFirst(int value);
-        public abstract void InsertLast(int value);
-        public abstract void InsertPos(int position, int value);
+        public abstract void InsertFirst(object value);
+        public abstract void InsertLast(object value);
+        public abstract void InsertPos(int position, object value);
         public abstract void DeleteFirst();
         public abstract void DeleteLast();
         public abstract void DeletePos(int position);

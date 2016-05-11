@@ -7,7 +7,7 @@ namespace vyDonemProjesi
 {
     public class Node
     {
-        public int Data;
+        public object Data;
         public Node Next;
     }
 }

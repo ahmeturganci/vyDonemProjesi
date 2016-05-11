@@ -9,3 +9,9 @@ C:\Users\Ahmet\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\obj\Debug\vyDonemPro
 C:\Users\Ahmet\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\obj\Debug\vyDonemProjesi.pdb
 C:\Users\ADMIN\git\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\obj\Debug\vyDonemProjesi.exe
 C:\Users\ADMIN\git\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\obj\Debug\vyDonemProjesi.pdb
+C:\Users\ADMIN\git\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\obj\Debug\vyDonemProjesi.csprojResolveAssemblyReference.cache
+C:\Users\ADMIN\git\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\obj\Debug\vyDonemProjesi.Properties.Resources.resources
+C:\Users\ADMIN\git\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\obj\Debug\vyDonemProjesi.csproj.GenerateResource.Cache
+C:\Users\ADMIN\git\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\bin\Debug\vyDonemProjesi.exe
+C:\Users\ADMIN\git\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\bin\Debug\vyDonemProjesi.pdb
+C:\Users\ADMIN\git\vyDonemProjesi\vyDonemProjesi\vyDonemProjesi\obj\Debug\vyDonemProjesi.Form1.resources

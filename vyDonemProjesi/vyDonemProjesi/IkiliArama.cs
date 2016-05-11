@@ -95,7 +95,7 @@ namespace vyDonemProjesi
             PostOrderInt(dugum.sag);
             Ziyaret(dugum);
         }
-        public void Ekle(int deger)
+        public void Ekle(object deger)
         {
             İkiliAramaAgacDugumu tempParent = new İkiliAramaAgacDugumu();
             İkiliAramaAgacDugumu tempSearch = kok;
@@ -103,17 +103,19 @@ namespace vyDonemProjesi
             while (tempSearch != null)
             {
                 tempParent = tempSearch;
-                if (deger == (int)tempSearch.veri)
+                Kisi k=(Kisi)deger;
+                if ( k.id== (int)tempSearch.veri)
                     return;
-                else if (deger < (int)tempSearch.veri)
+                else if(k.id < (int)tempSearch.veri)
                     tempSearch = tempSearch.sol;
                 else
                     tempSearch = tempSearch.sag;
             }
             İkiliAramaAgacDugumu eklenecek = new İkiliAramaAgacDugumu(deger);
+            Kisi kk = (Kisi)deger;
             if (kok == null)
                 kok = eklenecek;
-            else if (deger < (int)tempParent.veri)
+            else if (kk.id < (int)tempParent.veri)
                 tempParent.sol = eklenecek;
             else
                 tempParent.sag = eklenecek;
