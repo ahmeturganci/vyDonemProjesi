@@ -7,7 +7,6 @@ namespace vyDonemProjesi
 {
    public class Kisi
     {
-        public int id { get; set; }
         public string Ad { get; set; }
         public string Adres { get; set; }
         public string Email  { get; set; }

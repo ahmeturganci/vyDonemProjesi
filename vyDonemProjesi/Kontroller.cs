@@ -10,10 +10,8 @@ namespace vyDonemProjesi
         private BaglıListe blIsyeri;
         private BaglıListe blEgitimDurumu;
         private IkiliArama ikiliArama;
-        private int id;
         public Kontroller()
         {
-            id = 1;
             blIsyeri = new BaglıListe();
             blEgitimDurumu = new BaglıListe();
             ikiliArama = new IkiliArama();
@@ -21,7 +19,21 @@ namespace vyDonemProjesi
         public void kisiEkle(Kisi kisi)
         {
             ikiliArama.Ekle(kisi);
-            id++;
+        }
+        public void kisiGuncelle(Kisi kisi) // param sayısı artacak farklı belki birşeyde bulunabilir düzeltilecek
+        {
+
+        }
+        public İkiliAramaAgacDugumu kisiAra(string ad)
+        {
+            İkiliAramaAgacDugumu bstn= ikiliArama.Ara(ad);
+            if (bstn == null)
+            {
+                return null;
+            }
+            return bstn;
+                //Kisi k = (Kisi)bstn.veri;
+                //System.Windows.Forms.MessageBox.Show(k.Ad + " " + k.Adres);
         }
         public void blIsyeriEkle(IsYeri iy)
         {

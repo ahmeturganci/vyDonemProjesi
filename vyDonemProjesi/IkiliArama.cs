@@ -7,7 +7,7 @@ namespace vyDonemProjesi
 {
     public class IkiliArama
     {
-         private İkiliAramaAgacDugumu kok;
+        private İkiliAramaAgacDugumu kok;
         private string dugumler;
         public IkiliArama()
         {         
@@ -95,62 +95,68 @@ namespace vyDonemProjesi
             PostOrderInt(dugum.sag);
             Ziyaret(dugum);
         }
+        public int asciiTop(string s)
+        {
+            int top = 0;
+            char[] arr = s.ToCharArray();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                top += arr[i];
+            }
+            return top;
+        }
         public void Ekle(object deger)
         {
             İkiliAramaAgacDugumu tempParent = new İkiliAramaAgacDugumu();
             İkiliAramaAgacDugumu tempSearch = kok;
-             
+            int top = 0, top2 = 0;
             while (tempSearch != null)
             {
                 tempParent = tempSearch;
                 Kisi k=(Kisi)deger;
-                if ( k.id== (int)tempSearch.veri)
+                Kisi k2=(Kisi)tempSearch.veri;
+                string s = k.Ad, s2 = k2.Ad;                
+                top=asciiTop(s);
+                top2 = asciiTop(s2);
+                if ( top==top2)
                     return;
-                else if(k.id < (int)tempSearch.veri)
+                else if(top < top2)
                     tempSearch = tempSearch.sol;
                 else
                     tempSearch = tempSearch.sag;
             }
             İkiliAramaAgacDugumu eklenecek = new İkiliAramaAgacDugumu(deger);
-            Kisi kk = (Kisi)deger;
             if (kok == null)
                 kok = eklenecek;
-            else if (kk.id < (int)tempParent.veri)
+            else if (top <top2)
                 tempParent.sol = eklenecek;
             else
                 tempParent.sag = eklenecek;
         }
-        public İkiliAramaAgacDugumu Ara(int anahtar)
+        public İkiliAramaAgacDugumu Ara(string anahtarAd)
         {
-            return AraInt(kok, anahtar);
+            return AraInt(kok, anahtarAd);
         }
-        private İkiliAramaAgacDugumu AraInt(İkiliAramaAgacDugumu dugum, 
-                                            int anahtar)
+        private İkiliAramaAgacDugumu AraInt(İkiliAramaAgacDugumu dugum,
+                                                string anahtarAd)
         {
             if (dugum == null)
+            {
                 return null;
-            else if ((int)dugum.veri == anahtar)
-                return dugum;
-            else if ((int)dugum.veri > anahtar)
-                return (AraInt(dugum.sol, anahtar));
+            }
             else
-                return (AraInt(dugum.sag, anahtar));
-        }
-
-        public İkiliAramaAgacDugumu MinDeger()
-        {
-            İkiliAramaAgacDugumu tempSol = kok;
-            while (tempSol.sol != null)
-                tempSol = tempSol.sol;
-            return tempSol;
-        }
-
-        public İkiliAramaAgacDugumu MaksDeger()
-        {
-            İkiliAramaAgacDugumu tempSag = kok;
-            while (tempSag.sag != null)
-                tempSag = tempSag.sag;
-            return tempSag;
+            {
+                Kisi k = (Kisi)dugum.veri;
+                int topAnahtarAd = asciiTop(anahtarAd);
+                int topK = asciiTop(k.Ad);
+            
+                if (topK == topAnahtarAd)
+                    return dugum;
+                else if (topK > topAnahtarAd)
+                    return (AraInt(dugum.sol, anahtarAd));
+                else
+                    return (AraInt(dugum.sag, anahtarAd));
+            }
         }
          
         private İkiliAramaAgacDugumu Successor(İkiliAramaAgacDugumu silDugum)
