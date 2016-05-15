@@ -16,15 +16,10 @@ namespace vyDonemProjesi
             InitializeComponent();
         }
 
-        Kontroller k = new Kontroller();
+        IsKontroller k = new IsKontroller();
         Kisi ahmet = new Kisi();
         private void btnTest_Click(object sender, EventArgs e)
         {
-            
-    
-
-
-            
             ahmet.isYeri = new IsYeri();
             ahmet.egitimDurumu = new EgitimDurumu();
             ahmet.Ad = "ahmetgelmedi";
@@ -35,7 +30,7 @@ namespace vyDonemProjesi
             ahmet.egitimDurumu.BittisYil = "2018"; // İNŞALLAH
             ahmet.egitimDurumu.Bolum = "yzm";
             ahmet.egitimDurumu.MezunOlunanOkul = "CBÜ";
-            ahmet.egitimDurumu.ortalama = 4f;
+            ahmet.egitimDurumu.ortalama = 85;
             ahmet.Email = "sananelan@sananehır.com";
             ahmet.IlgiAlanlari = "ahmet urganci";
             ahmet.MedeniDurum = "Bekar";
@@ -62,7 +57,7 @@ namespace vyDonemProjesi
             mehmet.egitimDurumu.BittisYil = "2018"; // İNŞALLAH
             mehmet.egitimDurumu.Bolum = "yzm";
             mehmet.egitimDurumu.MezunOlunanOkul = "CBÜ";
-            mehmet.egitimDurumu.ortalama = 4f;
+            mehmet.egitimDurumu.ortalama = 90;
             mehmet.Email = "sananelan@sananehır.com";
             mehmet.IlgiAlanlari = "ahmet urganci";
             mehmet.MedeniDurum = "Bekar";
@@ -82,13 +77,17 @@ namespace vyDonemProjesi
 
         private void btnAra_Click(object sender, EventArgs e)
         {
-            //k.kisiAra("mehmetgelmedi");
-            //k.kisiAra("ahmetgelmedi");
             //k.kisiAra("ahmet"); // deneme patlak verecek ekrana yazdırmayacaktır.
+            İkiliAramaAgacDugumu bstn = k.kisiAra("mehmetgelmedi");
+            Kisi kisi = (Kisi)bstn.veri;
+            MessageBox.Show(kisi.Ad+" "+kisi.Adres); // artırılacak...
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
+            // ad güncelleniyorsa kisiyi silip yeni kisi ekle çünkü bst üzerinde ad dan dolayı yeri değişecek
+
+
             //string ad = "mehmet"; // degerler artacak düzeltilecek
             //string adres = "manisa";
             ////MessageBox.Show(ahmet.Ad + " " + ahmet.Adres + " " + ahmet.DogumYeri);

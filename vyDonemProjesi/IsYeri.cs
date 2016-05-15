@@ -11,6 +11,7 @@ namespace vyDonemProjesi
         public string Adres { get; set; }
         public string Pozisyon { get; set; }
         public string Gorev { get; set; }
+        //public IsIlani isIlani { get; set; }
 
     }
 }

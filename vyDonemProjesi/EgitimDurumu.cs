@@ -11,7 +11,7 @@ namespace vyDonemProjesi
         public string Bolum { get; set; }
         public string BaslangicYil { get; set; }
         public string BittisYil { get; set; }
-        public float ortalama { get; set; }//4 ortalama üzerinden
+        public int ortalama { get; set; }//100 ortalama üzerinden
 
 
     }

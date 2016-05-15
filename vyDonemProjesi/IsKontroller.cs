@@ -5,12 +5,13 @@ using System.Text;
 
 namespace vyDonemProjesi
 {
-    public class Kontroller
+    public class IsKontroller
     {
-        private BaglıListe blIsyeri;
+        private BaglıListe blIsyeri; //bağlı liste
         private BaglıListe blEgitimDurumu;
         private IkiliArama ikiliArama;
-        public Kontroller()
+
+        public IsKontroller()
         {
             blIsyeri = new BaglıListe();
             blEgitimDurumu = new BaglıListe();
@@ -20,7 +21,7 @@ namespace vyDonemProjesi
         {
             ikiliArama.Ekle(kisi);
         }
-        public void kisiGuncelle(Kisi kisi) // param sayısı artacak farklı belki birşeyde bulunabilir düzeltilecek
+        public void kisiGuncelle(Kisi kisi) // param sayısı artacak belki farklı birşeyde bulunabilir düzeltilecek
         {
 
         }

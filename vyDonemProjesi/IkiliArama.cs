@@ -10,7 +10,7 @@ namespace vyDonemProjesi
         private İkiliAramaAgacDugumu kok;
         private string dugumler;
         public IkiliArama()
-        {         
+        {
         }
         public IkiliArama(İkiliAramaAgacDugumu kok)
         {
@@ -20,7 +20,7 @@ namespace vyDonemProjesi
         {
             return DugumSayisi(kok);
         }
-        public int DugumSayisi (İkiliAramaAgacDugumu dugum)
+        public int DugumSayisi(İkiliAramaAgacDugumu dugum)
         {
             int count = 0;
             if (dugum != null)
@@ -42,11 +42,11 @@ namespace vyDonemProjesi
                 if ((dugum.sol == null) && (dugum.sag == null))
                     count = 1;
                 else
-                    count = count + YaprakSayisi(dugum.sol) + YaprakSayisi(dugum.sag); 
+                    count = count + YaprakSayisi(dugum.sol) + YaprakSayisi(dugum.sag);
             }
             return count;
         }
-       
+
 
         public string DugumleriYazdir()
         {
@@ -113,14 +113,14 @@ namespace vyDonemProjesi
             while (tempSearch != null)
             {
                 tempParent = tempSearch;
-                Kisi k=(Kisi)deger;
-                Kisi k2=(Kisi)tempSearch.veri;
-                string s = k.Ad, s2 = k2.Ad;                
-                top=asciiTop(s);
+                Kisi k = (Kisi)deger;
+                Kisi k2 = (Kisi)tempSearch.veri;
+                string s = k.Ad, s2 = k2.Ad;
+                top = asciiTop(s);
                 top2 = asciiTop(s2);
-                if ( top==top2)
+                if (top == top2)
                     return;
-                else if(top < top2)
+                else if (top < top2)
                     tempSearch = tempSearch.sol;
                 else
                     tempSearch = tempSearch.sag;
@@ -128,7 +128,7 @@ namespace vyDonemProjesi
             İkiliAramaAgacDugumu eklenecek = new İkiliAramaAgacDugumu(deger);
             if (kok == null)
                 kok = eklenecek;
-            else if (top <top2)
+            else if (top < top2)
                 tempParent.sol = eklenecek;
             else
                 tempParent.sag = eklenecek;
@@ -137,8 +137,7 @@ namespace vyDonemProjesi
         {
             return AraInt(kok, anahtarAd);
         }
-        private İkiliAramaAgacDugumu AraInt(İkiliAramaAgacDugumu dugum,
-                                                string anahtarAd)
+        private İkiliAramaAgacDugumu AraInt(İkiliAramaAgacDugumu dugum, string anahtarAd)
         {
             if (dugum == null)
             {
@@ -149,7 +148,7 @@ namespace vyDonemProjesi
                 Kisi k = (Kisi)dugum.veri;
                 int topAnahtarAd = asciiTop(anahtarAd);
                 int topK = asciiTop(k.Ad);
-            
+
                 if (topK == topAnahtarAd)
                     return dugum;
                 else if (topK > topAnahtarAd)
@@ -158,7 +157,7 @@ namespace vyDonemProjesi
                     return (AraInt(dugum.sag, anahtarAd));
             }
         }
-         
+   
         private İkiliAramaAgacDugumu Successor(İkiliAramaAgacDugumu silDugum)
         {
             İkiliAramaAgacDugumu successorParent = silDugum;
@@ -207,7 +206,7 @@ namespace vyDonemProjesi
                 else
                     parent.sag = null;
             }
-            
+
             else if (current.sag == null)
             {
                 if (current == kok)
@@ -238,8 +237,8 @@ namespace vyDonemProjesi
                 successor.sol = current.sol;
             }
             return true;
-        } 
+        }
 
     }
-    }
+}
 
