@@ -27,14 +27,14 @@ namespace vyDonemProjesi
         }
         public İkiliAramaAgacDugumu kisiAra(string ad)
         {
-            İkiliAramaAgacDugumu bstn= ikiliArama.Ara(ad);
+            İkiliAramaAgacDugumu bstn = ikiliArama.Ara(ad);
             if (bstn == null)
             {
                 return null;
             }
             return bstn;
-                //Kisi k = (Kisi)bstn.veri;
-                //System.Windows.Forms.MessageBox.Show(k.Ad + " " + k.Adres);
+            //Kisi k = (Kisi)bstn.veri;
+            //System.Windows.Forms.MessageBox.Show(k.Ad + " " + k.Adres);
         }
         public void blIsyeriEkle(IsYeri iy)
         {
@@ -54,6 +54,11 @@ namespace vyDonemProjesi
         public int Goster()
         {
             return ikiliArama.DugumSayisi();
+        }
+        public string Goster2()
+        {
+            ikiliArama.PreOrder();
+            return ikiliArama.DugumleriYazdir();
         }
     }
 }

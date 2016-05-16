@@ -39,5 +39,9 @@ namespace vyDonemProjesi
             sirket.isIlani.arananOzellikler = "Yazılım Mühendisi";
             // heap.Insert() // heap e ayar çekilecek
         }
+        public void isBasvurusuYap(int ilanNo)
+        {
+            //hashtable ilannoyu bul o ilanın 
+        }
     }
 }

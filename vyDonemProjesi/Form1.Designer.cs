@@ -32,6 +32,7 @@
             this.btnAra = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnSilme = new System.Windows.Forms.Button();
+            this.btnBasvuru = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnTest
@@ -75,11 +76,22 @@
             this.btnSilme.UseVisualStyleBackColor = true;
             this.btnSilme.Click += new System.EventHandler(this.btnSilme_Click);
             // 
+            // btnBasvuru
+            // 
+            this.btnBasvuru.Location = new System.Drawing.Point(87, 200);
+            this.btnBasvuru.Name = "btnBasvuru";
+            this.btnBasvuru.Size = new System.Drawing.Size(75, 23);
+            this.btnBasvuru.TabIndex = 4;
+            this.btnBasvuru.Text = "Başvuru yap";
+            this.btnBasvuru.UseVisualStyleBackColor = true;
+            this.btnBasvuru.Click += new System.EventHandler(this.btnBasvuru_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.btnBasvuru);
             this.Controls.Add(this.btnSilme);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.btnAra);
@@ -96,6 +108,7 @@
         private System.Windows.Forms.Button btnAra;
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.Button btnSilme;
+        private System.Windows.Forms.Button btnBasvuru;
     }
 }
 

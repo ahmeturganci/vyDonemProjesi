@@ -41,7 +41,7 @@ namespace vyDonemProjesi
             }
             heapArray[index] = bottom;
         }
-        public HeapDugumu RemoveMax() // Remove maximum value HeapDugumu
+        public HeapDugumu RemoveMax()
         {
             HeapDugumu root = heapArray[0];
             heapArray[0] = heapArray[--currentSize];
@@ -56,7 +56,6 @@ namespace vyDonemProjesi
             {
                 int leftChild = 2 * index + 1;
                 int rightChild = leftChild + 1;
-                //Find larger child
                 if (rightChild < currentSize && heapArray[leftChild].Deger < heapArray[rightChild].Deger)
                     largerChild = rightChild;
                 else

@@ -80,7 +80,8 @@ namespace vyDonemProjesi
         }
         private void Ziyaret(İkiliAramaAgacDugumu dugum)
         {
-            dugumler += dugum.veri + " ";
+            Kisi k = (Kisi)dugum.veri;
+            dugumler += k.Ad + " ";
         }
         public void PostOrder()
         {
@@ -95,32 +96,60 @@ namespace vyDonemProjesi
             PostOrderInt(dugum.sag);
             Ziyaret(dugum);
         }
-        public int asciiTop(string s)
-        {
-            int top = 0;
-            char[] arr = s.ToCharArray();
-            for (int i = 0; i < arr.Length; i++)
-            {
-                top += arr[i];
-            }
-            return top;
-        }
+        //public int asciiTop(string s)
+        //{
+        //    int top = 0;
+        //    char[] arr = s.ToCharArray();
+        //    for (int i = 0; i < arr.Length; i++)
+        //    {
+        //        top += arr[i];
+        //    }
+        //    return top;
+        //}
+        //public void Ekle(object deger)
+        //{
+        //    İkiliAramaAgacDugumu tempParent = new İkiliAramaAgacDugumu();
+        //    İkiliAramaAgacDugumu tempSearch = kok;
+        //    int top = 0, top2 = 0;
+        //    while (tempSearch != null)
+        //    {
+        //        tempParent = tempSearch;
+        //        Kisi k = (Kisi)deger;
+        //        Kisi k2 = (Kisi)tempSearch.veri;
+        //        string s = k.Ad, s2 = k2.Ad;
+        //        top = asciiTop(s);
+        //        top2 = asciiTop(s2);
+        //        if (top == top2)
+        //            return;
+        //        else if (top < top2)
+        //            tempSearch = tempSearch.sol;
+        //        else
+        //            tempSearch = tempSearch.sag;
+        //    }
+        //    İkiliAramaAgacDugumu eklenecek = new İkiliAramaAgacDugumu(deger);
+        //    if (kok == null)
+        //        kok = eklenecek;
+        //    else if (top < top2)
+        //        tempParent.sol = eklenecek;
+        //    else
+        //        tempParent.sag = eklenecek;
+        //}
         public void Ekle(object deger)
         {
             İkiliAramaAgacDugumu tempParent = new İkiliAramaAgacDugumu();
             İkiliAramaAgacDugumu tempSearch = kok;
-            int top = 0, top2 = 0;
+            Kisi k = new Kisi();
+            Kisi k2 = new Kisi();
             while (tempSearch != null)
             {
                 tempParent = tempSearch;
-                Kisi k = (Kisi)deger;
-                Kisi k2 = (Kisi)tempSearch.veri;
-                string s = k.Ad, s2 = k2.Ad;
-                top = asciiTop(s);
-                top2 = asciiTop(s2);
-                if (top == top2)
+                k = (Kisi)deger;
+                k2 = (Kisi)tempSearch.veri;
+                //if (k.Ad.CompareTo(k2.Ad)==0)
+                if (string.Compare(k.Ad, k2.Ad) == 0)
                     return;
-                else if (top < top2)
+                //else if (k.Ad.CompareTo(k2.Ad)<0)
+                else if (string.Compare(k.Ad, k2.Ad)< 0)
                     tempSearch = tempSearch.sol;
                 else
                     tempSearch = tempSearch.sag;
@@ -128,7 +157,7 @@ namespace vyDonemProjesi
             İkiliAramaAgacDugumu eklenecek = new İkiliAramaAgacDugumu(deger);
             if (kok == null)
                 kok = eklenecek;
-            else if (top < top2)
+            else if (k.Ad.CompareTo(k2.Ad) < 0)
                 tempParent.sol = eklenecek;
             else
                 tempParent.sag = eklenecek;
@@ -146,18 +175,16 @@ namespace vyDonemProjesi
             else
             {
                 Kisi k = (Kisi)dugum.veri;
-                int topAnahtarAd = asciiTop(anahtarAd);
-                int topK = asciiTop(k.Ad);
-
-                if (topK == topAnahtarAd)
+                //if (k.Ad.CompareTo(anahtarAd)==0)
+                if (string.Compare(k.Ad,anahtarAd)==0)
                     return dugum;
-                else if (topK > topAnahtarAd)
+                //else if (k.Ad.CompareTo(anahtarAd)<0)
+                else if (string.Compare(k.Ad, anahtarAd)>0)
                     return (AraInt(dugum.sol, anahtarAd));
                 else
                     return (AraInt(dugum.sag, anahtarAd));
             }
         }
-   
         private İkiliAramaAgacDugumu Successor(İkiliAramaAgacDugumu silDugum)
         {
             İkiliAramaAgacDugumu successorParent = silDugum;
