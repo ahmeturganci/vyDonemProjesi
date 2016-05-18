@@ -5,11 +5,18 @@ using System.Text;
 
 namespace vyDonemProjesi
 {
+
     public class Heap
     {
         private HeapDugumu[] heapArray;
         private int maxSize;
         private int currentSize;
+        public int Cevir(string ad)
+        {
+            char[] dizi = ad.ToCharArray();
+            int i = (int)Convert.ToChar(dizi[0]);
+            return i;
+        }
         public Heap(int maxHeapSize)
         {
             maxSize = maxHeapSize;
@@ -20,7 +27,7 @@ namespace vyDonemProjesi
         {
             return currentSize == 0;
         }
-        public bool Insert(int value)
+        public bool Insert(Kisi value)
         {
             if (currentSize == maxSize)
                 return false;
@@ -33,9 +40,10 @@ namespace vyDonemProjesi
         {
             int parent = (index - 1) / 2;
             HeapDugumu bottom = heapArray[index];
-            while (index > 0 && heapArray[parent].Deger < bottom.Deger)
+
+            while (index > 0 && (Cevir(heapArray[parent].Deger.Ad) > Cevir(bottom.Deger.Ad)))//çevirmek
             {
-                heapArray[index] = heapArray[parent];
+                heapArray[index].Deger.Ad = heapArray[parent].Deger.Ad;
                 index = parent;
                 parent = (parent - 1) / 2;
             }
@@ -56,11 +64,11 @@ namespace vyDonemProjesi
             {
                 int leftChild = 2 * index + 1;
                 int rightChild = leftChild + 1;
-                if (rightChild < currentSize && heapArray[leftChild].Deger < heapArray[rightChild].Deger)
+                if (rightChild < currentSize && Cevir(heapArray[leftChild].Deger.Ad) < Cevir(heapArray[rightChild].Deger.Ad))
                     largerChild = rightChild;
                 else
                     largerChild = leftChild;
-                if (top.Deger >= heapArray[largerChild].Deger)
+                if (Cevir(top.Deger.Ad) >= Cevir(heapArray[largerChild].Deger.Ad))
                     break;
                 heapArray[index] = heapArray[largerChild];
                 index = largerChild;
@@ -69,13 +77,11 @@ namespace vyDonemProjesi
         }
         public void DisplayHeap()
         {
-            Console.WriteLine();
-            Console.Write("Heap içerisindeki elemanlar: ");
+
             for (int m = 0; m < currentSize; m++)
                 if (heapArray[m] != null)
-                    Console.Write(heapArray[m].Deger + " ");
-                else
-                    Console.Write("-- ");
+                    System.Windows.Forms.MessageBox.Show(heapArray[m].Deger.Ad + " ");
+
             Console.WriteLine();
             int emptyLeaf = 32;
             int itemsPerRow = 1;
@@ -105,5 +111,8 @@ namespace vyDonemProjesi
             }
             Console.WriteLine("\n" + separator + separator);
         }
+
+
     }
-}   
+
+}

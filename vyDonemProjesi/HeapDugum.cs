@@ -7,8 +7,8 @@ namespace vyDonemProjesi
 {
     public class HeapDugumu
     {
-        public int Deger { get; set; }
-        public HeapDugumu(int deger)
+        public Kisi Deger { get; set; }
+        public HeapDugumu(Kisi deger)
         {
             this.Deger = deger;
         }

@@ -180,12 +180,36 @@ namespace vyDonemProjesi
         {
             ek.isYeriEkle("", "", "", "");
             ek.isIlaniEkle("", "");
+            Heap h = new Heap(4);
+            Kisi k = new Kisi();
+            k.Ad = "D";
+            Kisi k2 = new Kisi();
+            k2.Ad = "a";
+            Kisi k3 = new Kisi();
+            k3.Ad = "c";
             
+            h.Insert(k);
+            h.Insert(k2);
+            h.Insert(k3);
+            h.DisplayHeap();
+            h.RemoveMax();
+
+
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+
+
+
+        }
+       
+
     }
 }

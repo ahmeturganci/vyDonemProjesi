@@ -18,7 +18,7 @@ namespace vyDonemProjesi
         public ElemanKontroller()
         {
             sirket = new Sirket();
-            heap = new Heap(10); // deneme amaçlı max size 10
+           // heap = new Heap(10); // deneme amaçlı max size 10
             hash = new Hashtable();
             eleman = new Eleman();
             ilanNo = 100;
@@ -37,7 +37,7 @@ namespace vyDonemProjesi
             sirket.isIlani = new IsIlani();
             sirket.isIlani.isTanimi = "verilen bilgiler ile projeyi test etme";
             sirket.isIlani.arananOzellikler = "Yazılım Mühendisi";
-            // heap.Insert() // heap e ayar çekilecek
+            //heap.Insert() // heap e ayar çekilecek
         }
         public void isBasvurusuYap(int ilanNo)
         {
