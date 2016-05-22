@@ -18,6 +18,7 @@ namespace vyDonemProjesi
         public string YabanciDil { get; set; }
         public string IlgiAlanlari { get; set; }
         public string Referans { get; set; }
+        public double iseUygunluk { get; set; }
         public EgitimDurumu egitimDurumu { get; set; }
         public IsYeri isYeri { get; set; }
         public Kisi()

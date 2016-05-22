@@ -61,6 +61,7 @@
     <Compile Include="Giris.Designer.cs">
       <DependentUpon>Giris.cs</DependentUpon>
     </Compile>
+    <Compile Include="HashMapChain.cs" />
     <Compile Include="Heap.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -71,6 +72,7 @@
     <Compile Include="IkiliAramaAgaci.cs" />
     <Compile Include="IsIlani.cs" />
     <Compile Include="IsKontroller.cs" />
+    <Compile Include="LinkedHashEntry.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Sirket.cs" />
     <Compile Include="Form1.cs">

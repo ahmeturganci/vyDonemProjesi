@@ -8,40 +8,64 @@ namespace vyDonemProjesi
 {
     public class ElemanKontroller
     {
-        Sirket sirket;
-        Heap heap;
-        Hashtable hash;
+        //bunlar arraylist dönüşecek
+        Sirket[] sirket;
+        //Heap[] heap = new Heap[10];
+        HashMapChain hash;
         Eleman eleman;
         private int ilanNo;
+        private int sirketNo;
         // her bir isyeri içerisinde is ilani ve o iş ilani içerisinde işe başvuru yapan elemanlar yanlış
         // heap te sirketin.isilani
         public ElemanKontroller()
         {
-            sirket = new Sirket();
-           // heap = new Heap(10); // deneme amaçlı max size 10
-            hash = new Hashtable();
+            sirket = new Sirket[10]; // deneme amaçlı max size 10
             eleman = new Eleman();
-            ilanNo = 100;
+            hash = new HashMapChain();
+            
+            ilanNo = 0;
+            sirketNo = 0;
+        }
+        public void sirketEkle(string adres, string telefon, string faks, string eposta)
+        {
+            sirket[sirketNo] = new Sirket();
+            sirket[sirketNo].tamAdres = adres;
+            sirket[sirketNo].Telefon = telefon;
+            sirket[sirketNo].Faks = faks;
+            sirket[sirketNo].EPosta = eposta;
         }
         public void isYeriEkle(string ad, string adres, string gorev, string pozisyon)
         {
-            sirket.isyeri = new IsYeri();
-            sirket.isyeri.Adi = "ABCYAZILIM";
-            sirket.isyeri.Adres = "Turgutlu/Manisa";
-            sirket.isyeri.Gorev = "Test";
-            sirket.isyeri.Pozisyon = "Yazılım Mühendisi";
-            hash.Add(ilanNo++, sirket);
+            sirket[sirketNo].isyeri = new IsYeri();
+            sirket[sirketNo].isyeri.Adi = ad;
+            sirket[sirketNo].isyeri.Adres = adres;
+            sirket[sirketNo].isyeri.Gorev = gorev;
+            sirket[sirketNo].isyeri.Pozisyon = pozisyon;
+            //hash.Add(ilanNo++, sirket);
         }
         public void isIlaniEkle(string isTanimi, string arananOzellikler)
         {
-            sirket.isIlani = new IsIlani();
-            sirket.isIlani.isTanimi = "verilen bilgiler ile projeyi test etme";
-            sirket.isIlani.arananOzellikler = "Yazılım Mühendisi";
-            //heap.Insert() // heap e ayar çekilecek
+            //sirket eklendiği zaman sirketno 1 artacağı için -1 alındı
+            sirket[sirketNo].isIlani = new IsIlani();
+            sirket[sirketNo].isIlani.isTanimi = isTanimi;
+            sirket[sirketNo].isIlani.arananOzellikler = arananOzellikler;
+            //hash.Add((ilanNo), sirket[sirketNo]);
+            ilanNo++;
+            sirketNo++;
         }
-        public void isBasvurusuYap(int ilanNo)
+        public void isBasvurusuYap(Kisi kisi)
         {
-            //hashtable ilannoyu bul o ilanın 
+            double uygunluk = GetRandomNumber(0.0, 10.0);
+            kisi.iseUygunluk = uygunluk;
+            sirket[sirketNo].isIlani.elemanEkle(kisi, ilanNo);
+            hash.Add(ilanNo, sirket[sirketNo].isIlani);
+            //heap[ilanNo-1] = new Heap(10);
+            //heap[ilanNo - 1].Insert(kisi);
+        }
+        public double GetRandomNumber(double minimum, double maximum)
+        {
+            Random random = new Random();
+            return random.NextDouble() * (maximum - minimum) + minimum;
         }
     }
 }

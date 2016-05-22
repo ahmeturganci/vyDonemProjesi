@@ -19,6 +19,7 @@ namespace vyDonemProjesi
         IsKontroller k = new IsKontroller();
         ElemanKontroller ek = new ElemanKontroller();
         Kisi ahmet = new Kisi();
+        Kisi mehmet = new Kisi();
         private void btnTest_Click(object sender, EventArgs e)
         {
             ahmet.isYeri = new IsYeri();
@@ -47,7 +48,7 @@ namespace vyDonemProjesi
             k.blEgitimEkle(ahmet.egitimDurumu);
 
 
-            Kisi mehmet = new Kisi();
+            
             mehmet.isYeri = new IsYeri();
             mehmet.egitimDurumu = new EgitimDurumu();
             mehmet.Ad = "mehmetgelmedi";
@@ -178,21 +179,26 @@ namespace vyDonemProjesi
 
         private void btnBasvuru_Click(object sender, EventArgs e)
         {
-            ek.isYeriEkle("", "", "", "");
-            ek.isIlaniEkle("", "");
-            Heap h = new Heap(4);
-            Kisi k = new Kisi();
-            k.Ad = "D";
-            Kisi k2 = new Kisi();
-            k2.Ad = "a";
-            Kisi k3 = new Kisi();
-            k3.Ad = "c";
+            //ek.isYeriEkle("", "", "", "");
+            //ek.isIlaniEkle("", "");
+            //Heap h = new Heap(4);
+            //Kisi k = new Kisi();
+            //k.Ad = "D";
+            //Kisi k2 = new Kisi();
+            //k2.Ad = "a";
+            //Kisi k3 = new Kisi();
+            //k3.Ad = "c";
             
-            h.Insert(k);
-            h.Insert(k2);
-            h.Insert(k3);
-            h.DisplayHeap();
-            h.RemoveMax();
+            //h.Insert(k);
+            //h.Insert(k2);
+            //h.Insert(k3);
+            //h.DisplayHeap();
+            //h.RemoveMax();
+            ek.sirketEkle("meg","turgutlu","faks","eposta");
+            ek.isYeriEkle("ad", "adres", "gorev", "pozisyon");
+            ek.isIlaniEkle("istanimi", "ozellikler");
+            ek.isBasvurusuYap(ahmet);
+            ek.isBasvurusuYap(mehmet);
 
 
         }
