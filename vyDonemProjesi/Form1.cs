@@ -11,17 +11,47 @@ namespace vyDonemProjesi
 {
     public partial class Form1 : Form
     {
-        public Form1()
-        {
-            InitializeComponent();
-        }
-
+        Kisi kisi = new Kisi();
         IsKontroller k = new IsKontroller();
         ElemanKontroller ek = new ElemanKontroller();
-        Kisi ahmet = new Kisi();
-        Kisi mehmet = new Kisi();
-        private void btnTest_Click(object sender, EventArgs e)
+
+          
+        public Form1()
         {
+            
+            InitializeComponent();
+           //PATLIYOR   
+            //txtAd.DataBindings.Add("Text", kisi.Ad, "Ad");
+            //txtAdres.DataBindings.Add("Text", kisi.Adres, "Adres");
+            //txtMail.DataBindings.Add("Text", kisi.Email, "Adres");
+            //txtTelefon.DataBindings.Add("Text", kisi.Telefon, "Adres");
+            //txtUyruk.DataBindings.Add("Text", kisi.Uyruk, "Uyruk");
+            //txtDogunYeri.DataBindings.Add("Text", kisi.DogumYeri, "DogumYeri");
+            //txtDogunYeri.DataBindings.Add("Text", kisi.DogumTarihi, "DogumTarihi");
+            //txtMedeniDurum.DataBindings.Add("Text", kisi.MedeniDurum, "MedeniDurum");
+            //txtIlgiAlani.DataBindings.Add("Text", kisi.IlgiAlanlari, "IlgiAlanlari");
+            //txtReferans.DataBindings.Add("Text", kisi.Referans, "Referans");
+
+            //txtOkul.DataBindings.Add("Text", kisi.egitimDurumu.MezunOlunanOkul, "MezunOlunanOkul");
+            //txtBolum.DataBindings.Add("Text", kisi.egitimDurumu.Bolum, "Bolum");
+            //txtBaslangic.DataBindings.Add("Text", kisi.egitimDurumu.BaslangicYil, "BaslangicYil");
+            //txtBitis.DataBindings.Add("Text", kisi.egitimDurumu.BittisYil, "BittisYil");
+            //txtOrtalama.DataBindings.Add("Text", kisi.egitimDurumu.ortalama, "ortalama");
+
+            //txtEskiIs.DataBindings.Add("Text", kisi.isYeri.Adi, "Adi");
+            //txtEskiAdres.DataBindings.Add("Text", kisi.isYeri.Adres, "Adres");
+            //txtPo.DataBindings.Add("Text", kisi.isYeri.Pozisyon, "Pozisyon");
+            //txtGorev.DataBindings.Add("Text", kisi.isYeri.Gorev, "Gorev");
+           
+
+        }
+
+       
+        //Kisi mehmet = new Kisi();
+       private void btnTest_Click(object sender, EventArgs e)
+        {
+           
+           /* 
             ahmet.isYeri = new IsYeri();
             ahmet.egitimDurumu = new EgitimDurumu();
             ahmet.Ad = "ahmetgelmedi";
@@ -131,20 +161,20 @@ namespace vyDonemProjesi
 
 
             MessageBox.Show(k.Goster().ToString()); // bir sıkıntı yok gibi ama daha fazla test yapılması gerekli
-            MessageBox.Show(k.Goster2());
+            MessageBox.Show(k.Goster2());*/
         }
 
         private void btnAra_Click(object sender, EventArgs e)
         {
-            //k.kisiAra("ahmet"); // deneme patlak verecek ekrana yazdırmayacaktır.
-            İkiliAramaAgacDugumu bstn = k.kisiAra("p");
-            if (bstn != null)
-            {
-                Kisi kisi = (Kisi)bstn.veri;
-                MessageBox.Show(kisi.Ad + " " + kisi.Adres); // artırılacak...
-            }
-            else
-                MessageBox.Show("Aranan kayıt bulunamadı");
+            ////k.kisiAra("ahmet"); // deneme patlak verecek ekrana yazdırmayacaktır.
+            //İkiliAramaAgacDugumu bstn = k.kisiAra("p");
+            //if (bstn != null)
+            //{
+            //    Kisi kisi = (Kisi)bstn.veri;
+            //    MessageBox.Show(kisi.Ad + " " + kisi.Adres); // artırılacak...
+            //}
+            //else
+            //    MessageBox.Show("Aranan kayıt bulunamadı");
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
@@ -194,11 +224,11 @@ namespace vyDonemProjesi
             //h.Insert(k3);
             //h.DisplayHeap();
             //h.RemoveMax();
-            ek.sirketEkle("meg","turgutlu","faks","eposta");
-            ek.isYeriEkle("ad", "adres", "gorev", "pozisyon");
-            ek.isIlaniEkle("istanimi", "ozellikler");
-            ek.isBasvurusuYap(ahmet);
-            ek.isBasvurusuYap(mehmet);
+            //ek.sirketEkle("meg","turgutlu","faks","eposta");
+            //ek.isYeriEkle("ad", "adres", "gorev", "pozisyon");
+            //ek.isIlaniEkle("istanimi", "ozellikler");
+            //ek.isBasvurusuYap(ahmet);
+            //ek.isBasvurusuYap(mehmet);
 
 
         }
@@ -210,10 +240,53 @@ namespace vyDonemProjesi
 
         private void button4_Click(object sender, EventArgs e)
         {
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)//kaydol
+        {
+
+            kisi.Ad = txtAd.Text;
+            kisi.Adres = txtAdres.Text;
+            kisi.Email = txtMail.Text;
+            kisi.Telefon= txtTelefon.Text;
+            kisi.Uyruk = txtUyruk.Text;
+            kisi.DogumYeri = txtDogunYeri.Text;
+            kisi.DogumTarihi = txtDogumTarihi.Text;
+            kisi.MedeniDurum = txtMedeniDurum.Text;
+            kisi.IlgiAlanlari = txtIlgiAlani.Text;
+            kisi.Referans = txtReferans.Text;
+
+            kisi.egitimDurumu = new EgitimDurumu();
+            kisi.egitimDurumu.BaslangicYil =txtBaslangic.Text; 
+            kisi.egitimDurumu.BittisYil =txtBitis.Text;
+            kisi.egitimDurumu.Bolum =txtBolum.Text;
+            kisi.egitimDurumu.MezunOlunanOkul =txtOkul.Text;
+            kisi.egitimDurumu.ortalama = Convert.ToDouble(txtOrtalama.Text);
+
+            kisi.isYeri = new IsYeri();
+            kisi.isYeri.Adi = txtEskiIs.Text;
+            kisi.isYeri.Adres = txtEskiAdres.Text;
+            kisi.isYeri.Gorev = txtGorev.Text;
+            kisi.isYeri.Pozisyon = txtPo.Text;
+
+            k.kisiEkle(kisi);
+
+
+
             
 
+        }
 
+        private void txtOkul_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
         }
        
 

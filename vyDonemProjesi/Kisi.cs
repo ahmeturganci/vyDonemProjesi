@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
 namespace vyDonemProjesi
 {
-   public class Kisi
+    public class Kisi 
+
     {
         public string Ad { get; set; }
         public string Adres { get; set; }
@@ -18,7 +20,7 @@ namespace vyDonemProjesi
         public string YabanciDil { get; set; }
         public string IlgiAlanlari { get; set; }
         public string Referans { get; set; }
-        public double iseUygunluk { get; set; }
+        protected double iseUygunluk { get; set; }//kullanıcı giremetecek 
         public EgitimDurumu egitimDurumu { get; set; }
         public IsYeri isYeri { get; set; }
         public Kisi()
@@ -29,6 +31,8 @@ namespace vyDonemProjesi
 
 
 
- 
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

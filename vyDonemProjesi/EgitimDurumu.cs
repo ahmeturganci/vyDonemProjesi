@@ -7,11 +7,12 @@ namespace vyDonemProjesi
 {
     public class EgitimDurumu
     {
+       
         public string MezunOlunanOkul{ get; set; }
         public string Bolum { get; set; }
         public string BaslangicYil { get; set; }
         public string BittisYil { get; set; }
-        public int ortalama { get; set; }//100 ortalama üzerinden
+        public double ortalama { get; set; }//100 ortalama üzerinden
 
 
     }

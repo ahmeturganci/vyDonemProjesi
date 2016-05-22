@@ -56,7 +56,7 @@ namespace vyDonemProjesi
         public void isBasvurusuYap(Kisi kisi)
         {
             double uygunluk = GetRandomNumber(0.0, 10.0);
-            kisi.iseUygunluk = uygunluk;
+           // kisi.iseUygunluk = uygunluk;
             sirket[sirketNo].isIlani.elemanEkle(kisi, ilanNo);
             hash.Add(ilanNo, sirket[sirketNo].isIlani);
             //heap[ilanNo-1] = new Heap(10);
