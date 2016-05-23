@@ -48,6 +48,8 @@ namespace vyDonemProjesi
             sirket.EPosta = eposta;
             sirketler.Add(sirket);
 
+            // buraya değerler form2 den mi gelece ? 
+
         }
         
         public Sirket sirketBul(string sirketTelefon)
@@ -95,6 +97,8 @@ namespace vyDonemProjesi
             //heap[ilanNo-1] = new Heap(10);
             //heap[ilanNo - 1].Insert(kisi);
         }
+
+        
         public double GetRandomNumber(double minimum, double maximum)
         {
             Random random = new Random();

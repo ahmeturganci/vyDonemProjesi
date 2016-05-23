@@ -9,6 +9,11 @@ using System.Windows.Forms;
 
 namespace vyDonemProjesi
 {
+    /*
+     * iş ilanlarının listelemesi ile ilgili konuşulaca ? 
+     * ? anlamadığım yer : şimdi sisteme 1 kişi kayıt oluyor ee o zaman bizim ona göre şirket ve işleri ve başvuran kişileri aynı anda oluşturup değer atamalarını yapacağız ? 
+     * 
+     */
     public partial class Form1 : Form
     {
         Kisi kisi = new Kisi();
@@ -266,6 +271,7 @@ namespace vyDonemProjesi
         private void button1_Click(object sender, EventArgs e)//kaydol
         {
 
+            //ağaçla bağlı listeteye elemanlar erklendi. 
             kisi.Ad = txtAd.Text;
             kisi.Adres = txtAdres.Text;
             kisi.Email = txtMail.Text;
@@ -291,8 +297,8 @@ namespace vyDonemProjesi
             kisi.isYeri.Pozisyon = txtPo.Text;
 
             k.kisiEkle(kisi);
-
-
+            k.blEgitimEkle(kisi.egitimDurumu);
+            k.blIsyeriEkle(kisi.isYeri);
 
             
 
@@ -305,7 +311,12 @@ namespace vyDonemProjesi
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            txtAd.Text = kisi.Ad;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+                
         }
         //public class Data : INotifyPropertyChanged
         //{

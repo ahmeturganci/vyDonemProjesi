@@ -20,14 +20,18 @@ namespace vyDonemProjesi
         {
             Form1 frm = new Form1();
             frm.Show();
-            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Form2 frm = new Form2();
             frm.Show();
-            this.Hide();
+            
+        }
+
+        private void Giris_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
