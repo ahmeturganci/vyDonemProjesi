@@ -21,8 +21,11 @@ namespace vyDonemProjesi
         {
             ikiliArama.Ekle(kisi);
         }
-        public void kisiGuncelle(Kisi kisi) // param sayısı artacak belki farklı birşeyde bulunabilir düzeltilecek
+        public void kisiGuncelle(Kisi kisi)
         {
+            
+            kisiEkle(kisi);// eski gelen kişiyi silip yerine değişmiş özellklerle yenisi eklemek ? 
+
 
         }
         public İkiliAramaAgacDugumu kisiAra(string ad)

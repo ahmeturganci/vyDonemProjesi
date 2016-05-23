@@ -91,16 +91,23 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtGgorev = new System.Windows.Forms.TextBox();
+            this.txtGpo = new System.Windows.Forms.TextBox();
+            this.txtGisAdres = new System.Windows.Forms.TextBox();
+            this.txtGisyeriAdi = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtGilgiAlani = new System.Windows.Forms.TextBox();
+            this.txtGreferans = new System.Windows.Forms.TextBox();
+            this.txtGyabanciDil = new System.Windows.Forms.TextBox();
+            this.txtGmedeniDurum = new System.Windows.Forms.TextBox();
+            this.txtGdogumTarih = new System.Windows.Forms.TextBox();
+            this.txtGdogumYeri = new System.Windows.Forms.TextBox();
+            this.txtGuyruk = new System.Windows.Forms.TextBox();
+            this.txtGtel = new System.Windows.Forms.TextBox();
+            this.txtGmail = new System.Windows.Forms.TextBox();
+            this.txtGadres = new System.Windows.Forms.TextBox();
+            this.txtGad = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -112,29 +119,21 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnVericek = new System.Windows.Forms.Button();
+            this.txtGokul = new System.Windows.Forms.TextBox();
+            this.txtGbolum = new System.Windows.Forms.TextBox();
+            this.txtGbaslamaYili = new System.Windows.Forms.TextBox();
+            this.txtGbitisYili = new System.Windows.Forms.TextBox();
+            this.txtGort = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -145,8 +144,8 @@
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            this.groupBox8.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnTest
@@ -182,7 +181,7 @@
             // 
             // btnSilme
             // 
-            this.btnSilme.Location = new System.Drawing.Point(512, 229);
+            this.btnSilme.Location = new System.Drawing.Point(512, 219);
             this.btnSilme.Name = "btnSilme";
             this.btnSilme.Size = new System.Drawing.Size(38, 21);
             this.btnSilme.TabIndex = 3;
@@ -219,7 +218,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(498, 393);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Kayıt Ol";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -323,7 +322,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(449, 19);
+            this.button4.Location = new System.Drawing.Point(457, 0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(30, 23);
             this.button4.TabIndex = 9;
@@ -691,11 +690,12 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(498, 393);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Güncelle ";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnVericek);
             this.groupBox4.Controls.Add(this.button2);
             this.groupBox4.Controls.Add(this.groupBox5);
             this.groupBox4.Controls.Add(this.button1);
@@ -710,7 +710,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(384, 349);
+            this.button2.Location = new System.Drawing.Point(386, 347);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 10;
@@ -724,10 +724,10 @@
             this.groupBox5.Controls.Add(this.label19);
             this.groupBox5.Controls.Add(this.label20);
             this.groupBox5.Controls.Add(this.label21);
-            this.groupBox5.Controls.Add(this.textBox1);
-            this.groupBox5.Controls.Add(this.textBox2);
-            this.groupBox5.Controls.Add(this.textBox3);
-            this.groupBox5.Controls.Add(this.textBox4);
+            this.groupBox5.Controls.Add(this.txtGgorev);
+            this.groupBox5.Controls.Add(this.txtGpo);
+            this.groupBox5.Controls.Add(this.txtGisAdres);
+            this.groupBox5.Controls.Add(this.txtGisyeriAdi);
             this.groupBox5.Location = new System.Drawing.Point(241, 210);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(202, 131);
@@ -771,37 +771,37 @@
             this.label21.TabIndex = 9;
             this.label21.Text = "İş Yeri Adı";
             // 
-            // textBox1
+            // txtGgorev
             // 
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox1.Location = new System.Drawing.Point(93, 97);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtGgorev.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtGgorev.Location = new System.Drawing.Point(93, 97);
+            this.txtGgorev.Name = "txtGgorev";
+            this.txtGgorev.Size = new System.Drawing.Size(100, 20);
+            this.txtGgorev.TabIndex = 1;
             // 
-            // textBox2
+            // txtGpo
             // 
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox2.Location = new System.Drawing.Point(93, 71);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.txtGpo.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtGpo.Location = new System.Drawing.Point(93, 71);
+            this.txtGpo.Name = "txtGpo";
+            this.txtGpo.Size = new System.Drawing.Size(100, 20);
+            this.txtGpo.TabIndex = 1;
             // 
-            // textBox3
+            // txtGisAdres
             // 
-            this.textBox3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox3.Location = new System.Drawing.Point(93, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 1;
+            this.txtGisAdres.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtGisAdres.Location = new System.Drawing.Point(93, 45);
+            this.txtGisAdres.Name = "txtGisAdres";
+            this.txtGisAdres.Size = new System.Drawing.Size(100, 20);
+            this.txtGisAdres.TabIndex = 1;
             // 
-            // textBox4
+            // txtGisyeriAdi
             // 
-            this.textBox4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox4.Location = new System.Drawing.Point(93, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 1;
+            this.txtGisyeriAdi.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtGisyeriAdi.Location = new System.Drawing.Point(93, 19);
+            this.txtGisyeriAdi.Name = "txtGisyeriAdi";
+            this.txtGisyeriAdi.Size = new System.Drawing.Size(100, 20);
+            this.txtGisyeriAdi.TabIndex = 1;
             // 
             // button1
             // 
@@ -814,10 +814,17 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.textBox5);
-            this.groupBox6.Controls.Add(this.textBox6);
-            this.groupBox6.Controls.Add(this.textBox7);
-            this.groupBox6.Controls.Add(this.textBox8);
+            this.groupBox6.Controls.Add(this.txtGilgiAlani);
+            this.groupBox6.Controls.Add(this.txtGreferans);
+            this.groupBox6.Controls.Add(this.txtGyabanciDil);
+            this.groupBox6.Controls.Add(this.txtGmedeniDurum);
+            this.groupBox6.Controls.Add(this.txtGdogumTarih);
+            this.groupBox6.Controls.Add(this.txtGdogumYeri);
+            this.groupBox6.Controls.Add(this.txtGuyruk);
+            this.groupBox6.Controls.Add(this.txtGtel);
+            this.groupBox6.Controls.Add(this.txtGmail);
+            this.groupBox6.Controls.Add(this.txtGadres);
+            this.groupBox6.Controls.Add(this.txtGad);
             this.groupBox6.Controls.Add(this.label22);
             this.groupBox6.Controls.Add(this.label23);
             this.groupBox6.Controls.Add(this.label24);
@@ -829,13 +836,6 @@
             this.groupBox6.Controls.Add(this.label30);
             this.groupBox6.Controls.Add(this.label31);
             this.groupBox6.Controls.Add(this.label32);
-            this.groupBox6.Controls.Add(this.textBox9);
-            this.groupBox6.Controls.Add(this.textBox10);
-            this.groupBox6.Controls.Add(this.textBox11);
-            this.groupBox6.Controls.Add(this.textBox12);
-            this.groupBox6.Controls.Add(this.textBox13);
-            this.groupBox6.Controls.Add(this.textBox14);
-            this.groupBox6.Controls.Add(this.textBox15);
             this.groupBox6.Location = new System.Drawing.Point(3, 19);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(232, 351);
@@ -843,39 +843,94 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "İş Yeri Bilgiler";
             // 
-            // textBox5
+            // txtGilgiAlani
             // 
-            this.textBox5.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox5.Location = new System.Drawing.Point(96, 294);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 49);
-            this.textBox5.TabIndex = 10;
+            this.txtGilgiAlani.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtGilgiAlani.Location = new System.Drawing.Point(83, 294);
+            this.txtGilgiAlani.Multiline = true;
+            this.txtGilgiAlani.Name = "txtGilgiAlani";
+            this.txtGilgiAlani.Size = new System.Drawing.Size(100, 49);
+            this.txtGilgiAlani.TabIndex = 20;
             // 
-            // textBox6
+            // txtGreferans
             // 
-            this.textBox6.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox6.Location = new System.Drawing.Point(96, 250);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 38);
-            this.textBox6.TabIndex = 10;
+            this.txtGreferans.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtGreferans.Location = new System.Drawing.Point(83, 250);
+            this.txtGreferans.Multiline = true;
+            this.txtGreferans.Name = "txtGreferans";
+            this.txtGreferans.Size = new System.Drawing.Size(100, 38);
+            this.txtGreferans.TabIndex = 21;
             // 
-            // textBox7
+            // txtGyabanciDil
             // 
-            this.textBox7.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox7.Location = new System.Drawing.Point(96, 224);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 11;
+            this.txtGyabanciDil.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtGyabanciDil.Location = new System.Drawing.Point(83, 224);
+            this.txtGyabanciDil.Name = "txtGyabanciDil";
+            this.txtGyabanciDil.Size = new System.Drawing.Size(100, 20);
+            this.txtGyabanciDil.TabIndex = 22;
             // 
-            // textBox8
+            // txtGmedeniDurum
             // 
-            this.textBox8.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox8.Location = new System.Drawing.Point(96, 198);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 12;
+            this.txtGmedeniDurum.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtGmedeniDurum.Location = new System.Drawing.Point(83, 198);
+            this.txtGmedeniDurum.Name = "txtGmedeniDurum";
+            this.txtGmedeniDurum.Size = new System.Drawing.Size(100, 20);
+            this.txtGmedeniDurum.TabIndex = 23;
+            // 
+            // txtGdogumTarih
+            // 
+            this.txtGdogumTarih.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtGdogumTarih.Location = new System.Drawing.Point(83, 172);
+            this.txtGdogumTarih.Name = "txtGdogumTarih";
+            this.txtGdogumTarih.Size = new System.Drawing.Size(100, 20);
+            this.txtGdogumTarih.TabIndex = 13;
+            // 
+            // txtGdogumYeri
+            // 
+            this.txtGdogumYeri.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtGdogumYeri.Location = new System.Drawing.Point(83, 146);
+            this.txtGdogumYeri.Name = "txtGdogumYeri";
+            this.txtGdogumYeri.Size = new System.Drawing.Size(100, 20);
+            this.txtGdogumYeri.TabIndex = 14;
+            // 
+            // txtGuyruk
+            // 
+            this.txtGuyruk.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtGuyruk.Location = new System.Drawing.Point(83, 120);
+            this.txtGuyruk.Name = "txtGuyruk";
+            this.txtGuyruk.Size = new System.Drawing.Size(100, 20);
+            this.txtGuyruk.TabIndex = 15;
+            // 
+            // txtGtel
+            // 
+            this.txtGtel.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtGtel.ForeColor = System.Drawing.Color.Transparent;
+            this.txtGtel.Location = new System.Drawing.Point(83, 94);
+            this.txtGtel.Name = "txtGtel";
+            this.txtGtel.Size = new System.Drawing.Size(100, 20);
+            this.txtGtel.TabIndex = 16;
+            // 
+            // txtGmail
+            // 
+            this.txtGmail.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtGmail.Location = new System.Drawing.Point(83, 68);
+            this.txtGmail.Name = "txtGmail";
+            this.txtGmail.Size = new System.Drawing.Size(100, 20);
+            this.txtGmail.TabIndex = 17;
+            // 
+            // txtGadres
+            // 
+            this.txtGadres.Location = new System.Drawing.Point(83, 42);
+            this.txtGadres.Name = "txtGadres";
+            this.txtGadres.Size = new System.Drawing.Size(100, 20);
+            this.txtGadres.TabIndex = 18;
+            // 
+            // txtGad
+            // 
+            this.txtGad.Location = new System.Drawing.Point(83, 16);
+            this.txtGad.Name = "txtGad";
+            this.txtGad.Size = new System.Drawing.Size(100, 20);
+            this.txtGad.TabIndex = 19;
             // 
             // label22
             // 
@@ -976,183 +1031,6 @@
             this.label32.TabIndex = 8;
             this.label32.Text = "Ad";
             // 
-            // textBox9
-            // 
-            this.textBox9.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox9.Location = new System.Drawing.Point(96, 172);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 4;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox10.Location = new System.Drawing.Point(96, 146);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 4;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox11.Location = new System.Drawing.Point(96, 120);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 5;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox12.Location = new System.Drawing.Point(96, 94);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 20);
-            this.textBox12.TabIndex = 6;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox13.Location = new System.Drawing.Point(96, 68);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 20);
-            this.textBox13.TabIndex = 7;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(96, 42);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 20);
-            this.textBox14.TabIndex = 8;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(96, 16);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(100, 20);
-            this.textBox15.TabIndex = 9;
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.label33);
-            this.groupBox8.Controls.Add(this.label38);
-            this.groupBox8.Controls.Add(this.label39);
-            this.groupBox8.Controls.Add(this.label40);
-            this.groupBox8.Controls.Add(this.label41);
-            this.groupBox8.Controls.Add(this.label42);
-            this.groupBox8.Controls.Add(this.textBox16);
-            this.groupBox8.Controls.Add(this.textBox17);
-            this.groupBox8.Controls.Add(this.textBox18);
-            this.groupBox8.Controls.Add(this.textBox19);
-            this.groupBox8.Controls.Add(this.textBox20);
-            this.groupBox8.Controls.Add(this.textBox21);
-            this.groupBox8.Location = new System.Drawing.Point(241, 19);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(202, 185);
-            this.groupBox8.TabIndex = 6;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Eğitim Bilgileri";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(6, 156);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(49, 13);
-            this.label33.TabIndex = 9;
-            this.label33.Text = "Ortalama";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(6, 130);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(42, 13);
-            this.label38.TabIndex = 9;
-            this.label38.Text = "Bitis Yılı";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(6, 104);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(63, 13);
-            this.label39.TabIndex = 9;
-            this.label39.Text = "Başlama Yılı";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(6, 78);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(36, 13);
-            this.label40.TabIndex = 9;
-            this.label40.Text = "Bölüm";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(6, 26);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(29, 13);
-            this.label41.TabIndex = 9;
-            this.label41.Text = "Okul";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(6, 56);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(71, 13);
-            this.label42.TabIndex = 9;
-            this.label42.Text = "Mezuniyet Yılı";
-            // 
-            // textBox16
-            // 
-            this.textBox16.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox16.Location = new System.Drawing.Point(93, 153);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(100, 20);
-            this.textBox16.TabIndex = 1;
-            // 
-            // textBox17
-            // 
-            this.textBox17.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox17.Location = new System.Drawing.Point(93, 127);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(100, 20);
-            this.textBox17.TabIndex = 1;
-            // 
-            // textBox18
-            // 
-            this.textBox18.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox18.Location = new System.Drawing.Point(93, 101);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(100, 20);
-            this.textBox18.TabIndex = 1;
-            // 
-            // textBox19
-            // 
-            this.textBox19.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox19.Location = new System.Drawing.Point(93, 75);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(100, 20);
-            this.textBox19.TabIndex = 1;
-            // 
-            // textBox20
-            // 
-            this.textBox20.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox20.Location = new System.Drawing.Point(93, 23);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(100, 20);
-            this.textBox20.TabIndex = 1;
-            // 
-            // textBox21
-            // 
-            this.textBox21.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox21.Location = new System.Drawing.Point(93, 49);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(100, 20);
-            this.textBox21.TabIndex = 1;
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.button5);
@@ -1162,7 +1040,7 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(498, 393);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.Text = "İşe Başvur";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // button5
@@ -1182,6 +1060,121 @@
             this.listBox1.Size = new System.Drawing.Size(379, 381);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // btnVericek
+            // 
+            this.btnVericek.Location = new System.Drawing.Point(250, 347);
+            this.btnVericek.Name = "btnVericek";
+            this.btnVericek.Size = new System.Drawing.Size(89, 23);
+            this.btnVericek.TabIndex = 6;
+            this.btnVericek.Text = "Verileri çek";
+            this.btnVericek.UseVisualStyleBackColor = true;
+            this.btnVericek.Click += new System.EventHandler(this.btnVericek_Click);
+            // 
+            // txtGokul
+            // 
+            this.txtGokul.AcceptsReturn = true;
+            this.txtGokul.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtGokul.Location = new System.Drawing.Point(93, 23);
+            this.txtGokul.Name = "txtGokul";
+            this.txtGokul.Size = new System.Drawing.Size(100, 20);
+            this.txtGokul.TabIndex = 1;
+            // 
+            // txtGbolum
+            // 
+            this.txtGbolum.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtGbolum.Location = new System.Drawing.Point(93, 75);
+            this.txtGbolum.Name = "txtGbolum";
+            this.txtGbolum.Size = new System.Drawing.Size(100, 20);
+            this.txtGbolum.TabIndex = 1;
+            // 
+            // txtGbaslamaYili
+            // 
+            this.txtGbaslamaYili.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtGbaslamaYili.Location = new System.Drawing.Point(93, 101);
+            this.txtGbaslamaYili.Name = "txtGbaslamaYili";
+            this.txtGbaslamaYili.Size = new System.Drawing.Size(100, 20);
+            this.txtGbaslamaYili.TabIndex = 1;
+            // 
+            // txtGbitisYili
+            // 
+            this.txtGbitisYili.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtGbitisYili.Location = new System.Drawing.Point(93, 127);
+            this.txtGbitisYili.Name = "txtGbitisYili";
+            this.txtGbitisYili.Size = new System.Drawing.Size(100, 20);
+            this.txtGbitisYili.TabIndex = 1;
+            // 
+            // txtGort
+            // 
+            this.txtGort.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtGort.Location = new System.Drawing.Point(93, 153);
+            this.txtGort.Name = "txtGort";
+            this.txtGort.Size = new System.Drawing.Size(100, 20);
+            this.txtGort.TabIndex = 1;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(6, 26);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(29, 13);
+            this.label41.TabIndex = 9;
+            this.label41.Text = "Okul";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(6, 78);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(36, 13);
+            this.label40.TabIndex = 9;
+            this.label40.Text = "Bölüm";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(6, 104);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(63, 13);
+            this.label39.TabIndex = 9;
+            this.label39.Text = "Başlama Yılı";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(6, 130);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(42, 13);
+            this.label38.TabIndex = 9;
+            this.label38.Text = "Bitis Yılı";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(6, 156);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(49, 13);
+            this.label33.TabIndex = 9;
+            this.label33.Text = "Ortalama";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.label33);
+            this.groupBox8.Controls.Add(this.label38);
+            this.groupBox8.Controls.Add(this.label39);
+            this.groupBox8.Controls.Add(this.label40);
+            this.groupBox8.Controls.Add(this.label41);
+            this.groupBox8.Controls.Add(this.txtGort);
+            this.groupBox8.Controls.Add(this.txtGbitisYili);
+            this.groupBox8.Controls.Add(this.txtGbaslamaYili);
+            this.groupBox8.Controls.Add(this.txtGbolum);
+            this.groupBox8.Controls.Add(this.txtGokul);
+            this.groupBox8.Location = new System.Drawing.Point(241, 19);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(202, 185);
+            this.groupBox8.TabIndex = 6;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Eğitim Bilgileri";
             // 
             // Form1
             // 
@@ -1213,9 +1206,9 @@
             this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1287,16 +1280,12 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtGgorev;
+        private System.Windows.Forms.TextBox txtGpo;
+        private System.Windows.Forms.TextBox txtGisAdres;
+        private System.Windows.Forms.TextBox txtGisyeriAdi;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
@@ -1308,27 +1297,30 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtGilgiAlani;
+        private System.Windows.Forms.TextBox txtGreferans;
+        private System.Windows.Forms.TextBox txtGyabanciDil;
+        private System.Windows.Forms.TextBox txtGmedeniDurum;
+        private System.Windows.Forms.TextBox txtGdogumTarih;
+        private System.Windows.Forms.TextBox txtGdogumYeri;
+        private System.Windows.Forms.TextBox txtGuyruk;
+        private System.Windows.Forms.TextBox txtGtel;
+        private System.Windows.Forms.TextBox txtGmail;
+        private System.Windows.Forms.TextBox txtGadres;
+        private System.Windows.Forms.TextBox txtGad;
+        private System.Windows.Forms.Button btnVericek;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtGort;
+        private System.Windows.Forms.TextBox txtGbitisYili;
+        private System.Windows.Forms.TextBox txtGbaslamaYili;
+        private System.Windows.Forms.TextBox txtGbolum;
+        private System.Windows.Forms.TextBox txtGokul;
     }
 }
 

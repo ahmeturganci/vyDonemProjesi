@@ -51,7 +51,7 @@ namespace vyDonemProjesi
             // buraya değerler form2 den mi gelece ? 
 
         }
-        
+
         public Sirket sirketBul(string sirketTelefon)
         {
             Sirket retSirket = new Sirket();
@@ -65,7 +65,7 @@ namespace vyDonemProjesi
             return retSirket;
         }
         // isyerini hangi sirkete ekleyecek bilmiyoruz o yüzden sirketbul metodundan gelen sirket ile bunu tespit ediyoruz
-        public void isYeriEkle(Sirket sirket,string ad, string adres, string gorev, string pozisyon)
+        public void isYeriEkle(Sirket sirket, string ad, string adres, string gorev, string pozisyon)
         {
             sirket.isyeri = new IsYeri();
             sirket.isyeri.Adi = ad;
@@ -74,7 +74,7 @@ namespace vyDonemProjesi
             sirket.isyeri.Pozisyon = pozisyon;
             //hash.Add(ilanNo++, sirket);
         }
-        public void isIlaniEkle(Sirket sirket,string isTanimi, string arananOzellikler)
+        public void isIlaniEkle(Sirket sirket, string isTanimi, string arananOzellikler)
         {
             //sirket eklendiği zaman sirketno 1 artacağı için -1 alındı
             sirket.isIlani = new IsIlani();
@@ -86,11 +86,11 @@ namespace vyDonemProjesi
             //ilanNo++;
             //sirketNo++;
         }
-        public void isBasvurusuYap(Sirket sirket,Kisi kisi)
+        public void isBasvurusuYap(Sirket sirket, Kisi kisi)
         {
             double uygunluk = GetRandomNumber(0.0, 10.0);
             kisi.iseUygunluk = uygunluk;
-            if(sirket.isIlani!=null)
+            if (sirket.isIlani != null)
                 sirket.isIlani.elemanEkle(kisi, ilanNo);
             else
                 System.Windows.Forms.MessageBox.Show("İş ilani olmayan bir Şirkete başvuramazsınız");
@@ -98,19 +98,19 @@ namespace vyDonemProjesi
             //heap[ilanNo - 1].Insert(kisi);
         }
         public string isListele(Sirket sirket)
-        { 
+        {
             string s = "";
             //nesne olaylaı bi patlıyo ? 
             foreach (var item in sirketler)
             {
-                s+=item.isIlani.isAdi+" "+ item.isyeri+" "+item.isIlani.isTanimi+" "+item.isIlani.isPozisyon+" "+Environment.NewLine;
+                s += item.tamAdres;//+" "item.isyeri.Adi+" "+item.isyeri.Gorev+" "+Environment.NewLine;
             }
             return s;
 
-            
+
         }
 
-        
+
         public double GetRandomNumber(double minimum, double maximum)
         {
             Random random = new Random();
