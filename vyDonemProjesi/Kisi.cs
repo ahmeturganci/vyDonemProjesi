@@ -20,7 +20,7 @@ namespace vyDonemProjesi
         public string YabanciDil { get; set; }
         public string IlgiAlanlari { get; set; }
         public string Referans { get; set; }
-        protected double iseUygunluk { get; set; }//kullanıcı giremetecek 
+        public double iseUygunluk { get; set; }//kullanıcı giremetecek // edit protected->public kanka zaten kullanıcının hangi değeri girip giremeyeceğini biz belirliyoruz
         public EgitimDurumu egitimDurumu { get; set; }
         public IsYeri isYeri { get; set; }
         public Kisi()

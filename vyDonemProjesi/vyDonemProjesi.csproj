@@ -47,7 +47,6 @@
     <Compile Include="BagliListeADT.cs" />
     <Compile Include="BaglıListe.cs" />
     <Compile Include="EgitimDurumu.cs" />
-    <Compile Include="Eleman.cs" />
     <Compile Include="ElemanKontroller.cs" />
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>

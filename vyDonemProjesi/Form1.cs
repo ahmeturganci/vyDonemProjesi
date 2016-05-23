@@ -15,7 +15,10 @@ namespace vyDonemProjesi
         IsKontroller k = new IsKontroller();
         ElemanKontroller ek = new ElemanKontroller();
 
-          
+        Kisi ahmet = new Kisi();
+        Kisi mehmet = new Kisi();
+        Kisi kamil = new Kisi();
+        Kisi nuri = new Kisi();
         public Form1()
         {
             
@@ -47,121 +50,121 @@ namespace vyDonemProjesi
         }
 
        
-        //Kisi mehmet = new Kisi();
+        
        private void btnTest_Click(object sender, EventArgs e)
         {
-           
-           /* 
-            ahmet.isYeri = new IsYeri();
-            ahmet.egitimDurumu = new EgitimDurumu();
-            ahmet.Ad = "ahmetgelmedi";
-            ahmet.Adres = "SedocanÖzcanKYKturgutlu";
-            ahmet.DogumTarihi = "05.11.1992";
-            ahmet.DogumYeri = "manisa";
-            ahmet.egitimDurumu.BaslangicYil = "2014";
-            ahmet.egitimDurumu.BittisYil = "2018"; // İNŞALLAH
-            ahmet.egitimDurumu.Bolum = "yzm";
-            ahmet.egitimDurumu.MezunOlunanOkul = "CBÜ";
-            ahmet.egitimDurumu.ortalama = 85;
-            ahmet.Email = "sananelan@sananehır.com";
-            ahmet.IlgiAlanlari = "ahmet urganci";
-            ahmet.MedeniDurum = "Bekar";
-            ahmet.Referans = "abcdfegh";
 
-            ahmet.isYeri.Adi = "IŞIK OYUN,IŞIK SİSTEM";
-            ahmet.isYeri.Adres = "Bursa/Emek";
-            ahmet.isYeri.Gorev = "görev";
-            ahmet.isYeri.Pozisyon = "pozisyon";
+             
+             ahmet.isYeri = new IsYeri();
+             ahmet.egitimDurumu = new EgitimDurumu();
+             ahmet.Ad = "ahmetgelmedi";
+             ahmet.Adres = "SedocanÖzcanKYKturgutlu";
+             ahmet.DogumTarihi = "05.11.1992";
+             ahmet.DogumYeri = "manisa";
+             ahmet.egitimDurumu.BaslangicYil = "2014";
+             ahmet.egitimDurumu.BittisYil = "2018"; // İNŞALLAH
+             ahmet.egitimDurumu.Bolum = "yzm";
+             ahmet.egitimDurumu.MezunOlunanOkul = "CBÜ";
+             ahmet.egitimDurumu.ortalama = 85;
+             ahmet.Email = "sananelan@sananehır.com";
+             ahmet.IlgiAlanlari = "ahmet urganci";
+             ahmet.MedeniDurum = "Bekar";
+             ahmet.Referans = "abcdfegh";
 
-            k.kisiEkle(ahmet);
-            k.blIsyeriEkle(ahmet.isYeri);
-            k.blEgitimEkle(ahmet.egitimDurumu);
+             ahmet.isYeri.Adi = "IŞIK OYUN,IŞIK SİSTEM";
+             ahmet.isYeri.Adres = "Bursa/Emek";
+             ahmet.isYeri.Gorev = "görev";
+             ahmet.isYeri.Pozisyon = "pozisyon";
 
+             k.kisiEkle(ahmet);
+             k.blIsyeriEkle(ahmet.isYeri);
+             k.blEgitimEkle(ahmet.egitimDurumu);
 
             
-            mehmet.isYeri = new IsYeri();
-            mehmet.egitimDurumu = new EgitimDurumu();
-            mehmet.Ad = "mehmetgelmedi";
-            mehmet.Adres = "SedocanÖzcanKYKturgutlu";
-            mehmet.DogumTarihi = "05.11.1992";
-            mehmet.DogumYeri = "manisa";
-            mehmet.egitimDurumu.BaslangicYil = "2014";
-            mehmet.egitimDurumu.BittisYil = "2018"; // İNŞALLAH
-            mehmet.egitimDurumu.Bolum = "yzm";
-            mehmet.egitimDurumu.MezunOlunanOkul = "CBÜ";
-            mehmet.egitimDurumu.ortalama = 90;
-            mehmet.Email = "sananelan@sananehır.com";
-            mehmet.IlgiAlanlari = "ahmet urganci";
-            mehmet.MedeniDurum = "Bekar";
-            mehmet.Referans = "abcdfegh";
+            
+              mehmet.isYeri = new IsYeri();
+              mehmet.egitimDurumu = new EgitimDurumu();
+              mehmet.Ad = "mehmetgelmedi";
+              mehmet.Adres = "SedocanÖzcanKYKturgutlu";
+              mehmet.DogumTarihi = "05.11.1992";
+              mehmet.DogumYeri = "manisa";
+              mehmet.egitimDurumu.BaslangicYil = "2014";
+              mehmet.egitimDurumu.BittisYil = "2018"; // İNŞALLAH
+              mehmet.egitimDurumu.Bolum = "yzm";
+              mehmet.egitimDurumu.MezunOlunanOkul = "CBÜ";
+              mehmet.egitimDurumu.ortalama = 90;
+              mehmet.Email = "sananelan@sananehır.com";
+              mehmet.IlgiAlanlari = "ahmet urganci";
+              mehmet.MedeniDurum = "Bekar";
+              mehmet.Referans = "abcdfegh";
 
-            mehmet.isYeri.Adi = "IŞIK OYUN,IŞIK SİSTEM";
-            mehmet.isYeri.Adres = "Bursa/Emek";
-            mehmet.isYeri.Gorev = "görev";
-            mehmet.isYeri.Pozisyon = "pozisyon";
+              mehmet.isYeri.Adi = "IŞIK OYUN,IŞIK SİSTEM";
+              mehmet.isYeri.Adres = "Bursa/Emek";
+              mehmet.isYeri.Gorev = "görev";
+              mehmet.isYeri.Pozisyon = "pozisyon";
 
-            k.kisiEkle(mehmet);
-            k.blIsyeriEkle(mehmet.isYeri);
-            k.blEgitimEkle(mehmet.egitimDurumu);
-
-
-            Kisi nuri = new Kisi();
-            nuri.isYeri = new IsYeri();
-            nuri.egitimDurumu = new EgitimDurumu();
-            nuri.Ad = "nurigelmedi";
-            nuri.Adres = "SedocanÖzcanKYKturgutlu";
-            nuri.DogumTarihi = "05.11.1992";
-            nuri.DogumYeri = "manisa";
-            nuri.egitimDurumu.BaslangicYil = "2014";
-            nuri.egitimDurumu.BittisYil = "2018"; // İNŞALLAH
-            nuri.egitimDurumu.Bolum = "yzm";
-            nuri.egitimDurumu.MezunOlunanOkul = "CBÜ";
-            nuri.egitimDurumu.ortalama = 85;
-            nuri.Email = "sananelan@sananehır.com";
-            nuri.IlgiAlanlari = "nuri urganci";
-            nuri.MedeniDurum = "Bekar";
-            nuri.Referans = "abcdfegh";
-
-            nuri.isYeri.Adi = "IŞIK OYUN,IŞIK SİSTEM";
-            nuri.isYeri.Adres = "Bursa/Emek";
-            nuri.isYeri.Gorev = "görev";
-            nuri.isYeri.Pozisyon = "pozisyon";
-
-            k.kisiEkle(nuri);
-            k.blIsyeriEkle(nuri.isYeri);
-            k.blEgitimEkle(nuri.egitimDurumu);
+              k.kisiEkle(mehmet);
+              k.blIsyeriEkle(mehmet.isYeri);
+              k.blEgitimEkle(mehmet.egitimDurumu);
 
 
-            Kisi kamil = new Kisi();
-            kamil.isYeri = new IsYeri();
-            kamil.egitimDurumu = new EgitimDurumu();
-            kamil.Ad = "kamilgelmedi";
-            kamil.Adres = "SedocanÖzcanKYKturgutlu";
-            kamil.DogumTarihi = "05.11.1992";
-            kamil.DogumYeri = "manisa";
-            kamil.egitimDurumu.BaslangicYil = "2014";
-            kamil.egitimDurumu.BittisYil = "2018"; // İNŞALLAH
-            kamil.egitimDurumu.Bolum = "yzm";
-            kamil.egitimDurumu.MezunOlunanOkul = "CBÜ";
-            kamil.egitimDurumu.ortalama = 85;
-            kamil.Email = "sananelan@sananehır.com";
-            kamil.IlgiAlanlari = "kamil urganci";
-            kamil.MedeniDurum = "Bekar";
-            kamil.Referans = "abcdfegh";
+              
+              nuri.isYeri = new IsYeri();
+              nuri.egitimDurumu = new EgitimDurumu();
+              nuri.Ad = "nurigelmedi";
+              nuri.Adres = "SedocanÖzcanKYKturgutlu";
+              nuri.DogumTarihi = "05.11.1992";
+              nuri.DogumYeri = "manisa";
+              nuri.egitimDurumu.BaslangicYil = "2014";
+              nuri.egitimDurumu.BittisYil = "2018"; // İNŞALLAH
+              nuri.egitimDurumu.Bolum = "yzm";
+              nuri.egitimDurumu.MezunOlunanOkul = "CBÜ";
+              nuri.egitimDurumu.ortalama = 85;
+              nuri.Email = "sananelan@sananehır.com";
+              nuri.IlgiAlanlari = "nuri urganci";
+              nuri.MedeniDurum = "Bekar";
+              nuri.Referans = "abcdfegh";
 
-            kamil.isYeri.Adi = "IŞIK OYUN,IŞIK SİSTEM";
-            kamil.isYeri.Adres = "Bursa/Emek";
-            kamil.isYeri.Gorev = "görev";
-            kamil.isYeri.Pozisyon = "pozisyon";
+              nuri.isYeri.Adi = "IŞIK OYUN,IŞIK SİSTEM";
+              nuri.isYeri.Adres = "Bursa/Emek";
+              nuri.isYeri.Gorev = "görev";
+              nuri.isYeri.Pozisyon = "pozisyon";
 
-            k.kisiEkle(kamil);
-            k.blIsyeriEkle(kamil.isYeri);
-            k.blEgitimEkle(kamil.egitimDurumu);
+              k.kisiEkle(nuri);
+              k.blIsyeriEkle(nuri.isYeri);
+              k.blEgitimEkle(nuri.egitimDurumu);
 
 
+              
+              kamil.isYeri = new IsYeri();
+              kamil.egitimDurumu = new EgitimDurumu();
+              kamil.Ad = "kamilgelmedi";
+              kamil.Adres = "SedocanÖzcanKYKturgutlu";
+              kamil.DogumTarihi = "05.11.1992";
+              kamil.DogumYeri = "manisa";
+              kamil.egitimDurumu.BaslangicYil = "2014";
+              kamil.egitimDurumu.BittisYil = "2018"; // İNŞALLAH
+              kamil.egitimDurumu.Bolum = "yzm";
+              kamil.egitimDurumu.MezunOlunanOkul = "CBÜ";
+              kamil.egitimDurumu.ortalama = 85;
+              kamil.Email = "sananelan@sananehır.com";
+              kamil.IlgiAlanlari = "kamil urganci";
+              kamil.MedeniDurum = "Bekar";
+              kamil.Referans = "abcdfegh";
 
-            MessageBox.Show(k.Goster().ToString()); // bir sıkıntı yok gibi ama daha fazla test yapılması gerekli
-            MessageBox.Show(k.Goster2());*/
+              kamil.isYeri.Adi = "IŞIK OYUN,IŞIK SİSTEM";
+              kamil.isYeri.Adres = "Bursa/Emek";
+              kamil.isYeri.Gorev = "görev";
+              kamil.isYeri.Pozisyon = "pozisyon";
+
+              k.kisiEkle(kamil);
+              k.blIsyeriEkle(kamil.isYeri);
+              k.blEgitimEkle(kamil.egitimDurumu);
+
+           /*
+
+              MessageBox.Show(k.Goster().ToString()); // bir sıkıntı yok gibi ama daha fazla test yapılması gerekli
+              MessageBox.Show(k.Goster2());*/
         }
 
         private void btnAra_Click(object sender, EventArgs e)
@@ -240,6 +243,22 @@ namespace vyDonemProjesi
 
         private void button4_Click(object sender, EventArgs e)
         {
+            //button text=X
+            //testler
+            ek.sirketEkle("turgutlu", "12345", "fakss", "mail@mail.com");
+            ek.sirketEkle("turgutlu1", "123422135", "ssfakss", "gmail@gmail.com");
+            Sirket sirket= ek.sirketBul("12345");
+            ek.isYeriEkle(sirket, "meg", "manisa", "gor", "poz");
+            sirket = ek.sirketBul("123422135");
+            ek.isYeriEkle(sirket, "au", "muğla", "gor2", "poz2");
+            ek.isIlaniEkle(sirket, "yazılım mühendisi", "backend developer");
+            ek.isBasvurusuYap(sirket, ahmet);
+            ek.isBasvurusuYap(sirket, mehmet);
+            sirket = ek.sirketBul("12345");
+            //eğer bu şirkete iş ilani eklemeden çalıştırsaydık null ref den dolayı patlardı düzeltildi
+            ek.isIlaniEkle(sirket, "yazılım mühendisi", "frontend developer");
+            ek.isBasvurusuYap(sirket, nuri);
+            ek.isBasvurusuYap(sirket, kamil);
 
 
         }
@@ -288,7 +307,22 @@ namespace vyDonemProjesi
         {
             
         }
-       
+        //public class Data : INotifyPropertyChanged
+        //{
+        //    private string deger;
+
+        //    public string Deger
+        //    {
+        //        get { return deger; }
+        //        set { deger = value;
+        //        if (PropertyChanged != null)
+        //            PropertyChanged(this, new PropertyChangedEventArgs("Deger"));
+        //        }
+        //    }
+
+
+        //    public event PropertyChangedEventHandler PropertyChanged;
+        //}
 
     }
 }
