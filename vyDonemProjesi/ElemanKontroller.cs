@@ -97,6 +97,11 @@ namespace vyDonemProjesi
             //heap[ilanNo-1] = new Heap(10);
             //heap[ilanNo - 1].Insert(kisi);
         }
+        public void isListele(Sirket sirket)
+        { 
+            //  ? ? 
+            
+        }
 
         
         public double GetRandomNumber(double minimum, double maximum)

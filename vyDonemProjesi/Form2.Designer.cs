@@ -44,11 +44,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtUyruk = new System.Windows.Forms.TextBox();
-            this.txtTelefon = new System.Windows.Forms.TextBox();
+            this.txtGorev = new System.Windows.Forms.TextBox();
+            this.txtPo = new System.Windows.Forms.TextBox();
             this.txtMail = new System.Windows.Forms.TextBox();
-            this.txtSirketAdres = new System.Windows.Forms.TextBox();
-            this.txtSirketAd = new System.Windows.Forms.TextBox();
+            this.txtIsAdres = new System.Windows.Forms.TextBox();
+            this.txtIsAd = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -71,8 +71,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtBitis = new System.Windows.Forms.TextBox();
-            this.txtBaslangic = new System.Windows.Forms.TextBox();
+            this.txtIsmail = new System.Windows.Forms.TextBox();
+            this.txtFax = new System.Windows.Forms.TextBox();
             this.txtBolum = new System.Windows.Forms.TextBox();
             this.txtTamAdres = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -96,7 +96,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(454, 534);
+            this.tabPage4.Size = new System.Drawing.Size(454, 436);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "İlan Başvuruları Listele";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -109,6 +109,7 @@
             this.button5.TabIndex = 1;
             this.button5.Text = "İşe Al";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // listBox1
             // 
@@ -126,7 +127,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(454, 534);
+            this.tabPage3.Size = new System.Drawing.Size(454, 436);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "İlan Ver";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -139,6 +140,7 @@
             this.button6.TabIndex = 12;
             this.button6.Text = "İlan ver ";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // groupBox6
             // 
@@ -194,11 +196,11 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.txtUyruk);
-            this.groupBox3.Controls.Add(this.txtTelefon);
+            this.groupBox3.Controls.Add(this.txtGorev);
+            this.groupBox3.Controls.Add(this.txtPo);
             this.groupBox3.Controls.Add(this.txtMail);
-            this.groupBox3.Controls.Add(this.txtSirketAdres);
-            this.groupBox3.Controls.Add(this.txtSirketAd);
+            this.groupBox3.Controls.Add(this.txtIsAdres);
+            this.groupBox3.Controls.Add(this.txtIsAd);
             this.groupBox3.Location = new System.Drawing.Point(7, 6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(264, 198);
@@ -251,21 +253,21 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "İş Ad";
             // 
-            // txtUyruk
+            // txtGorev
             // 
-            this.txtUyruk.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtUyruk.Location = new System.Drawing.Point(96, 120);
-            this.txtUyruk.Name = "txtUyruk";
-            this.txtUyruk.Size = new System.Drawing.Size(100, 20);
-            this.txtUyruk.TabIndex = 5;
+            this.txtGorev.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtGorev.Location = new System.Drawing.Point(96, 120);
+            this.txtGorev.Name = "txtGorev";
+            this.txtGorev.Size = new System.Drawing.Size(100, 20);
+            this.txtGorev.TabIndex = 5;
             // 
-            // txtTelefon
+            // txtPo
             // 
-            this.txtTelefon.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtTelefon.Location = new System.Drawing.Point(96, 94);
-            this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefon.TabIndex = 6;
+            this.txtPo.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtPo.Location = new System.Drawing.Point(96, 94);
+            this.txtPo.Name = "txtPo";
+            this.txtPo.Size = new System.Drawing.Size(100, 20);
+            this.txtPo.TabIndex = 6;
             // 
             // txtMail
             // 
@@ -275,19 +277,19 @@
             this.txtMail.Size = new System.Drawing.Size(100, 20);
             this.txtMail.TabIndex = 7;
             // 
-            // txtSirketAdres
+            // txtIsAdres
             // 
-            this.txtSirketAdres.Location = new System.Drawing.Point(96, 42);
-            this.txtSirketAdres.Name = "txtSirketAdres";
-            this.txtSirketAdres.Size = new System.Drawing.Size(100, 20);
-            this.txtSirketAdres.TabIndex = 8;
+            this.txtIsAdres.Location = new System.Drawing.Point(96, 42);
+            this.txtIsAdres.Name = "txtIsAdres";
+            this.txtIsAdres.Size = new System.Drawing.Size(100, 20);
+            this.txtIsAdres.TabIndex = 8;
             // 
-            // txtSirketAd
+            // txtIsAd
             // 
-            this.txtSirketAd.Location = new System.Drawing.Point(96, 16);
-            this.txtSirketAd.Name = "txtSirketAd";
-            this.txtSirketAd.Size = new System.Drawing.Size(100, 20);
-            this.txtSirketAd.TabIndex = 9;
+            this.txtIsAd.Location = new System.Drawing.Point(96, 16);
+            this.txtIsAd.Name = "txtIsAd";
+            this.txtIsAd.Size = new System.Drawing.Size(100, 20);
+            this.txtIsAd.TabIndex = 9;
             // 
             // tabPage2
             // 
@@ -295,7 +297,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(454, 534);
+            this.tabPage2.Size = new System.Drawing.Size(454, 436);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Güncelle";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -422,7 +424,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(454, 534);
+            this.tabPage1.Size = new System.Drawing.Size(454, 436);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Kaydol";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -434,25 +436,25 @@
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(8, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(440, 539);
+            this.groupBox1.Size = new System.Drawing.Size(440, 425);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sisteme kayıt";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(339, 19);
+            this.button4.Location = new System.Drawing.Point(395, 19);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 23);
+            this.button4.Size = new System.Drawing.Size(39, 23);
             this.button4.TabIndex = 9;
-            this.button4.Text = "Sistemden Çık";
+            this.button4.Text = "X";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(252, 152);
+            this.button1.Location = new System.Drawing.Point(241, 179);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 49);
+            this.button1.Size = new System.Drawing.Size(97, 22);
             this.button1.TabIndex = 8;
             this.button1.Text = "Kaydol";
             this.button1.UseVisualStyleBackColor = true;
@@ -464,8 +466,8 @@
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.txtBitis);
-            this.groupBox2.Controls.Add(this.txtBaslangic);
+            this.groupBox2.Controls.Add(this.txtIsmail);
+            this.groupBox2.Controls.Add(this.txtFax);
             this.groupBox2.Controls.Add(this.txtBolum);
             this.groupBox2.Controls.Add(this.txtTamAdres);
             this.groupBox2.Location = new System.Drawing.Point(6, 50);
@@ -511,21 +513,21 @@
             this.label12.TabIndex = 9;
             this.label12.Text = "Tam Adres";
             // 
-            // txtBitis
+            // txtIsmail
             // 
-            this.txtBitis.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtBitis.Location = new System.Drawing.Point(93, 113);
-            this.txtBitis.Name = "txtBitis";
-            this.txtBitis.Size = new System.Drawing.Size(100, 20);
-            this.txtBitis.TabIndex = 1;
+            this.txtIsmail.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtIsmail.Location = new System.Drawing.Point(93, 113);
+            this.txtIsmail.Name = "txtIsmail";
+            this.txtIsmail.Size = new System.Drawing.Size(100, 20);
+            this.txtIsmail.TabIndex = 1;
             // 
-            // txtBaslangic
+            // txtFax
             // 
-            this.txtBaslangic.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtBaslangic.Location = new System.Drawing.Point(93, 87);
-            this.txtBaslangic.Name = "txtBaslangic";
-            this.txtBaslangic.Size = new System.Drawing.Size(100, 20);
-            this.txtBaslangic.TabIndex = 1;
+            this.txtFax.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtFax.Location = new System.Drawing.Point(93, 87);
+            this.txtFax.Name = "txtFax";
+            this.txtFax.Size = new System.Drawing.Size(100, 20);
+            this.txtFax.TabIndex = 1;
             // 
             // txtBolum
             // 
@@ -553,14 +555,14 @@
             this.tabControl1.Location = new System.Drawing.Point(1, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(462, 560);
+            this.tabControl1.Size = new System.Drawing.Size(462, 462);
             this.tabControl1.TabIndex = 6;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 572);
+            this.ClientSize = new System.Drawing.Size(463, 464);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form2";
             this.Text = "Form2";
@@ -601,11 +603,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtUyruk;
-        private System.Windows.Forms.TextBox txtTelefon;
+        private System.Windows.Forms.TextBox txtGorev;
+        private System.Windows.Forms.TextBox txtPo;
         private System.Windows.Forms.TextBox txtMail;
-        private System.Windows.Forms.TextBox txtSirketAdres;
-        private System.Windows.Forms.TextBox txtSirketAd;
+        private System.Windows.Forms.TextBox txtIsAdres;
+        private System.Windows.Forms.TextBox txtIsAd;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button2;
@@ -628,8 +630,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtBitis;
-        private System.Windows.Forms.TextBox txtBaslangic;
+        private System.Windows.Forms.TextBox txtIsmail;
+        private System.Windows.Forms.TextBox txtFax;
         private System.Windows.Forms.TextBox txtBolum;
         private System.Windows.Forms.TextBox txtTamAdres;
         private System.Windows.Forms.TabControl tabControl1;
