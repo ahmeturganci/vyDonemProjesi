@@ -24,6 +24,21 @@ namespace vyDonemProjesi
         Kisi mehmet = new Kisi();
         Kisi kamil = new Kisi();
         Kisi nuri = new Kisi();
+        public void textTemizle(Control clt)
+        {
+            
+            foreach (Control item in clt.Controls)
+            {
+                if (item is TextBox)
+                {
+                    ((TextBox)item).Clear();
+                }
+                if (item.Controls.Count > 0)
+                {
+                    textTemizle(item);
+                }
+            }
+        }
         public Form1()
         {
             
@@ -297,9 +312,14 @@ namespace vyDonemProjesi
             kisi.isYeri.Pozisyon = txtPo.Text;
 
             k.kisiEkle(kisi);
+            k.Goster();
+            k.Goster2();
             k.blEgitimEkle(kisi.egitimDurumu);
             k.blIsyeriEkle(kisi.isYeri);
-
+            MessageBox.Show("kayıt işlemi başarılı");
+            textTemizle(this);//textboxları temizleme
+            
+            
             
 
         }
@@ -311,12 +331,25 @@ namespace vyDonemProjesi
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            txtAd.Text = kisi.Ad;
+            Sirket s = new Sirket();
+            ek.isListele(s);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
                 
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)//güncelle 
+        {
+            txtAd.Text = kisi.Ad;
+
+           
         }
         //public class Data : INotifyPropertyChanged
         //{

@@ -203,7 +203,7 @@
             this.groupBox3.Controls.Add(this.txtIsAd);
             this.groupBox3.Location = new System.Drawing.Point(7, 6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(264, 198);
+            this.groupBox3.Size = new System.Drawing.Size(264, 160);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "İş Bilgileri";

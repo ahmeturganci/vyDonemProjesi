@@ -48,7 +48,7 @@ namespace vyDonemProjesi
             if (blEgitimDurumu.Head == null)
                 blEgitimDurumu.InsertFirst(ed);
             else
-                blEgitimDurumu.InsertLast(ed);
+                    blEgitimDurumu.InsertLast(ed);
         }
 
         public int Goster()

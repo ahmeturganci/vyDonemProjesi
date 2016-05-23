@@ -97,9 +97,16 @@ namespace vyDonemProjesi
             //heap[ilanNo-1] = new Heap(10);
             //heap[ilanNo - 1].Insert(kisi);
         }
-        public void isListele(Sirket sirket)
+        public string isListele(Sirket sirket)
         { 
-            //  ? ? 
+            string s = "";
+            //nesne olaylaı bi patlıyo ? 
+            foreach (var item in sirketler)
+            {
+                s+=item.isIlani.isAdi+" "+ item.isyeri+" "+item.isIlani.isTanimi+" "+item.isIlani.isPozisyon+" "+Environment.NewLine;
+            }
+            return s;
+
             
         }
 
