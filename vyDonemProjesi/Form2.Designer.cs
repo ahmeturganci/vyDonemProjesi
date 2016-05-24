@@ -58,23 +58,23 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEmailGuncelle = new System.Windows.Forms.TextBox();
+            this.txtFaksGuncelle = new System.Windows.Forms.TextBox();
+            this.txtTelefonGuncelle = new System.Windows.Forms.TextBox();
+            this.txtTamAdresGuncelle = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtTamAdres = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtIsmail = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtFax = new System.Windows.Forms.TextBox();
             this.txtTelefon = new System.Windows.Forms.TextBox();
-            this.txtTamAdres = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -340,10 +340,10 @@
             this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Controls.Add(this.label8);
             this.groupBox5.Controls.Add(this.label9);
-            this.groupBox5.Controls.Add(this.textBox1);
-            this.groupBox5.Controls.Add(this.textBox2);
-            this.groupBox5.Controls.Add(this.textBox3);
-            this.groupBox5.Controls.Add(this.textBox4);
+            this.groupBox5.Controls.Add(this.txtEmailGuncelle);
+            this.groupBox5.Controls.Add(this.txtFaksGuncelle);
+            this.groupBox5.Controls.Add(this.txtTelefonGuncelle);
+            this.groupBox5.Controls.Add(this.txtTamAdresGuncelle);
             this.groupBox5.Location = new System.Drawing.Point(6, 19);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(229, 151);
@@ -387,38 +387,38 @@
             this.label9.TabIndex = 9;
             this.label9.Text = "Tam Adres";
             // 
-            // textBox1
+            // txtEmailGuncelle
             // 
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox1.Location = new System.Drawing.Point(93, 113);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtEmailGuncelle.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtEmailGuncelle.Location = new System.Drawing.Point(93, 113);
+            this.txtEmailGuncelle.Name = "txtEmailGuncelle";
+            this.txtEmailGuncelle.Size = new System.Drawing.Size(100, 20);
+            this.txtEmailGuncelle.TabIndex = 4;
             // 
-            // textBox2
+            // txtFaksGuncelle
             // 
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox2.Location = new System.Drawing.Point(93, 87);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtFaksGuncelle.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtFaksGuncelle.Location = new System.Drawing.Point(93, 87);
+            this.txtFaksGuncelle.Name = "txtFaksGuncelle";
+            this.txtFaksGuncelle.Size = new System.Drawing.Size(100, 20);
+            this.txtFaksGuncelle.TabIndex = 3;
             // 
-            // textBox3
+            // txtTelefonGuncelle
             // 
-            this.textBox3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox3.Location = new System.Drawing.Point(93, 61);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 2;
+            this.txtTelefonGuncelle.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtTelefonGuncelle.Location = new System.Drawing.Point(93, 61);
+            this.txtTelefonGuncelle.Name = "txtTelefonGuncelle";
+            this.txtTelefonGuncelle.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefonGuncelle.TabIndex = 2;
             // 
-            // textBox4
+            // txtTamAdresGuncelle
             // 
-            this.textBox4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox4.Location = new System.Drawing.Point(93, 19);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 36);
-            this.textBox4.TabIndex = 1;
+            this.txtTamAdresGuncelle.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtTamAdresGuncelle.Location = new System.Drawing.Point(93, 19);
+            this.txtTamAdresGuncelle.Multiline = true;
+            this.txtTamAdresGuncelle.Name = "txtTamAdresGuncelle";
+            this.txtTamAdresGuncelle.Size = new System.Drawing.Size(100, 36);
+            this.txtTamAdresGuncelle.TabIndex = 1;
             // 
             // tabPage1
             // 
@@ -444,15 +444,6 @@
             this.groupBox1.Text = "Sisteme kayıt";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(447, 22);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(39, 29);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "X";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(241, 148);
@@ -470,7 +461,7 @@
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.txtIsmail);
+            this.groupBox2.Controls.Add(this.txtEmail);
             this.groupBox2.Controls.Add(this.txtFax);
             this.groupBox2.Controls.Add(this.txtTelefon);
             this.groupBox2.Location = new System.Drawing.Point(6, 19);
@@ -479,6 +470,15 @@
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Şirket Bilgileri";
+            // 
+            // txtTamAdres
+            // 
+            this.txtTamAdres.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtTamAdres.Location = new System.Drawing.Point(93, 19);
+            this.txtTamAdres.Multiline = true;
+            this.txtTamAdres.Name = "txtTamAdres";
+            this.txtTamAdres.Size = new System.Drawing.Size(100, 36);
+            this.txtTamAdres.TabIndex = 1;
             // 
             // label15
             // 
@@ -516,13 +516,13 @@
             this.label12.TabIndex = 9;
             this.label12.Text = "Tam Adres";
             // 
-            // txtIsmail
+            // txtEmail
             // 
-            this.txtIsmail.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtIsmail.Location = new System.Drawing.Point(93, 113);
-            this.txtIsmail.Name = "txtIsmail";
-            this.txtIsmail.Size = new System.Drawing.Size(100, 20);
-            this.txtIsmail.TabIndex = 4;
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtEmail.Location = new System.Drawing.Point(93, 113);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.TabIndex = 4;
             // 
             // txtFax
             // 
@@ -540,14 +540,14 @@
             this.txtTelefon.Size = new System.Drawing.Size(100, 20);
             this.txtTelefon.TabIndex = 2;
             // 
-            // txtTamAdres
+            // button4
             // 
-            this.txtTamAdres.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtTamAdres.Location = new System.Drawing.Point(93, 19);
-            this.txtTamAdres.Multiline = true;
-            this.txtTamAdres.Name = "txtTamAdres";
-            this.txtTamAdres.Size = new System.Drawing.Size(100, 36);
-            this.txtTamAdres.TabIndex = 1;
+            this.button4.Location = new System.Drawing.Point(447, 22);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(39, 29);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "X";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
@@ -621,10 +621,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEmailGuncelle;
+        private System.Windows.Forms.TextBox txtFaksGuncelle;
+        private System.Windows.Forms.TextBox txtTelefonGuncelle;
+        private System.Windows.Forms.TextBox txtTamAdresGuncelle;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button4;
@@ -634,7 +634,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtIsmail;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtFax;
         private System.Windows.Forms.TextBox txtTelefon;
         private System.Windows.Forms.TextBox txtTamAdres;

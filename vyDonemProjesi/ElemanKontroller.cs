@@ -6,15 +6,6 @@ using System.Collections;
 
 namespace vyDonemProjesi
 {
-    /* PROBLEMLER && ÇÖZÜM ÖNERİLERİ
-     * hashtable içersinde sirket.isilani isilani içersinde heap heap in düğümlerinde işe başvuran kişiler
-     * sağda solda ilan no var düzeltilecek 
-     * isyerini hangi sirkete ekleyecek bilmiyoruz o yüzden sirketbul metodundan gelen sirket ile bunu tespit ediyoruz
-     * iş ilanı sınıfında değişiklik yapıldı heap[] -> heap (kritik düzenleme)
-     * iş başvurusu yaparken ilan no eklemek değilde iş ilanı verirken ilan no eklendi (önemli düzenleme)
-     * HeapDugum sınıfına düzenleme yapılacak cast için (yapıldı)
-     * heap de ceviri düzenle
-     */
     public class ElemanKontroller
     {
         private List<Sirket> sirketler;
@@ -51,7 +42,7 @@ namespace vyDonemProjesi
         }
         public Sirket getSirket()
         {
-            return sirket;
+            return this.sirket;
         }
         public void isYeriEkle(Sirket sirket, string ad, string adres, string gorev, string pozisyon)
         {
@@ -95,6 +86,13 @@ namespace vyDonemProjesi
         {
             Random random = new Random();
             return random.NextDouble() * (maximum - minimum) + minimum;
+        }
+        public void sirketGuncelle(Sirket sirket)
+        {
+                this.sirket.tamAdres = sirket.tamAdres;
+                this.sirket.Telefon = sirket.Telefon;
+                this.sirket.Faks = sirket.Faks;
+                this.sirket.EPosta = sirket.EPosta;
         }
     }
 }

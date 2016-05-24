@@ -21,13 +21,6 @@ namespace vyDonemProjesi
         {
             ikiliArama.Ekle(kisi);
         }
-        public void kisiGuncelle(Kisi kisi)
-        {
-            
-            kisiEkle(kisi);// eski gelen kişiyi silip yerine değişmiş özellklerle yenisi eklemek ? 
-
-
-        }
         public İkiliAramaAgacDugumu kisiAra(string ad)
         {
             İkiliAramaAgacDugumu bstn = ikiliArama.Ara(ad);
@@ -36,8 +29,6 @@ namespace vyDonemProjesi
                 return null;
             }
             return bstn;
-            //Kisi k = (Kisi)bstn.veri;
-            //System.Windows.Forms.MessageBox.Show(k.Ad + " " + k.Adres);
         }
         public void blIsyeriEkle(IsYeri iy)
         {
@@ -62,6 +53,12 @@ namespace vyDonemProjesi
         {
             ikiliArama.PreOrder();
             return ikiliArama.DugumleriYazdir();
+        }
+        public void kisiGuncelle(Kisi kisi)
+        {
+            //if adı değiştirdiyse 
+            //ağaçtan kisiyi sil yeni kisi ekle
+            //else 
         }
     }
 }

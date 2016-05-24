@@ -96,44 +96,6 @@ namespace vyDonemProjesi
             PostOrderInt(dugum.sag);
             Ziyaret(dugum);
         }
-        //public int asciiTop(string s)
-        //{
-        //    int top = 0;
-        //    char[] arr = s.ToCharArray();
-        //    for (int i = 0; i < arr.Length; i++)
-        //    {
-        //        top += arr[i];
-        //    }
-        //    return top;
-        //}
-        //public void Ekle(object deger)
-        //{
-        //    İkiliAramaAgacDugumu tempParent = new İkiliAramaAgacDugumu();
-        //    İkiliAramaAgacDugumu tempSearch = kok;
-        //    int top = 0, top2 = 0;
-        //    while (tempSearch != null)
-        //    {
-        //        tempParent = tempSearch;
-        //        Kisi k = (Kisi)deger;
-        //        Kisi k2 = (Kisi)tempSearch.veri;
-        //        string s = k.Ad, s2 = k2.Ad;
-        //        top = asciiTop(s);
-        //        top2 = asciiTop(s2);
-        //        if (top == top2)
-        //            return;
-        //        else if (top < top2)
-        //            tempSearch = tempSearch.sol;
-        //        else
-        //            tempSearch = tempSearch.sag;
-        //    }
-        //    İkiliAramaAgacDugumu eklenecek = new İkiliAramaAgacDugumu(deger);
-        //    if (kok == null)
-        //        kok = eklenecek;
-        //    else if (top < top2)
-        //        tempParent.sol = eklenecek;
-        //    else
-        //        tempParent.sag = eklenecek;
-        //}
         public void Ekle(object deger)
         {
             İkiliAramaAgacDugumu tempParent = new İkiliAramaAgacDugumu();
@@ -145,10 +107,8 @@ namespace vyDonemProjesi
                 tempParent = tempSearch;
                 k = (Kisi)deger;
                 k2 = (Kisi)tempSearch.veri;
-                //if (k.Ad.CompareTo(k2.Ad)==0)
                 if (string.Compare(k.Ad, k2.Ad) == 0)
                     return;
-                //else if (k.Ad.CompareTo(k2.Ad)<0)
                 else if (string.Compare(k.Ad, k2.Ad)< 0)
                     tempSearch = tempSearch.sol;
                 else
@@ -175,10 +135,8 @@ namespace vyDonemProjesi
             else
             {
                 Kisi k = (Kisi)dugum.veri;
-                //if (k.Ad.CompareTo(anahtarAd)==0)
                 if (string.Compare(k.Ad,anahtarAd)==0)
                     return dugum;
-                //else if (k.Ad.CompareTo(anahtarAd)<0)
                 else if (string.Compare(k.Ad, anahtarAd)>0)
                     return (AraInt(dugum.sol, anahtarAd));
                 else

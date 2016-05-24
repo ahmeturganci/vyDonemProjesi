@@ -39,7 +39,7 @@ namespace vyDonemProjesi
             tamAdres = txtTamAdres.Text;
             Telefon = txtTelefon.Text;
             Faks = txtFax.Text;
-            EPosta = txtIsmail.Text;
+            EPosta = txtEmail.Text;
             ek.sirketEkle(tamAdres,Telefon,Faks,EPosta);
         }
 
@@ -50,7 +50,7 @@ namespace vyDonemProjesi
             Adi = txtIsAd.Text;
             Adres = txtIsAdres.Text;
             Gorev = txtGorev.Text;
-            Email = txtIsmail.Text;
+            Email = txtEmail.Text;
             Pozisyon = txtPo.Text;
 
             ek.isYeriEkle(s, Adi, Adres, Gorev, Pozisyon);
@@ -84,13 +84,13 @@ namespace vyDonemProjesi
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e) // bilgileri getir
         {
             Sirket s = ek.getSirket();
-            textBox4.Text = s.tamAdres;
-            textBox3.Text = s.Telefon;
-            textBox2.Text = s.Faks;
-            textBox1.Text = s.EPosta;
+            txtTamAdresGuncelle.Text = s.tamAdres;
+            txtTelefonGuncelle.Text = s.Telefon;
+            txtFaksGuncelle.Text = s.Faks;
+            txtEmailGuncelle.Text = s.EPosta;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -100,7 +100,13 @@ namespace vyDonemProjesi
 
         private void btnSirketGuncelle_Click(object sender, EventArgs e)
         {
-          
+            // form textbox dolu boş kontrol eklenebilir..
+            Sirket s = ek.getSirket();
+            s.tamAdres = txtTamAdresGuncelle.Text;
+            s.Telefon = txtTelefonGuncelle.Text;
+            s.Faks = txtFaksGuncelle.Text;
+            s.EPosta = txtEmailGuncelle.Text;
+            ek.sirketGuncelle(s);
         }
     }
 }

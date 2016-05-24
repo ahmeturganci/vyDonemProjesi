@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnTest = new System.Windows.Forms.Button();
-            this.btnAra = new System.Windows.Forms.Button();
-            this.btnGuncelle = new System.Windows.Forms.Button();
-            this.btnSilme = new System.Windows.Forms.Button();
-            this.btnBasvuru = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -85,7 +80,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnVericek = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnKisiGuncelle = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -132,7 +127,8 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
             this.listIsIlanlari = new System.Windows.Forms.ListBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnCikis = new System.Windows.Forms.Button();
+            this.txtAdKim = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -146,57 +142,6 @@
             this.groupBox8.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnTest
-            // 
-            this.btnTest.Location = new System.Drawing.Point(483, 85);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(38, 21);
-            this.btnTest.TabIndex = 0;
-            this.btnTest.Text = "Test";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
-            // 
-            // btnAra
-            // 
-            this.btnAra.Location = new System.Drawing.Point(483, 114);
-            this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(38, 21);
-            this.btnAra.TabIndex = 1;
-            this.btnAra.Text = "Arama";
-            this.btnAra.UseVisualStyleBackColor = true;
-            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
-            // 
-            // btnGuncelle
-            // 
-            this.btnGuncelle.Location = new System.Drawing.Point(483, 159);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(38, 21);
-            this.btnGuncelle.TabIndex = 2;
-            this.btnGuncelle.Text = "Güncelleme";
-            this.btnGuncelle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGuncelle.UseVisualStyleBackColor = true;
-            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
-            // 
-            // btnSilme
-            // 
-            this.btnSilme.Location = new System.Drawing.Point(483, 193);
-            this.btnSilme.Name = "btnSilme";
-            this.btnSilme.Size = new System.Drawing.Size(38, 21);
-            this.btnSilme.TabIndex = 3;
-            this.btnSilme.Text = "Silme";
-            this.btnSilme.UseVisualStyleBackColor = true;
-            this.btnSilme.Click += new System.EventHandler(this.btnSilme_Click);
-            // 
-            // btnBasvuru
-            // 
-            this.btnBasvuru.Location = new System.Drawing.Point(483, 244);
-            this.btnBasvuru.Name = "btnBasvuru";
-            this.btnBasvuru.Size = new System.Drawing.Size(38, 21);
-            this.btnBasvuru.TabIndex = 4;
-            this.btnBasvuru.Text = "Başvuru yap";
-            this.btnBasvuru.UseVisualStyleBackColor = true;
-            this.btnBasvuru.Click += new System.EventHandler(this.btnBasvuru_Click);
             // 
             // tabControl1
             // 
@@ -660,7 +605,6 @@
             this.txtOkul.Name = "txtOkul";
             this.txtOkul.Size = new System.Drawing.Size(100, 20);
             this.txtOkul.TabIndex = 1;
-            this.txtOkul.TextChanged += new System.EventHandler(this.txtOkul_TextChanged);
             // 
             // txtMezunYil
             // 
@@ -684,7 +628,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnVericek);
-            this.groupBox4.Controls.Add(this.button2);
+            this.groupBox4.Controls.Add(this.btnKisiGuncelle);
             this.groupBox4.Controls.Add(this.groupBox5);
             this.groupBox4.Controls.Add(this.groupBox6);
             this.groupBox4.Controls.Add(this.groupBox8);
@@ -705,18 +649,19 @@
             this.btnVericek.UseVisualStyleBackColor = true;
             this.btnVericek.Click += new System.EventHandler(this.btnVericek_Click);
             // 
-            // button2
+            // btnKisiGuncelle
             // 
-            this.button2.Location = new System.Drawing.Point(359, 347);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Güncelle";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.btnKisiGuncelle.Location = new System.Drawing.Point(359, 347);
+            this.btnKisiGuncelle.Name = "btnKisiGuncelle";
+            this.btnKisiGuncelle.Size = new System.Drawing.Size(75, 23);
+            this.btnKisiGuncelle.TabIndex = 10;
+            this.btnKisiGuncelle.Text = "Güncelle";
+            this.btnKisiGuncelle.UseVisualStyleBackColor = true;
+            this.btnKisiGuncelle.Click += new System.EventHandler(this.btnKisiGuncelle_Click);
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.txtAdKim);
             this.groupBox5.Controls.Add(this.label18);
             this.groupBox5.Controls.Add(this.label19);
             this.groupBox5.Controls.Add(this.label20);
@@ -1152,17 +1097,23 @@
             this.listIsIlanlari.Name = "listIsIlanlari";
             this.listIsIlanlari.Size = new System.Drawing.Size(379, 381);
             this.listIsIlanlari.TabIndex = 0;
-            this.listIsIlanlari.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // button3
+            // btnCikis
             // 
-            this.button3.Location = new System.Drawing.Point(483, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(59, 39);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "X";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnCikis.Location = new System.Drawing.Point(483, 22);
+            this.btnCikis.Name = "btnCikis";
+            this.btnCikis.Size = new System.Drawing.Size(59, 39);
+            this.btnCikis.TabIndex = 10;
+            this.btnCikis.Text = "X";
+            this.btnCikis.UseVisualStyleBackColor = true;
+            this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
+            // 
+            // txtAdKim
+            // 
+            this.txtAdKim.Location = new System.Drawing.Point(6, 116);
+            this.txtAdKim.Name = "txtAdKim";
+            this.txtAdKim.Size = new System.Drawing.Size(100, 20);
+            this.txtAdKim.TabIndex = 11;
             // 
             // Form1
             // 
@@ -1170,16 +1121,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(552, 430);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnCikis);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.btnBasvuru);
-            this.Controls.Add(this.btnSilme);
-            this.Controls.Add(this.btnGuncelle);
-            this.Controls.Add(this.btnAra);
-            this.Controls.Add(this.btnTest);
             this.Name = "Form1";
             this.Text = "İş Arayan ";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -1204,11 +1149,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnTest;
-        private System.Windows.Forms.Button btnAra;
-        private System.Windows.Forms.Button btnGuncelle;
-        private System.Windows.Forms.Button btnSilme;
-        private System.Windows.Forms.Button btnBasvuru;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -1284,7 +1224,7 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnKisiGuncelle;
         private System.Windows.Forms.TextBox txtGilgiAlani;
         private System.Windows.Forms.TextBox txtGreferans;
         private System.Windows.Forms.TextBox txtGyabanciDil;
@@ -1308,7 +1248,8 @@
         private System.Windows.Forms.TextBox txtGbaslamaYili;
         private System.Windows.Forms.TextBox txtGbolum;
         private System.Windows.Forms.TextBox txtGokul;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCikis;
+        private System.Windows.Forms.TextBox txtAdKim;
     }
 }
 
