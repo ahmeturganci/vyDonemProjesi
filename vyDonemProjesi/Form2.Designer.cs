@@ -52,7 +52,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnSirketGuncelle = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -97,16 +96,16 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(454, 208);
+            this.tabPage4.Size = new System.Drawing.Size(436, 192);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "İlan Başvuruları Listele";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(369, 20);
+            this.button5.Location = new System.Drawing.Point(366, 6);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 37);
+            this.button5.Size = new System.Drawing.Size(64, 23);
             this.button5.TabIndex = 1;
             this.button5.Text = "İşe Al";
             this.button5.UseVisualStyleBackColor = true;
@@ -117,7 +116,7 @@
             this.lbilanBasvurulariListele.FormattingEnabled = true;
             this.lbilanBasvurulariListele.Location = new System.Drawing.Point(6, 6);
             this.lbilanBasvurulariListele.Name = "lbilanBasvurulariListele";
-            this.lbilanBasvurulariListele.Size = new System.Drawing.Size(354, 199);
+            this.lbilanBasvurulariListele.Size = new System.Drawing.Size(354, 173);
             this.lbilanBasvurulariListele.TabIndex = 0;
             // 
             // tabPage3
@@ -128,14 +127,14 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(454, 208);
+            this.tabPage3.Size = new System.Drawing.Size(436, 192);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "İlan Ver";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(357, 172);
+            this.button6.Location = new System.Drawing.Point(358, 166);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 12;
@@ -298,7 +297,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(454, 208);
+            this.tabPage2.Size = new System.Drawing.Size(436, 192);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Güncelle";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -306,19 +305,18 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.button7);
-            this.groupBox4.Controls.Add(this.button2);
             this.groupBox4.Controls.Add(this.btnSirketGuncelle);
             this.groupBox4.Controls.Add(this.groupBox5);
             this.groupBox4.Location = new System.Drawing.Point(3, 6);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(440, 196);
+            this.groupBox4.Size = new System.Drawing.Size(385, 180);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "GÜNCELLEME";
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(241, 131);
+            this.button7.Location = new System.Drawing.Point(241, 96);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 39);
             this.button7.TabIndex = 10;
@@ -326,20 +324,11 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(405, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(29, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "X";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // btnSirketGuncelle
             // 
-            this.btnSirketGuncelle.Location = new System.Drawing.Point(337, 139);
+            this.btnSirketGuncelle.Location = new System.Drawing.Point(241, 141);
             this.btnSirketGuncelle.Name = "btnSirketGuncelle";
-            this.btnSirketGuncelle.Size = new System.Drawing.Size(97, 31);
+            this.btnSirketGuncelle.Size = new System.Drawing.Size(86, 31);
             this.btnSirketGuncelle.TabIndex = 8;
             this.btnSirketGuncelle.Text = "Güncelle";
             this.btnSirketGuncelle.UseVisualStyleBackColor = true;
@@ -404,7 +393,7 @@
             this.textBox1.Location = new System.Drawing.Point(93, 113);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
@@ -412,7 +401,7 @@
             this.textBox2.Location = new System.Drawing.Point(93, 87);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.textBox2.TabIndex = 3;
             // 
             // textBox3
             // 
@@ -420,7 +409,7 @@
             this.textBox3.Location = new System.Drawing.Point(93, 61);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 1;
+            this.textBox3.TabIndex = 2;
             // 
             // textBox4
             // 
@@ -437,7 +426,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(454, 208);
+            this.tabPage1.Size = new System.Drawing.Size(436, 192);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Kaydol";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -445,12 +434,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(8, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(440, 196);
+            this.groupBox1.Size = new System.Drawing.Size(348, 178);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sisteme kayıt";
@@ -458,25 +446,26 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(395, 19);
+            this.button4.Location = new System.Drawing.Point(447, 22);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(39, 23);
-            this.button4.TabIndex = 9;
+            this.button4.Size = new System.Drawing.Size(39, 29);
+            this.button4.TabIndex = 6;
             this.button4.Text = "X";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(328, 156);
+            this.button1.Location = new System.Drawing.Point(241, 148);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 22);
-            this.button1.TabIndex = 8;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Kaydol";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtTamAdres);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
@@ -484,7 +473,6 @@
             this.groupBox2.Controls.Add(this.txtIsmail);
             this.groupBox2.Controls.Add(this.txtFax);
             this.groupBox2.Controls.Add(this.txtTelefon);
-            this.groupBox2.Controls.Add(this.txtTamAdres);
             this.groupBox2.Location = new System.Drawing.Point(6, 19);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(229, 151);
@@ -534,7 +522,7 @@
             this.txtIsmail.Location = new System.Drawing.Point(93, 113);
             this.txtIsmail.Name = "txtIsmail";
             this.txtIsmail.Size = new System.Drawing.Size(100, 20);
-            this.txtIsmail.TabIndex = 1;
+            this.txtIsmail.TabIndex = 4;
             // 
             // txtFax
             // 
@@ -542,7 +530,7 @@
             this.txtFax.Location = new System.Drawing.Point(93, 87);
             this.txtFax.Name = "txtFax";
             this.txtFax.Size = new System.Drawing.Size(100, 20);
-            this.txtFax.TabIndex = 1;
+            this.txtFax.TabIndex = 3;
             // 
             // txtTelefon
             // 
@@ -550,7 +538,7 @@
             this.txtTelefon.Location = new System.Drawing.Point(93, 61);
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefon.TabIndex = 1;
+            this.txtTelefon.TabIndex = 2;
             // 
             // txtTamAdres
             // 
@@ -570,14 +558,15 @@
             this.tabControl1.Location = new System.Drawing.Point(1, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(462, 234);
+            this.tabControl1.Size = new System.Drawing.Size(444, 218);
             this.tabControl1.TabIndex = 6;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 243);
+            this.ClientSize = new System.Drawing.Size(492, 235);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form2";
             this.Text = "Form2";
@@ -626,7 +615,6 @@
         private System.Windows.Forms.TextBox txtIsAd;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnSirketGuncelle;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label6;
