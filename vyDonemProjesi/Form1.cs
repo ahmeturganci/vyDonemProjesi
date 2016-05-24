@@ -16,7 +16,7 @@ namespace vyDonemProjesi
      */
     public partial class Form1 : Form
     {
-        Giris g = new Giris();
+        
         Kisi kisi = new Kisi();
         IsKontroller ik = new IsKontroller();
         ElemanKontroller ek = new ElemanKontroller();
@@ -121,5 +121,78 @@ namespace vyDonemProjesi
         {
 
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+      
+
+        private void btnSirketEkle_Click(object sender, EventArgs e)
+        {
+            string tamAdres, Telefon, Faks, EPosta;
+            tamAdres = txtTamAdres.Text;
+            Telefon = txtSirketTel.Text;
+            Faks = txtFax.Text;
+            EPosta = txtEmail.Text;
+            ek.sirketEkle(tamAdres, Telefon, Faks, EPosta);
+            //telefonu çekmiyor textboxlarda bi sıkıntı var 
+        }
+
+        private void btnBilgiGetir_Click(object sender, EventArgs e)
+        {
+            Sirket s = ek.getSirket();
+            txtTamAdresGuncelle.Text = s.tamAdres;
+            txtTelefonGuncelle.Text = s.Telefon;
+            txtFaksGuncelle.Text = s.Faks;
+            txtEmailGuncelle.Text = s.EPosta;
+
+        }
+
+        private void btnSirketGuncelle_Click(object sender, EventArgs e)
+        {
+            //form textbox dolu boş kontrol eklenebilir..
+            Sirket s = ek.getSirket();
+            s.tamAdres = txtTamAdresGuncelle.Text;
+            s.Telefon = txtTelefonGuncelle.Text;
+            s.Faks = txtFaksGuncelle.Text;
+            s.EPosta = txtEmailGuncelle.Text;
+            ek.sirketGuncelle(s);
+
+
+        }
+
+        private void btnIlanVer_Click(object sender, EventArgs e)
+        {
+            string Adi, Adres, Gorev, Email, Pozisyon, isTanimi, arananOzellikler;
+            Sirket s = ek.getSirket();//
+            Adi = txtIsAd.Text;
+            Adres = txtIsAdres.Text;
+            Gorev = txtGorev.Text;
+            Email = txtEmail.Text;
+            Pozisyon = txtPo.Text;
+
+            ek.isYeriEkle(s, Adi, Adres, Gorev, Pozisyon);
+
+            isTanimi = txtIsTanim.Text;
+            arananOzellikler = txtArananOzellik.Text;
+            ek.isIlaniEkle(s, isTanimi, arananOzellikler);
+            textTemizle(this);//textboxları temizleme
+        }
+
+    
+
+        private void btnKisiGuncelle_Click_1(object sender, EventArgs e)
+        {
+            //yazılmadı
+        }
+
+        private void txtFax_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
