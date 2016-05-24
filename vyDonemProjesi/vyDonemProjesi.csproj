@@ -68,7 +68,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="IkiliArama.cs" />
-    <Compile Include="IkiliAramaAgaci.cs" />
+    <Compile Include="İkiliAramaAgacDugumu.cs" />
     <Compile Include="IsIlani.cs" />
     <Compile Include="IsKontroller.cs" />
     <Compile Include="LinkedHashEntry.cs" />
