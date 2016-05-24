@@ -28,11 +28,5 @@ namespace vyDonemProjesi
             //egitimDurumu = new EgitimDurumu();
             //isYeri = new IsYeri();
         }
-
-
-
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

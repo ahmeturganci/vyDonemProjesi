@@ -9,25 +9,15 @@ namespace vyDonemProjesi
     {
         public string isTanimi { get; set; }
         public string arananOzellikler { get; set; }
-        //private List<Kisi> kisiList { get; set; }
-        Heap[] heap;
-        
+        Heap heap;
         public IsIlani()
         {
-            //kisiList = new List<Kisi>();
-            heap = new Heap[10];
+            heap = new Heap(10);
         }
-        public void elemanEkle(Kisi kisi,int ilanNo)
+        public void elemanEkle(Kisi kisi)
         {
-            //kisiList.Add(kisi);
-            heap[ilanNo] = new Heap(10);
-            heap[ilanNo].Insert(kisi);
+            heap.Insert(kisi);
 
         }
-        //private Eleman eleman { get; set; }
-        //public IsIlani()
-        //{
-        //    eleman = new Eleman();
-        //}
     }
 }

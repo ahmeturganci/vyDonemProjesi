@@ -9,47 +9,32 @@ namespace vyDonemProjesi
     /* PROBLEMLER && ÇÖZÜM ÖNERİLERİ
      * hashtable içersinde sirket.isilani isilani içersinde heap heap in düğümlerinde işe başvuran kişiler
      * sağda solda ilan no var düzeltilecek 
-     * 
+     * isyerini hangi sirkete ekleyecek bilmiyoruz o yüzden sirketbul metodundan gelen sirket ile bunu tespit ediyoruz
+     * iş ilanı sınıfında değişiklik yapıldı heap[] -> heap (kritik düzenleme)
+     * iş başvurusu yaparken ilan no eklemek değilde iş ilanı verirken ilan no eklendi (önemli düzenleme)
+     * HeapDugum sınıfına düzenleme yapılacak cast için (yapıldı)
+     * heap de ceviri düzenle
      */
     public class ElemanKontroller
     {
-        //bunlar list'e dönüşecek
-        //Sirket[] sirket;
         private List<Sirket> sirketler;
         Sirket sirket;
-        //Heap[] heap = new Heap[10];
         HashMapChain hash;
-        private int ilanNo;
-        private int sirketNo;
-        // her bir isyeri içerisinde is ilani ve o iş ilani içerisinde işe başvuru yapan elemanlar yanlış
-        // heap te sirketin.isilani
+        public int ilanNo { get; private set; }
         public ElemanKontroller()
         {
-            //sirket = new Sirket[10]; // deneme amaçlı max size 10
             sirketler = new List<Sirket>();
-            //eleman = new Eleman();
             hash = new HashMapChain();
-
-            ilanNo = 0;
-            //sirketNo = 0;
+            ilanNo = 100;
         }
         public void sirketEkle(string adres, string telefon, string faks, string eposta)
         {
-            //sirket[sirketNo] = new Sirket();
-            //sirket[sirketNo].tamAdres = adres;
-            //sirket[sirketNo].Telefon = telefon;
-            //sirket[sirketNo].Faks = faks;
-            //sirket[sirketNo].EPosta = eposta;
-
             sirket = new Sirket();
             sirket.tamAdres = adres;
             sirket.Telefon = telefon;
             sirket.Faks = faks;
             sirket.EPosta = eposta;
             sirketler.Add(sirket);
-
-            // buraya değerler form2 den mi gelece ? 
-
         }
 
         public Sirket sirketBul(string sirketTelefon)
@@ -64,7 +49,6 @@ namespace vyDonemProjesi
             }
             return retSirket;
         }
-        // isyerini hangi sirkete ekleyecek bilmiyoruz o yüzden sirketbul metodundan gelen sirket ile bunu tespit ediyoruz
         public void isYeriEkle(Sirket sirket, string ad, string adres, string gorev, string pozisyon)
         {
             sirket.isyeri = new IsYeri();
@@ -72,44 +56,36 @@ namespace vyDonemProjesi
             sirket.isyeri.Adres = adres;
             sirket.isyeri.Gorev = gorev;
             sirket.isyeri.Pozisyon = pozisyon;
-            //hash.Add(ilanNo++, sirket);
         }
         public void isIlaniEkle(Sirket sirket, string isTanimi, string arananOzellikler)
         {
-            //sirket eklendiği zaman sirketno 1 artacağı için -1 alındı
             sirket.isIlani = new IsIlani();
             sirket.isIlani.isTanimi = isTanimi;
             sirket.isIlani.arananOzellikler = arananOzellikler;
-            hash.Add(ilanNo, sirket.isIlani);
+            hash.Add(ilanNo, sirket);
+            //isIlaniGetir(ilanNo);
             ilanNo++;
-            //hash.Add((ilanNo), sirket[sirketNo]);
-            //ilanNo++;
-            //sirketNo++;
+        }
+        public string isIlaniGetir(int ilanNo)
+        {
+            string s;
+            Sirket ilan=hash.isIlaniGetir(ilanNo);
+            if(ilan!=null)
+                s =ilan.isyeri.Adi+" "+ilan.isIlani.arananOzellikler + " " +ilan.isIlani.isTanimi;
+            else
+                s="ilan yok";
+            return s;
+            //System.Windows.Forms.MessageBox.Show(s);
         }
         public void isBasvurusuYap(Sirket sirket, Kisi kisi)
         {
             double uygunluk = GetRandomNumber(0.0, 10.0);
             kisi.iseUygunluk = uygunluk;
             if (sirket.isIlani != null)
-                sirket.isIlani.elemanEkle(kisi, ilanNo);
+                sirket.isIlani.elemanEkle(kisi);
             else
                 System.Windows.Forms.MessageBox.Show("İş ilani olmayan bir Şirkete başvuramazsınız");
-            //heap[ilanNo-1] = new Heap(10);
-            //heap[ilanNo - 1].Insert(kisi);
         }
-        public string isListele(Sirket sirket)
-        {
-            string s = "";
-            //nesne olaylaı bi patlıyo ? 
-            foreach (var item in sirketler)
-            {
-                s += item.tamAdres;//+" "item.isyeri.Adi+" "+item.isyeri.Gorev+" "+Environment.NewLine;
-            }
-            return s;
-
-
-        }
-
 
         public double GetRandomNumber(double minimum, double maximum)
         {

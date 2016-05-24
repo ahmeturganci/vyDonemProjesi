@@ -11,12 +11,12 @@ namespace vyDonemProjesi
         private HeapDugumu[] heapArray;
         private int maxSize;
         private int currentSize;
-        public int Cevir(string ad)
-        {
-            char[] dizi = ad.ToCharArray();
-            int i = (int)Convert.ToChar(dizi[0]);
-            return i;
-        }
+        //public int Cevir(string ad)
+        //{
+        //    char[] dizi = ad.ToCharArray();
+        //    int i = (int)Convert.ToChar(dizi[0]);
+        //    return i;
+        //}
         public Heap(int maxHeapSize)
         {
             maxSize = maxHeapSize;
@@ -41,7 +41,7 @@ namespace vyDonemProjesi
             int parent = (index - 1) / 2;
             HeapDugumu bottom = heapArray[index];
 
-            while (index > 0 && (Cevir(heapArray[parent].Deger.Ad) > Cevir(bottom.Deger.Ad)))//çevirmek
+            while (index > 0 && (heapArray[parent].Deger.Ad).CompareTo(bottom.Deger.Ad) > 0)//çevirmek
             {
                 heapArray[index].Deger.Ad = heapArray[parent].Deger.Ad;
                 index = parent;
@@ -64,11 +64,11 @@ namespace vyDonemProjesi
             {
                 int leftChild = 2 * index + 1;
                 int rightChild = leftChild + 1;
-                if (rightChild < currentSize && Cevir(heapArray[leftChild].Deger.Ad) < Cevir(heapArray[rightChild].Deger.Ad))
+                if (rightChild < currentSize && (heapArray[leftChild].Deger.Ad).CompareTo(heapArray[rightChild].Deger.Ad) < 0)
                     largerChild = rightChild;
                 else
                     largerChild = leftChild;
-                if (Cevir(top.Deger.Ad) >= Cevir(heapArray[largerChild].Deger.Ad))
+                if ((top.Deger.Ad).CompareTo(heapArray[largerChild].Deger.Ad) >= 0)
                     break;
                 heapArray[index] = heapArray[largerChild];
                 index = largerChild;

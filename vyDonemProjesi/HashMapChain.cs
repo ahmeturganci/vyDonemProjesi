@@ -19,20 +19,20 @@ namespace vyDonemProjesi
                 table[i] = null;
         }
 
-        public HeapDugumu GetPersonel(int key)
+        public Sirket isIlaniGetir(int ilanNo)
         {
-            int hash = (key % TABLE_SIZE);
+            int hash = (ilanNo % TABLE_SIZE);
             if (table[hash] == null)
                 return null;
             else
             {
                 LinkedHashEntry entry = table[hash];
-                while (entry != null && entry.Anahtar != key)
+                while (entry != null && entry.Anahtar != ilanNo)
                     entry = entry.Next;
                 if (entry == null)
                     return null;
                 else
-                    return (HeapDugumu)entry.Deger;
+                    return (Sirket)entry.Deger;
             }
         }
 

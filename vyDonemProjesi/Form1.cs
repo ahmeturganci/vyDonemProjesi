@@ -219,6 +219,13 @@ namespace vyDonemProjesi
 
         private void btnBasvuru_Click(object sender, EventArgs e)
         {
+            listIsIlanlari.Items.Clear();
+            
+            for (int i = 100; i < ek.ilanNo; i++)
+                listIsIlanlari.Items.Add(ek.isIlaniGetir(i));   
+            
+            
+            
             //ek.isYeriEkle("", "", "", "");
             //ek.isIlaniEkle("", "");
             //Heap h = new Heap(4);
@@ -318,8 +325,7 @@ namespace vyDonemProjesi
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Sirket s = new Sirket();
-            ek.isListele(s);
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

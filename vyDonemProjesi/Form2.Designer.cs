@@ -30,7 +30,7 @@
         {
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbilanBasvurulariListele = new System.Windows.Forms.ListBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -51,8 +51,9 @@
             this.txtIsAd = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSirketGuncelle = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -76,7 +77,6 @@
             this.txtTelefon = new System.Windows.Forms.TextBox();
             this.txtTamAdres = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.button7 = new System.Windows.Forms.Button();
             this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -93,7 +93,7 @@
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.button5);
-            this.tabPage4.Controls.Add(this.listBox1);
+            this.tabPage4.Controls.Add(this.lbilanBasvurulariListele);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -112,13 +112,13 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // listBox1
+            // lbilanBasvurulariListele
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 6);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(354, 199);
-            this.listBox1.TabIndex = 0;
+            this.lbilanBasvurulariListele.FormattingEnabled = true;
+            this.lbilanBasvurulariListele.Location = new System.Drawing.Point(6, 6);
+            this.lbilanBasvurulariListele.Name = "lbilanBasvurulariListele";
+            this.lbilanBasvurulariListele.Size = new System.Drawing.Size(354, 199);
+            this.lbilanBasvurulariListele.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -307,7 +307,7 @@
             // 
             this.groupBox4.Controls.Add(this.button7);
             this.groupBox4.Controls.Add(this.button2);
-            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.btnSirketGuncelle);
             this.groupBox4.Controls.Add(this.groupBox5);
             this.groupBox4.Location = new System.Drawing.Point(3, 6);
             this.groupBox4.Name = "groupBox4";
@@ -315,6 +315,16 @@
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "GÜNCELLEME";
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(241, 131);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 39);
+            this.button7.TabIndex = 10;
+            this.button7.Text = "Bilgileri Getir ";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button2
             // 
@@ -325,14 +335,15 @@
             this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnSirketGuncelle
             // 
-            this.button3.Location = new System.Drawing.Point(337, 139);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 31);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Güncelle";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSirketGuncelle.Location = new System.Drawing.Point(337, 139);
+            this.btnSirketGuncelle.Name = "btnSirketGuncelle";
+            this.btnSirketGuncelle.Size = new System.Drawing.Size(97, 31);
+            this.btnSirketGuncelle.TabIndex = 8;
+            this.btnSirketGuncelle.Text = "Güncelle";
+            this.btnSirketGuncelle.UseVisualStyleBackColor = true;
+            this.btnSirketGuncelle.Click += new System.EventHandler(this.btnSirketGuncelle_Click);
             // 
             // groupBox5
             // 
@@ -562,16 +573,6 @@
             this.tabControl1.Size = new System.Drawing.Size(462, 234);
             this.tabControl1.TabIndex = 6;
             // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(241, 131);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 39);
-            this.button7.TabIndex = 10;
-            this.button7.Text = "Bilgileri Getir ";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -604,7 +605,7 @@
 
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbilanBasvurulariListele;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -626,7 +627,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSirketGuncelle;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
