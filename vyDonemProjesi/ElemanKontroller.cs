@@ -49,6 +49,10 @@ namespace vyDonemProjesi
             }
             return retSirket;
         }
+        public Sirket getSirket()
+        {
+            return sirket;
+        }
         public void isYeriEkle(Sirket sirket, string ad, string adres, string gorev, string pozisyon)
         {
             sirket.isyeri = new IsYeri();

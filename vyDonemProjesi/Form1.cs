@@ -16,6 +16,7 @@ namespace vyDonemProjesi
      */
     public partial class Form1 : Form
     {
+        Giris g = new Giris();
         Kisi kisi = new Kisi();
         IsKontroller k = new IsKontroller();
         ElemanKontroller ek = new ElemanKontroller();
@@ -161,8 +162,8 @@ namespace vyDonemProjesi
 
             kamil.isYeri.Adi = "IŞIK OYUN,IŞIK SİSTEM";
             kamil.isYeri.Adres = "Bursa/Emek";
-            kamil.isYeri.Gorev = "görev";
-            kamil.isYeri.Pozisyon = "pozisyon";
+            kamil.isYeri.Gorev = "Oyun Geliştirici";
+            kamil.isYeri.Pozisyon = "Çaycı";
 
             k.kisiEkle(kamil);
             k.blIsyeriEkle(kamil.isYeri);
@@ -189,6 +190,23 @@ namespace vyDonemProjesi
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
+
+            //button text=X
+            //testler
+            ek.sirketEkle("turgutlu", "12345", "fakss", "mail@mail.com");
+            ek.sirketEkle("turgutlu1", "123422135", "ssfakss", "gmail@gmail.com");
+            Sirket sirket = ek.sirketBul("12345");
+            ek.isYeriEkle(sirket, "meg", "manisa", "gor", "poz");
+            sirket = ek.sirketBul("123422135");
+            ek.isYeriEkle(sirket, "au", "muğla", "gor2", "poz2");
+            ek.isIlaniEkle(sirket, "yazılım mühendisi", "backend developer");
+            ek.isBasvurusuYap(sirket, ahmet);
+            ek.isBasvurusuYap(sirket, mehmet);
+            sirket = ek.sirketBul("12345");
+            //eğer bu şirkete iş ilani eklemeden çalıştırsaydık null ref den dolayı patlardı düzeltildi
+            ek.isIlaniEkle(sirket, "yazılım mühendisi", "frontend developer");
+            ek.isBasvurusuYap(sirket, nuri);
+            ek.isBasvurusuYap(sirket, kamil);
             // ad güncelleniyorsa kisiyi silip yeni kisi ekle çünkü bst üzerinde ad dan dolayı yeri değişecek
 
 
@@ -257,29 +275,16 @@ namespace vyDonemProjesi
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //button text=X
-            //testler
-            ek.sirketEkle("turgutlu", "12345", "fakss", "mail@mail.com");
-            ek.sirketEkle("turgutlu1", "123422135", "ssfakss", "gmail@gmail.com");
-            Sirket sirket = ek.sirketBul("12345");
-            ek.isYeriEkle(sirket, "meg", "manisa", "gor", "poz");
-            sirket = ek.sirketBul("123422135");
-            ek.isYeriEkle(sirket, "au", "muğla", "gor2", "poz2");
-            ek.isIlaniEkle(sirket, "yazılım mühendisi", "backend developer");
-            ek.isBasvurusuYap(sirket, ahmet);
-            ek.isBasvurusuYap(sirket, mehmet);
-            sirket = ek.sirketBul("12345");
-            //eğer bu şirkete iş ilani eklemeden çalıştırsaydık null ref den dolayı patlardı düzeltildi
-            ek.isIlaniEkle(sirket, "yazılım mühendisi", "frontend developer");
-            ek.isBasvurusuYap(sirket, nuri);
-            ek.isBasvurusuYap(sirket, kamil);
+            
+            
+            this.Hide();
 
 
         }
 
         private void button1_Click(object sender, EventArgs e)//kaydol
         {
-
+            
             //ağaçla bağlı listeteye elemanlar erklendi. 
             kisi.Ad = txtAd.Text;
             kisi.Adres = txtAdres.Text;
@@ -340,9 +345,9 @@ namespace vyDonemProjesi
 
         private void button2_Click_1(object sender, EventArgs e)//güncelle 
         {
-            txtAd.Text = kisi.Ad;
+            
 
-
+            
 
         }
 
@@ -375,6 +380,16 @@ namespace vyDonemProjesi
 
 
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
         //public class Data : INotifyPropertyChanged
         //{

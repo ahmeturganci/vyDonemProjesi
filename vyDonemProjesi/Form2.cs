@@ -15,7 +15,7 @@ namespace vyDonemProjesi
     {
         IsKontroller k = new IsKontroller();
         ElemanKontroller ek = new ElemanKontroller();
-        Sirket s = new Sirket();
+        
         public void textTemizle(Control clt)
         {
             foreach (Control item in clt.Controls)
@@ -32,29 +32,32 @@ namespace vyDonemProjesi
 
 
         }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
-            s.tamAdres = txtTamAdres.Text;
-            s.Telefon = txtTelefon.Text;
-            s.Faks = txtFax.Text;
-            s.EPosta = txtIsmail.Text;
-            ek.sirketEkle(s.tamAdres, s.Telefon, s.Faks, s.EPosta);
+            string tamAdres, Telefon, Faks, EPosta;
+            tamAdres = txtTamAdres.Text;
+            Telefon = txtTelefon.Text;
+            Faks = txtFax.Text;
+            EPosta = txtIsmail.Text;
+            ek.sirketEkle(tamAdres,Telefon,Faks,EPosta);
         }
 
         private void button6_Click(object sender, EventArgs e)//ilan ver 
         {
-            s.isyeri = new IsYeri();
-            s.isyeri.Adi = txtIsAd.Text;
-            s.isyeri.Adres = txtIsAdres.Text;
-            s.isyeri.Gorev = txtGorev.Text;
-            s.isyeri.Email = txtIsmail.Text;
-            s.isyeri.Pozisyon = txtPo.Text;
-            s.isIlani = new IsIlani();
-            s.isIlani.isTanimi = txtIsTanim.Text;
-            s.isIlani.arananOzellikler = txtArananOzellik.Text;
-            ek.isYeriEkle(s, s.isyeri.Adi, s.isyeri.Adres, s.isyeri.Gorev, s.isyeri.Pozisyon);
-            ek.isIlaniEkle(s, s.isIlani.isTanimi, s.isIlani.arananOzellikler);
+            string Adi, Adres, Gorev, Email, Pozisyon, isTanimi, arananOzellikler;
+            Sirket s = ek.getSirket();//
+            Adi = txtIsAd.Text;
+            Adres = txtIsAdres.Text;
+            Gorev = txtGorev.Text;
+            Email = txtIsmail.Text;
+            Pozisyon = txtPo.Text;
+
+            ek.isYeriEkle(s, Adi, Adres, Gorev, Pozisyon);
+            
+            isTanimi = txtIsTanim.Text;
+            arananOzellikler = txtArananOzellik.Text;
+            ek.isIlaniEkle(s, isTanimi, arananOzellikler);
             textTemizle(this);//textboxları temizleme
         }
 
@@ -83,6 +86,7 @@ namespace vyDonemProjesi
 
         private void button7_Click(object sender, EventArgs e)
         {
+            Sirket s = ek.getSirket();
             textBox4.Text = s.tamAdres;
             textBox3.Text = s.Telefon;
             textBox2.Text = s.Faks;
