@@ -8,15 +8,9 @@ namespace vyDonemProjesi
 
     public class Heap
     {
-        private HeapDugumu[] heapArray;
+        public HeapDugumu[] heapArray;
         private int maxSize;
         private int currentSize;
-        //public int Cevir(string ad)
-        //{
-        //    char[] dizi = ad.ToCharArray();
-        //    int i = (int)Convert.ToChar(dizi[0]);
-        //    return i;
-        //}
         public Heap(int maxHeapSize)
         {
             maxSize = maxHeapSize;
@@ -75,44 +69,18 @@ namespace vyDonemProjesi
             }
             heapArray[index] = top;
         }
-        public void DisplayHeap()
+        public bool basvuruKontrol(Kisi kisi)
         {
-
+            bool kontrol = false;
             for (int m = 0; m < currentSize; m++)
                 if (heapArray[m] != null)
-                    System.Windows.Forms.MessageBox.Show(heapArray[m].Deger.Ad + " ");
-
-            Console.WriteLine();
-            int emptyLeaf = 32;
-            int itemsPerRow = 1;
-            int column = 0;
-            int j = 0;
-            String separator = "...............................";
-            Console.WriteLine(separator + separator);
-            while (currentSize > 0)
-            {
-                if (column == 0)
-                    for (int k = 0; k < emptyLeaf; k++)
-                        Console.Write(' ');
-                Console.Write(heapArray[j].Deger);
-
-                if (++j == currentSize)
-                    break;
-                if (++column == itemsPerRow)
-                {
-                    emptyLeaf /= 2;
-                    itemsPerRow *= 2;
-                    column = 0;
-                    Console.WriteLine();
-                }
-                else
-                    for (int k = 0; k < emptyLeaf * 2 - 2; k++)
-                        Console.Write(' ');
-            }
-            Console.WriteLine("\n" + separator + separator);
+                    if (kisi.Ad == heapArray[m].Deger.Ad)
+                        kontrol = true;
+                    else
+                        kontrol = false;
+            return kontrol;
         }
-
-
+        
     }
 
 }

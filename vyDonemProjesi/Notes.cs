@@ -16,6 +16,14 @@ namespace vyDonemProjesi
      * HeapDugum sınıfına düzenleme yapılacak cast için (yapıldı)
      * heap de ceviri düzenle
      * txtGadres textbox değiştirilecek
+     * form tasarımı değiştirildi...
+     * ahmet,
+     * kisi güncelleme
+     * yabancı dil
+     * not ortalama 90 üstü ya da ner neyse
+     * dökümanda belirtilenleri yap işte
+     * veri silme;
+     *  Başvuru listele ve işe alma düzeltilecek(sorunlu)
      */
     }
 }

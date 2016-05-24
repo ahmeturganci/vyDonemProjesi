@@ -9,15 +9,10 @@ using System.Windows.Forms;
 
 namespace vyDonemProjesi
 {
-    /*
-     * iş ilanlarının listelemesi ile ilgili konuşulaca ? 
-     * ? anlamadığım yer : şimdi sisteme 1 kişi kayıt oluyor ee o zaman bizim ona göre şirket ve işleri ve başvuran kişileri aynı anda oluşturup değer atamalarını yapacağız ? 
-     * 
-     */
     public partial class Form1 : Form
     {
-        
-        Kisi kisi = new Kisi();
+
+        Kisi kisi;
         IsKontroller ik = new IsKontroller();
         ElemanKontroller ek = new ElemanKontroller();
 
@@ -40,13 +35,12 @@ namespace vyDonemProjesi
             InitializeComponent();
             listIsIlanlari.Items.Clear();
             //form yüklendiğinde şirket işilanı eklediyse o iş ilanlarını getir
-            for (int i = 100; i < ek.ilanNo; i++)
-                listIsIlanlari.Items.Add(ek.isIlaniGetir(i));
         }
-        private void button1_Click(object sender, EventArgs e)//kaydol
+        private void btnKisiEkle_Click(object sender, EventArgs e)
         {
 
-            //ağaçla bağlı listeteye elemanlar erklendi. 
+            //ağaçla bağlı listeteye elemanlar eklendi.
+            kisi = new Kisi();
             kisi.Ad = txtAd.Text;
             kisi.Adres = txtAdres.Text;
             kisi.Email = txtMail.Text;
@@ -76,14 +70,13 @@ namespace vyDonemProjesi
             ik.blIsyeriEkle(kisi.isYeri);
             MessageBox.Show("kayıt işlemi başarılı");
             textTemizle(this);//textboxları temizleme
+            listKisi.Items.Add(kisi.Ad);
         }
         private void btnVericek_Click(object sender, EventArgs e)
         {
             İkiliAramaAgacDugumu bstn = ik.kisiAra(txtAdKim.Text);
             if (bstn == null)
-            {
                 MessageBox.Show("Aranan kişi bulunamadı...");
-            }
             else
             {
                 Kisi kisi = (Kisi)bstn.veri;
@@ -121,14 +114,6 @@ namespace vyDonemProjesi
         {
 
         }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-      
-
         private void btnSirketEkle_Click(object sender, EventArgs e)
         {
             string tamAdres, Telefon, Faks, EPosta;
@@ -137,7 +122,6 @@ namespace vyDonemProjesi
             Faks = txtFax.Text;
             EPosta = txtEmail.Text;
             ek.sirketEkle(tamAdres, Telefon, Faks, EPosta);
-            //telefonu çekmiyor textboxlarda bi sıkıntı var 
         }
 
         private void btnBilgiGetir_Click(object sender, EventArgs e)
@@ -159,8 +143,6 @@ namespace vyDonemProjesi
             s.Faks = txtFaksGuncelle.Text;
             s.EPosta = txtEmailGuncelle.Text;
             ek.sirketGuncelle(s);
-
-
         }
 
         private void btnIlanVer_Click(object sender, EventArgs e)
@@ -179,20 +161,47 @@ namespace vyDonemProjesi
             arananOzellikler = txtArananOzellik.Text;
             ek.isIlaniEkle(s, isTanimi, arananOzellikler);
             textTemizle(this);//textboxları temizleme
+            listIsIlanlari.Items.Add(ek.isIlaniGetir(ek.ilanNo - 1));
         }
 
-    
-
-        private void btnKisiGuncelle_Click_1(object sender, EventArgs e)
+        private void btnIseBasvur_Click(object sender, EventArgs e)
         {
-            //yazılmadı
+            int ilanNo = listIsIlanlari.SelectedIndex; //ilk değer 0 = 100
+            if (ilanNo == 0)
+                ilanNo++;
+            ilanNo *= 100;
+            Sirket s = ek.isIlaniGetirCast(ilanNo);
+            if(kisi==null)
+                MessageBox.Show("Kişi seçmediniz.");
+            else
+            ek.isBasvurusuYap(s, kisi);
+            lbilanBasvurulariListele.Items.Add(kisi.Ad);
+            basvuruListele();
         }
-
-        private void txtFax_TextChanged(object sender, EventArgs e)
+        public void basvuruListele()
         {
-
+            lbilanBasvurulariListele.Items.Clear();
+            for (int i = 100; i < ek.ilanNo; i++)
+            {
+                HeapDugumu[] hd = ek.basvurulariListele(i);
+                for (int j = 0; j < hd.Length; j++)
+                {
+                    if(hd[j]!=null)
+                        lbilanBasvurulariListele.Items.Add(ek.ilanNo+" "+hd[j].Deger.Ad);
+                }
+            }
+        }
+        public void kisiTakas() // başvuru işlemleri için kişiler listbox dan kişi seçme
+        {
+            string kisiAd = listKisi.GetItemText(listKisi.SelectedItem);
+            İkiliAramaAgacDugumu bstn = ik.kisiAra(kisiAd);
+            Kisi kisi = (Kisi)bstn.veri;
+            this.kisi = kisi;
         }
 
-       
+        private void listKisi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            kisiTakas();
+        }  
     }
 }

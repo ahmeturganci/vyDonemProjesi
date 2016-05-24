@@ -27,19 +27,6 @@ namespace vyDonemProjesi
             sirket.EPosta = eposta;
             sirketler.Add(sirket);
         }
-
-        public Sirket sirketBul(string sirketTelefon)
-        {
-            Sirket retSirket = new Sirket();
-            foreach (Sirket sirket in sirketler)
-            {
-                if (sirket.Telefon == sirketTelefon)
-                {
-                    retSirket = sirket;
-                }
-            }
-            return retSirket;
-        }
         public Sirket getSirket()
         {
             return this.sirket;
@@ -58,19 +45,22 @@ namespace vyDonemProjesi
             sirket.isIlani.isTanimi = isTanimi;
             sirket.isIlani.arananOzellikler = arananOzellikler;
             hash.Add(ilanNo, sirket);
-            //isIlaniGetir(ilanNo);
             ilanNo++;
         }
         public string isIlaniGetir(int ilanNo)
         {
             string s;
-            Sirket ilan=hash.isIlaniGetir(ilanNo);
-            if(ilan!=null)
-                s =ilan.isyeri.Adi+" "+ilan.isIlani.arananOzellikler + " " +ilan.isIlani.isTanimi;
+            Sirket ilan = hash.isIlaniGetir(ilanNo);
+            if (ilan != null)
+                s = ilan.isyeri.Adi + " " + ilan.isIlani.arananOzellikler + " " + ilan.isIlani.isTanimi;
             else
-                s="ilan yok";
+                s = "ilan yok";
             return s;
-            //System.Windows.Forms.MessageBox.Show(s);
+        }
+        public Sirket isIlaniGetirCast(int ilanNo)
+        {
+            Sirket ilan = hash.isIlaniGetir(ilanNo);
+            return ilan;
         }
         public void isBasvurusuYap(Sirket sirket, Kisi kisi)
         {
@@ -89,10 +79,20 @@ namespace vyDonemProjesi
         }
         public void sirketGuncelle(Sirket sirket)
         {
-                this.sirket.tamAdres = sirket.tamAdres;
-                this.sirket.Telefon = sirket.Telefon;
-                this.sirket.Faks = sirket.Faks;
-                this.sirket.EPosta = sirket.EPosta;
+            this.sirket.tamAdres = sirket.tamAdres;
+            this.sirket.Telefon = sirket.Telefon;
+            this.sirket.Faks = sirket.Faks;
+            this.sirket.EPosta = sirket.EPosta;
+        }
+        public HeapDugumu[] basvurulariListele(int i)
+        {
+            Sirket ilan = getSirket();
+            ilan = hash.isIlaniGetir(i);
+            HeapDugumu[] hd = new HeapDugumu[ilan.isIlani.heap.heapArray.Length];
+            if (ilan != null)
+                hd = ilan.isIlani.heap.heapArray;
+
+            return hd;
         }
     }
 }

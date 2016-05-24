@@ -44,16 +44,6 @@ namespace vyDonemProjesi
             else
                     blEgitimDurumu.InsertLast(ed);
         }
-
-        public int Goster()
-        {
-            return ikiliArama.DugumSayisi();
-        }
-        public string Goster2()
-        {
-            ikiliArama.PreOrder();
-            return ikiliArama.DugumleriYazdir();
-        }
         public void kisiGuncelle(Kisi kisi)
         {
             //if adı değiştirdiyse 

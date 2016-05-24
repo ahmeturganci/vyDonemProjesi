@@ -43,7 +43,7 @@
             this.txtBolum = new System.Windows.Forms.TextBox();
             this.txtOkul = new System.Windows.Forms.TextBox();
             this.txtMezunYil = new System.Windows.Forms.TextBox();
-            this.btnKayit = new System.Windows.Forms.Button();
+            this.btnKisiEkle = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtIlgiAlani = new System.Windows.Forms.TextBox();
             this.txtReferans = new System.Windows.Forms.TextBox();
@@ -177,6 +177,7 @@
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.btnIseAl = new System.Windows.Forms.Button();
             this.lbilanBasvurulariListele = new System.Windows.Forms.ListBox();
+            this.listKisi = new System.Windows.Forms.ListBox();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -212,6 +213,7 @@
             this.btnIseBasvur.TabIndex = 25;
             this.btnIseBasvur.Text = "Başvur";
             this.btnIseBasvur.UseVisualStyleBackColor = true;
+            this.btnIseBasvur.Click += new System.EventHandler(this.btnIseBasvur_Click);
             // 
             // listIsIlanlari
             // 
@@ -344,15 +346,15 @@
             this.txtMezunYil.Size = new System.Drawing.Size(100, 20);
             this.txtMezunYil.TabIndex = 1;
             // 
-            // btnKayit
+            // btnKisiEkle
             // 
-            this.btnKayit.Location = new System.Drawing.Point(346, 344);
-            this.btnKayit.Name = "btnKayit";
-            this.btnKayit.Size = new System.Drawing.Size(97, 23);
-            this.btnKayit.TabIndex = 8;
-            this.btnKayit.Text = "Kaydol";
-            this.btnKayit.UseVisualStyleBackColor = true;
-            this.btnKayit.Click += new System.EventHandler(this.button1_Click);
+            this.btnKisiEkle.Location = new System.Drawing.Point(346, 344);
+            this.btnKisiEkle.Name = "btnKisiEkle";
+            this.btnKisiEkle.Size = new System.Drawing.Size(97, 23);
+            this.btnKisiEkle.TabIndex = 8;
+            this.btnKisiEkle.Text = "Kaydol";
+            this.btnKisiEkle.UseVisualStyleBackColor = true;
+            this.btnKisiEkle.Click += new System.EventHandler(this.btnKisiEkle_Click);
             // 
             // groupBox3
             // 
@@ -661,7 +663,7 @@
             // 
             this.groupBox1.Controls.Add(this.groupBox7);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.btnKayit);
+            this.groupBox1.Controls.Add(this.btnKisiEkle);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
@@ -1087,7 +1089,7 @@
             this.btnKisiGuncelle.TabIndex = 10;
             this.btnKisiGuncelle.Text = "Güncelle";
             this.btnKisiGuncelle.UseVisualStyleBackColor = true;
-            this.btnKisiGuncelle.Click += new System.EventHandler(this.btnKisiGuncelle_Click_1);
+            this.btnKisiGuncelle.Click += new System.EventHandler(this.btnKisiGuncelle_Click);
             // 
             // btnVericek
             // 
@@ -1142,7 +1144,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Kişi İşlemleri";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // tabControl2
             // 
@@ -1308,7 +1309,6 @@
             this.txtFax.Name = "txtFax";
             this.txtFax.Size = new System.Drawing.Size(100, 20);
             this.txtFax.TabIndex = 3;
-            this.txtFax.TextChanged += new System.EventHandler(this.txtFax_TextChanged);
             // 
             // txtSirketTel
             // 
@@ -1346,7 +1346,7 @@
             // 
             this.btnBilgiGetir.Location = new System.Drawing.Point(241, 106);
             this.btnBilgiGetir.Name = "btnBilgiGetir";
-            this.btnBilgiGetir.Size = new System.Drawing.Size(75, 29);
+            this.btnBilgiGetir.Size = new System.Drawing.Size(86, 29);
             this.btnBilgiGetir.TabIndex = 10;
             this.btnBilgiGetir.Text = "Bilgileri Getir ";
             this.btnBilgiGetir.UseVisualStyleBackColor = true;
@@ -1649,12 +1649,22 @@
             this.lbilanBasvurulariListele.Size = new System.Drawing.Size(354, 173);
             this.lbilanBasvurulariListele.TabIndex = 0;
             // 
+            // listKisi
+            // 
+            this.listKisi.FormattingEnabled = true;
+            this.listKisi.Location = new System.Drawing.Point(4, 448);
+            this.listKisi.Name = "listKisi";
+            this.listKisi.Size = new System.Drawing.Size(482, 95);
+            this.listKisi.TabIndex = 27;
+            this.listKisi.SelectedIndexChanged += new System.EventHandler(this.listKisi_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(811, 453);
+            this.ClientSize = new System.Drawing.Size(811, 553);
+            this.Controls.Add(this.listKisi);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnIseBasvur);
             this.Controls.Add(this.listIsIlanlari);
@@ -1717,7 +1727,7 @@
         private System.Windows.Forms.TextBox txtBolum;
         private System.Windows.Forms.TextBox txtOkul;
         private System.Windows.Forms.TextBox txtMezunYil;
-        private System.Windows.Forms.Button btnKayit;
+        private System.Windows.Forms.Button btnKisiEkle;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtIlgiAlani;
         private System.Windows.Forms.TextBox txtReferans;
@@ -1851,6 +1861,7 @@
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.Button btnIseAl;
         private System.Windows.Forms.ListBox lbilanBasvurulariListele;
+        private System.Windows.Forms.ListBox listKisi;
 
     }
 }
