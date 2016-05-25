@@ -24,6 +24,7 @@ namespace vyDonemProjesi
      * dökümanda belirtilenleri yap işte
      * veri silme;
      *  Başvuru listele ve işe alma düzeltilecek(sorunlu)
+     *  güncellemede bişeylerle uğraştım gelen değeri siliyor yerine yenisini ekliyor. listelemesini beceremedim üzerinde çalışıyorum 
      */
     }
 }

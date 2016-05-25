@@ -10,13 +10,16 @@ namespace vyDonemProjesi
         private BaglıListe blIsyeri; //bağlı liste
         private BaglıListe blEgitimDurumu;
         private IkiliArama ikiliArama;
+        Kisi kisi;
 
         public IsKontroller()
         {
             blIsyeri = new BaglıListe();
             blEgitimDurumu = new BaglıListe();
             ikiliArama = new IkiliArama();
+            kisi = new Kisi();
         }
+
         public void kisiEkle(Kisi kisi)
         {
             ikiliArama.Ekle(kisi);
@@ -42,13 +45,48 @@ namespace vyDonemProjesi
             if (blEgitimDurumu.Head == null)
                 blEgitimDurumu.InsertFirst(ed);
             else
-                    blEgitimDurumu.InsertLast(ed);
+                blEgitimDurumu.InsertLast(ed);
+        }
+
+        public Kisi getKisi(Kisi k)
+        {
+            return k;
         }
         public void kisiGuncelle(Kisi kisi)
         {
             //if adı değiştirdiyse 
             //ağaçtan kisiyi sil yeni kisi ekle
             //else 
+            this.kisi.Ad = kisi.Ad;
+            //this.kisi.Adres = kisi.Adres;
+            //this.kisi.DogumTarihi = kisi.DogumTarihi;
+            //this.kisi.DogumYeri = kisi.DogumYeri;
+            //this.kisi.Email = kisi.Email;
+            //this.kisi.IlgiAlanlari = kisi.IlgiAlanlari;
+            //this.kisi.Referans = kisi.Referans;
+            //this.kisi.YabanciDil = kisi.YabanciDil;
+            //this.kisi.Uyruk = kisi.Uyruk;
+            //this.kisi.MedeniDurum = kisi.MedeniDurum;
+            this.kisi.egitimDurumu = new EgitimDurumu();
+            //this.kisi.egitimDurumu.BaslangicYil = kisi.egitimDurumu.BaslangicYil;
+            //this.kisi.egitimDurumu.BittisYil = kisi.egitimDurumu.BittisYil;
+            //this.kisi.egitimDurumu.Bolum = kisi.egitimDurumu.Bolum;
+            //this.kisi.egitimDurumu.MezunOlunanOkul = kisi.egitimDurumu.MezunOlunanOkul;
+            this.kisi.egitimDurumu.ortalama = kisi.egitimDurumu.ortalama;
+
+            //this.kisi.isYeri = new IsYeri();
+            //this.kisi.isYeri.Adi = kisi.isYeri.Adi;
+            //this.kisi.isYeri.Adres = kisi.isYeri.Adres;
+            //this.kisi.isYeri.Email = kisi.isYeri.Email;
+            //this.kisi.isYeri.Gorev = kisi.isYeri.Gorev;
+            //this.kisi.isYeri.Pozisyon = kisi.isYeri.Pozisyon;
+
+
+
+
+        }
+        public void kisiListele() {
+            ikiliArama.PostOrder();
         }
     }
 }

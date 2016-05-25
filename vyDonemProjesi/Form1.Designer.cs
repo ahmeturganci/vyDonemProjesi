@@ -178,6 +178,12 @@
             this.btnIseAl = new System.Windows.Forms.Button();
             this.lbilanBasvurulariListele = new System.Windows.Forms.ListBox();
             this.listKisi = new System.Windows.Forms.ListBox();
+            this.listListeleme = new System.Windows.Forms.ListBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.txtList = new System.Windows.Forms.TextBox();
+            this.btnListeleme = new System.Windows.Forms.Button();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.btnOrtalama = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -203,11 +209,12 @@
             this.groupBox13.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            this.groupBox15.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnIseBasvur
             // 
-            this.btnIseBasvur.Location = new System.Drawing.Point(723, 20);
+            this.btnIseBasvur.Location = new System.Drawing.Point(642, 381);
             this.btnIseBasvur.Name = "btnIseBasvur";
             this.btnIseBasvur.Size = new System.Drawing.Size(75, 23);
             this.btnIseBasvur.TabIndex = 25;
@@ -220,7 +227,7 @@
             this.listIsIlanlari.FormattingEnabled = true;
             this.listIsIlanlari.Location = new System.Drawing.Point(492, 20);
             this.listIsIlanlari.Name = "listIsIlanlari";
-            this.listIsIlanlari.Size = new System.Drawing.Size(225, 420);
+            this.listIsIlanlari.Size = new System.Drawing.Size(225, 355);
             this.listIsIlanlari.TabIndex = 24;
             // 
             // groupBox2
@@ -1654,16 +1661,74 @@
             this.listKisi.FormattingEnabled = true;
             this.listKisi.Location = new System.Drawing.Point(4, 448);
             this.listKisi.Name = "listKisi";
-            this.listKisi.Size = new System.Drawing.Size(482, 95);
+            this.listKisi.Size = new System.Drawing.Size(482, 147);
             this.listKisi.TabIndex = 27;
             this.listKisi.SelectedIndexChanged += new System.EventHandler(this.listKisi_SelectedIndexChanged);
+            // 
+            // listListeleme
+            // 
+            this.listListeleme.FormattingEnabled = true;
+            this.listListeleme.Location = new System.Drawing.Point(15, 48);
+            this.listListeleme.Name = "listListeleme";
+            this.listListeleme.Size = new System.Drawing.Size(365, 108);
+            this.listListeleme.TabIndex = 28;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(723, 139);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(175, 238);
+            this.listBox1.TabIndex = 29;
+            // 
+            // txtList
+            // 
+            this.txtList.Location = new System.Drawing.Point(15, 22);
+            this.txtList.Name = "txtList";
+            this.txtList.Size = new System.Drawing.Size(100, 20);
+            this.txtList.TabIndex = 12;
+            // 
+            // btnListeleme
+            // 
+            this.btnListeleme.Location = new System.Drawing.Point(121, 19);
+            this.btnListeleme.Name = "btnListeleme";
+            this.btnListeleme.Size = new System.Drawing.Size(104, 23);
+            this.btnListeleme.TabIndex = 30;
+            this.btnListeleme.Text = "Kisi Bilgileri Gerit";
+            this.btnListeleme.UseVisualStyleBackColor = true;
+            this.btnListeleme.Click += new System.EventHandler(this.btnListeleme_Click);
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.btnOrtalama);
+            this.groupBox15.Controls.Add(this.listListeleme);
+            this.groupBox15.Controls.Add(this.btnListeleme);
+            this.groupBox15.Controls.Add(this.txtList);
+            this.groupBox15.Location = new System.Drawing.Point(492, 432);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(406, 163);
+            this.groupBox15.TabIndex = 31;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "groupBox15";
+            // 
+            // btnOrtalama
+            // 
+            this.btnOrtalama.Location = new System.Drawing.Point(231, 20);
+            this.btnOrtalama.Name = "btnOrtalama";
+            this.btnOrtalama.Size = new System.Drawing.Size(120, 23);
+            this.btnOrtalama.TabIndex = 32;
+            this.btnOrtalama.Text = "Ortalamya göre sırala";
+            this.btnOrtalama.UseVisualStyleBackColor = true;
+            this.btnOrtalama.Click += new System.EventHandler(this.btnOrtalama_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(811, 553);
+            this.ClientSize = new System.Drawing.Size(910, 678);
+            this.Controls.Add(this.groupBox15);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.listKisi);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnIseBasvur);
@@ -1706,6 +1771,8 @@
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
             this.tabPage8.ResumeLayout(false);
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1862,6 +1929,12 @@
         private System.Windows.Forms.Button btnIseAl;
         private System.Windows.Forms.ListBox lbilanBasvurulariListele;
         private System.Windows.Forms.ListBox listKisi;
+        private System.Windows.Forms.ListBox listListeleme;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox txtList;
+        private System.Windows.Forms.Button btnListeleme;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.Button btnOrtalama;
 
     }
 }

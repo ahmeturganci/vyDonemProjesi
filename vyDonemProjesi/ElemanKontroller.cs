@@ -33,6 +33,7 @@ namespace vyDonemProjesi
         }
         public void isYeriEkle(Sirket sirket, string ad, string adres, string gorev, string pozisyon)
         {
+            // bak bi 
             sirket.isyeri = new IsYeri();
             sirket.isyeri.Adi = ad;
             sirket.isyeri.Adres = adres;

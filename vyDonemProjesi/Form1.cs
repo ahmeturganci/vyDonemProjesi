@@ -109,10 +109,19 @@ namespace vyDonemProjesi
         {
             this.Hide();
         }
-
+         
         private void btnKisiGuncelle_Click(object sender, EventArgs e)
         {
-
+            
+            Kisi k = ik.getKisi(kisi);
+            k.Ad = txtGad.Text;
+            k.egitimDurumu = new EgitimDurumu();
+            k.egitimDurumu.ortalama = Convert.ToDouble(txtGort.Text);
+            textTemizle(this);
+            ik.kisiGuncelle(k);
+            ik.kisiEkle(k);
+            listKisi.Update();
+            MessageBox.Show("Güncelleme başarılı");
         }
         private void btnSirketEkle_Click(object sender, EventArgs e)
         {
@@ -143,6 +152,7 @@ namespace vyDonemProjesi
             s.Faks = txtFaksGuncelle.Text;
             s.EPosta = txtEmailGuncelle.Text;
             ek.sirketGuncelle(s);
+            
         }
 
         private void btnIlanVer_Click(object sender, EventArgs e)
@@ -171,12 +181,13 @@ namespace vyDonemProjesi
                 ilanNo++;
             ilanNo *= 100;
             Sirket s = ek.isIlaniGetirCast(ilanNo);
-            if(kisi==null)
+            if (kisi == null)
                 MessageBox.Show("Kişi seçmediniz.");
             else
-            ek.isBasvurusuYap(s, kisi);
+                ek.isBasvurusuYap(s, kisi);
             lbilanBasvurulariListele.Items.Add(kisi.Ad);
             basvuruListele();
+            MessageBox.Show("başvuru yapıldı");
         }
         public void basvuruListele()
         {
@@ -186,8 +197,8 @@ namespace vyDonemProjesi
                 HeapDugumu[] hd = ek.basvurulariListele(i);
                 for (int j = 0; j < hd.Length; j++)
                 {
-                    if(hd[j]!=null)
-                        lbilanBasvurulariListele.Items.Add(ek.ilanNo+" "+hd[j].Deger.Ad);
+                    if (hd[j] != null)
+                        lbilanBasvurulariListele.Items.Add(ek.ilanNo + " " + hd[j].Deger.Ad);
                 }
             }
         }
@@ -202,6 +213,35 @@ namespace vyDonemProjesi
         private void listKisi_SelectedIndexChanged(object sender, EventArgs e)
         {
             kisiTakas();
-        }  
+        }
+
+        private void btnListeleme_Click(object sender, EventArgs e)
+        {
+            İkiliAramaAgacDugumu bstn = ik.kisiAra(txtList.Text);
+            if (bstn == null)
+                MessageBox.Show("Aranan kişi bulunamadı...");
+            else
+            {
+                Kisi kisi = (Kisi)bstn.veri;
+                listListeleme.Items.Add(kisi.Ad + " "+ kisi.Adres +" " + kisi.DogumTarihi +""+kisi.DogumYeri);
+            }
+        }
+
+        private void btnOrtalama_Click(object sender, EventArgs e)
+        {
+            //listListeleme.Items.Clear();
+            //İkiliAramaAgacDugumu bstn = ;
+            //if (bstn == null)
+            //    MessageBox.Show("Aranan kişi bulunamadı...");
+            //else
+            //{
+            //    Kisi kisi = (Kisi)bstn.veri;
+            //    if (kisi.egitimDurumu.ortalama > 85) 
+            //    {       
+            //         listListeleme.Items.Add(kisi.Ad + "="+ kisi.egitimDurumu.ortalama.ToString()+Environment.NewLine);
+            //    }
+            //}
+
+        }
     }
 }
