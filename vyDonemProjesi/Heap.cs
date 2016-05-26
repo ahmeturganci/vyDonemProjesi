@@ -35,9 +35,9 @@ namespace vyDonemProjesi
             int parent = (index - 1) / 2;
             HeapDugumu bottom = heapArray[index];
 
-            while (index > 0 && (heapArray[parent].Deger.Ad).CompareTo(bottom.Deger.Ad) > 0)//çevirmek
+            while (index > 0 && (heapArray[parent].Deger.Ad).CompareTo(bottom.Deger.Ad) < 0)//çevirmek
             {
-                heapArray[index].Deger.Ad = heapArray[parent].Deger.Ad;
+                heapArray[index] = heapArray[parent];
                 index = parent;
                 parent = (parent - 1) / 2;
             }
@@ -58,11 +58,11 @@ namespace vyDonemProjesi
             {
                 int leftChild = 2 * index + 1;
                 int rightChild = leftChild + 1;
-                if (rightChild < currentSize && (heapArray[leftChild].Deger.Ad).CompareTo(heapArray[rightChild].Deger.Ad) < 0)
+                if (rightChild < currentSize && (heapArray[leftChild].Deger.Ad).CompareTo(heapArray[rightChild].Deger.Ad) > 0)
                     largerChild = rightChild;
                 else
                     largerChild = leftChild;
-                if ((top.Deger.Ad).CompareTo(heapArray[largerChild].Deger.Ad) >= 0)
+                if ((top.Deger.Ad).CompareTo(heapArray[largerChild].Deger.Ad) <= 0)
                     break;
                 heapArray[index] = heapArray[largerChild];
                 index = largerChild;
@@ -73,14 +73,17 @@ namespace vyDonemProjesi
         {
             bool kontrol = false;
             for (int m = 0; m < currentSize; m++)
+            {
                 if (heapArray[m] != null)
-                    if (kisi.Ad == heapArray[m].Deger.Ad)
+                {
+                    if (kisi == heapArray[m].Deger)
+                    {
                         kontrol = true;
-                    else
-                        kontrol = false;
+                        break;
+                    }
+                }
+            }
             return kontrol;
         }
-        
     }
-
 }

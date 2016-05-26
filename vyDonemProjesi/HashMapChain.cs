@@ -36,6 +36,22 @@ namespace vyDonemProjesi
             }
         }
 
+        //public void Add(int key, object value)
+        //{
+        //    int hash = (key % TABLE_SIZE);
+        //    if (table[hash] == null)
+        //        table[hash] = new LinkedHashEntry(key, value);
+        //    else
+        //    {
+        //        LinkedHashEntry entry = table[hash];
+        //        while (entry.Next != null && entry.Anahtar != key)
+        //            entry = entry.Next;
+        //        if (entry.Anahtar == key)
+        //            entry.Deger = value;
+        //        else
+        //            entry.Next = new LinkedHashEntry(key, value);
+        //    }
+        //}
         public void Add(int key, object value)
         {
             int hash = (key % TABLE_SIZE);

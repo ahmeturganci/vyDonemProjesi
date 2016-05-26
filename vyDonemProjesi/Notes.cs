@@ -24,7 +24,11 @@ namespace vyDonemProjesi
      * dökümanda belirtilenleri yap işte
      * veri silme;
      *  Başvuru listele ve işe alma düzeltilecek(sorunlu)
-     *  güncellemede bişeylerle uğraştım gelen değeri siliyor yerine yenisini ekliyor. listelemesini beceremedim üzerinde çalışıyorum 
+     *  güncellemede bişeylerle uğraştım gelen değeri siliyor yerine yenisini ekliyor. listelemesini beceremedim üzerinde çalışıyorum
+     ***  sistem ölümcül hatalardan arındırıldı... ****
+     *  sistem genel olarak çalışıyor işe tekrar başvurmama biraz daha geliştirilecek testlerde eksik olursa duruma göre düzeltilecek...
+     *  işe tekrar başvurmama düzeltildi
+     *  uygun kişiyi şirket kadrosuna dahil etme eklenecek...
      */
     }
 }

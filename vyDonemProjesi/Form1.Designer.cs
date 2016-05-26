@@ -1647,6 +1647,7 @@
             this.btnIseAl.TabIndex = 1;
             this.btnIseAl.Text = "İşe Al";
             this.btnIseAl.UseVisualStyleBackColor = true;
+            this.btnIseAl.Click += new System.EventHandler(this.btnIseAl_Click);
             // 
             // lbilanBasvurulariListele
             // 

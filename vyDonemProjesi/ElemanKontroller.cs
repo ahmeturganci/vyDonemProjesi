@@ -33,7 +33,6 @@ namespace vyDonemProjesi
         }
         public void isYeriEkle(Sirket sirket, string ad, string adres, string gorev, string pozisyon)
         {
-            // bak bi 
             sirket.isyeri = new IsYeri();
             sirket.isyeri.Adi = ad;
             sirket.isyeri.Adres = adres;
@@ -45,6 +44,10 @@ namespace vyDonemProjesi
             sirket.isIlani = new IsIlani();
             sirket.isIlani.isTanimi = isTanimi;
             sirket.isIlani.arananOzellikler = arananOzellikler;
+            sirket.tamAdres = this.sirket.tamAdres;
+            sirket.Telefon = this.sirket.Telefon;
+            sirket.Faks = this.sirket.Faks;
+            sirket.Telefon = this.sirket.Telefon;
             hash.Add(ilanNo, sirket);
             ilanNo++;
         }
@@ -64,19 +67,11 @@ namespace vyDonemProjesi
             return ilan;
         }
         public void isBasvurusuYap(Sirket sirket, Kisi kisi)
-        {
-            double uygunluk = GetRandomNumber(0.0, 10.0);
-            kisi.iseUygunluk = uygunluk;
+        {            
             if (sirket.isIlani != null)
                 sirket.isIlani.elemanEkle(kisi);
             else
                 System.Windows.Forms.MessageBox.Show("İş ilani olmayan bir Şirkete başvuramazsınız");
-        }
-
-        public double GetRandomNumber(double minimum, double maximum)
-        {
-            Random random = new Random();
-            return random.NextDouble() * (maximum - minimum) + minimum;
         }
         public void sirketGuncelle(Sirket sirket)
         {

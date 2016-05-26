@@ -34,13 +34,12 @@ namespace vyDonemProjesi
         {
             InitializeComponent();
             listIsIlanlari.Items.Clear();
-            //form yüklendiğinde şirket işilanı eklediyse o iş ilanlarını getir
         }
         private void btnKisiEkle_Click(object sender, EventArgs e)
         {
 
             //ağaçla bağlı listeteye elemanlar eklendi.
-            kisi = new Kisi();
+            Kisi kisi = new Kisi();
             kisi.Ad = txtAd.Text;
             kisi.Adres = txtAdres.Text;
             kisi.Email = txtMail.Text;
@@ -109,10 +108,9 @@ namespace vyDonemProjesi
         {
             this.Hide();
         }
-         
+
         private void btnKisiGuncelle_Click(object sender, EventArgs e)
         {
-            
             Kisi k = ik.getKisi(kisi);
             k.Ad = txtGad.Text;
             k.egitimDurumu = new EgitimDurumu();
@@ -140,7 +138,6 @@ namespace vyDonemProjesi
             txtTelefonGuncelle.Text = s.Telefon;
             txtFaksGuncelle.Text = s.Faks;
             txtEmailGuncelle.Text = s.EPosta;
-
         }
 
         private void btnSirketGuncelle_Click(object sender, EventArgs e)
@@ -152,42 +149,43 @@ namespace vyDonemProjesi
             s.Faks = txtFaksGuncelle.Text;
             s.EPosta = txtEmailGuncelle.Text;
             ek.sirketGuncelle(s);
-            
+
         }
 
         private void btnIlanVer_Click(object sender, EventArgs e)
         {
             string Adi, Adres, Gorev, Email, Pozisyon, isTanimi, arananOzellikler;
-            Sirket s = ek.getSirket();//
+            Sirket sirket = new Sirket();
             Adi = txtIsAd.Text;
             Adres = txtIsAdres.Text;
             Gorev = txtGorev.Text;
             Email = txtEmail.Text;
             Pozisyon = txtPo.Text;
-
-            ek.isYeriEkle(s, Adi, Adres, Gorev, Pozisyon);
+            sirket.isyeri = new IsYeri();
+            ek.isYeriEkle(sirket, Adi, Adres, Gorev, Pozisyon);
 
             isTanimi = txtIsTanim.Text;
             arananOzellikler = txtArananOzellik.Text;
-            ek.isIlaniEkle(s, isTanimi, arananOzellikler);
+            sirket.isIlani = new IsIlani();
+            ek.isIlaniEkle(sirket, isTanimi, arananOzellikler);
             textTemizle(this);//textboxları temizleme
-            listIsIlanlari.Items.Add(ek.isIlaniGetir(ek.ilanNo - 1));
+            listIsIlanlari.Items.Add(ek.isIlaniGetir(ek.ilanNo-1));
         }
 
         private void btnIseBasvur_Click(object sender, EventArgs e)
         {
             int ilanNo = listIsIlanlari.SelectedIndex; //ilk değer 0 = 100
-            if (ilanNo == 0)
-                ilanNo++;
-            ilanNo *= 100;
+            ilanNo += 100;
+            MessageBox.Show(ilanNo.ToString());
             Sirket s = ek.isIlaniGetirCast(ilanNo);
             if (kisi == null)
                 MessageBox.Show("Kişi seçmediniz.");
             else
+            {
                 ek.isBasvurusuYap(s, kisi);
-            lbilanBasvurulariListele.Items.Add(kisi.Ad);
-            basvuruListele();
-            MessageBox.Show("başvuru yapıldı");
+                basvuruListele();
+                MessageBox.Show("başvuru yapıldı");
+            }
         }
         public void basvuruListele()
         {
@@ -198,7 +196,7 @@ namespace vyDonemProjesi
                 for (int j = 0; j < hd.Length; j++)
                 {
                     if (hd[j] != null)
-                        lbilanBasvurulariListele.Items.Add(ek.ilanNo + " " + hd[j].Deger.Ad);
+                        lbilanBasvurulariListele.Items.Add(i + " " + hd[j].Deger.Ad + " "+hd[j].Deger.iseUygunluk);
                 }
             }
         }
@@ -206,12 +204,20 @@ namespace vyDonemProjesi
         {
             string kisiAd = listKisi.GetItemText(listKisi.SelectedItem);
             İkiliAramaAgacDugumu bstn = ik.kisiAra(kisiAd);
-            Kisi kisi = (Kisi)bstn.veri;
-            this.kisi = kisi;
+            Kisi kisi = new Kisi();
+            kisi = (Kisi)bstn.veri;
+            if (kisi != null)
+            {
+                this.kisi = kisi;
+                MessageBox.Show(kisi.Ad);
+            }
+            else
+                MessageBox.Show("Kişi seçilemedi.");
         }
 
         private void listKisi_SelectedIndexChanged(object sender, EventArgs e)
         {
+            kisi = null;
             kisiTakas();
         }
 
@@ -223,7 +229,7 @@ namespace vyDonemProjesi
             else
             {
                 Kisi kisi = (Kisi)bstn.veri;
-                listListeleme.Items.Add(kisi.Ad + " "+ kisi.Adres +" " + kisi.DogumTarihi +""+kisi.DogumYeri);
+                listListeleme.Items.Add(kisi.Ad + " " + kisi.Adres + " " + kisi.DogumTarihi + "" + kisi.DogumYeri);
             }
         }
 
@@ -242,6 +248,15 @@ namespace vyDonemProjesi
             //    }
             //}
 
+        }
+
+        private void btnIseAl_Click(object sender, EventArgs e)
+        {
+            string s =lbilanBasvurulariListele.GetItemText(lbilanBasvurulariListele.SelectedItem);
+            //string parse edilip heap sınıfı içersinde remove edilecek ek olarak ilgili şirketin eleman kadrosuna dahil edilecek...
+            //şimdilik 
+            MessageBox.Show(s + "\nİşe alındınız.");
+            lbilanBasvurulariListele.Items.Remove(lbilanBasvurulariListele.SelectedItem);
         }
     }
 }
