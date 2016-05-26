@@ -19,10 +19,29 @@ namespace vyDonemProjesi
             ikiliArama = new IkiliArama();
             kisi = new Kisi();
         }
+        public string preOrderListele()
+        {
+            ikiliArama.PreOrder();
+            return ikiliArama.DugumleriYazdir();
+        }
+        public string inOrderListeleme()
+        {
+            ikiliArama.InOrder();
+            return ikiliArama.DugumleriYazdir();
+        }
+        public string postOrderListeleme()
+        {
+            ikiliArama.PostOrder();
+            return ikiliArama.DugumleriYazdir();
+        }
 
         public void kisiEkle(Kisi kisi)
         {
             ikiliArama.Ekle(kisi);
+        }
+        public string doksanUstu()
+        {
+            return ikiliArama.ortListele();
         }
         public İkiliAramaAgacDugumu kisiAra(string ad)
         {
@@ -85,7 +104,8 @@ namespace vyDonemProjesi
 
 
         }
-        public void kisiListele() {
+        public void kisiListele()
+        {
             ikiliArama.PostOrder();
         }
     }

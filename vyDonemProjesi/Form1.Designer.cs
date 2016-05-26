@@ -184,6 +184,9 @@
             this.btnListeleme = new System.Windows.Forms.Button();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.btnOrtalama = new System.Windows.Forms.Button();
+            this.btnPre = new System.Windows.Forms.Button();
+            this.btnIn = new System.Windows.Forms.Button();
+            this.btnPost = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -1671,7 +1674,7 @@
             this.listListeleme.FormattingEnabled = true;
             this.listListeleme.Location = new System.Drawing.Point(15, 48);
             this.listListeleme.Name = "listListeleme";
-            this.listListeleme.Size = new System.Drawing.Size(365, 108);
+            this.listListeleme.Size = new System.Drawing.Size(336, 108);
             this.listListeleme.TabIndex = 28;
             // 
             // listBox1
@@ -1707,7 +1710,7 @@
             this.groupBox15.Controls.Add(this.txtList);
             this.groupBox15.Location = new System.Drawing.Point(492, 432);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(406, 163);
+            this.groupBox15.Size = new System.Drawing.Size(366, 163);
             this.groupBox15.TabIndex = 31;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "groupBox15";
@@ -1722,13 +1725,46 @@
             this.btnOrtalama.UseVisualStyleBackColor = true;
             this.btnOrtalama.Click += new System.EventHandler(this.btnOrtalama_Click);
             // 
+            // btnPre
+            // 
+            this.btnPre.Location = new System.Drawing.Point(674, 601);
+            this.btnPre.Name = "btnPre";
+            this.btnPre.Size = new System.Drawing.Size(55, 26);
+            this.btnPre.TabIndex = 33;
+            this.btnPre.Text = "PreOrder";
+            this.btnPre.UseVisualStyleBackColor = true;
+            this.btnPre.Click += new System.EventHandler(this.btnPre_Click);
+            // 
+            // btnIn
+            // 
+            this.btnIn.Location = new System.Drawing.Point(613, 601);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(55, 26);
+            this.btnIn.TabIndex = 34;
+            this.btnIn.Text = "InOrder";
+            this.btnIn.UseVisualStyleBackColor = true;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
+            // 
+            // btnPost
+            // 
+            this.btnPost.Location = new System.Drawing.Point(552, 601);
+            this.btnPost.Name = "btnPost";
+            this.btnPost.Size = new System.Drawing.Size(55, 26);
+            this.btnPost.TabIndex = 35;
+            this.btnPost.Text = "PostOrder";
+            this.btnPost.UseVisualStyleBackColor = true;
+            this.btnPost.Click += new System.EventHandler(this.btnPost_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(910, 678);
+            this.Controls.Add(this.btnPost);
             this.Controls.Add(this.groupBox15);
+            this.Controls.Add(this.btnPre);
+            this.Controls.Add(this.btnIn);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.listKisi);
             this.Controls.Add(this.tabControl1);
@@ -1936,6 +1972,9 @@
         private System.Windows.Forms.Button btnListeleme;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.Button btnOrtalama;
+        private System.Windows.Forms.Button btnPost;
+        private System.Windows.Forms.Button btnPre;
+        private System.Windows.Forms.Button btnIn;
 
     }
 }

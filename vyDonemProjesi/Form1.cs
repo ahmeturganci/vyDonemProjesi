@@ -169,7 +169,7 @@ namespace vyDonemProjesi
             sirket.isIlani = new IsIlani();
             ek.isIlaniEkle(sirket, isTanimi, arananOzellikler);
             textTemizle(this);//textboxları temizleme
-            listIsIlanlari.Items.Add(ek.isIlaniGetir(ek.ilanNo-1));
+            listIsIlanlari.Items.Add(ek.isIlaniGetir(ek.ilanNo - 1));
         }
 
         private void btnIseBasvur_Click(object sender, EventArgs e)
@@ -196,7 +196,7 @@ namespace vyDonemProjesi
                 for (int j = 0; j < hd.Length; j++)
                 {
                     if (hd[j] != null)
-                        lbilanBasvurulariListele.Items.Add(i + " " + hd[j].Deger.Ad + " "+hd[j].Deger.iseUygunluk);
+                        lbilanBasvurulariListele.Items.Add(i + " " + hd[j].Deger.Ad + " " + hd[j].Deger.iseUygunluk);
                 }
             }
         }
@@ -223,40 +223,51 @@ namespace vyDonemProjesi
 
         private void btnListeleme_Click(object sender, EventArgs e)
         {
+            listListeleme.Items.Clear();
             İkiliAramaAgacDugumu bstn = ik.kisiAra(txtList.Text);
             if (bstn == null)
                 MessageBox.Show("Aranan kişi bulunamadı...");
             else
             {
                 Kisi kisi = (Kisi)bstn.veri;
-                listListeleme.Items.Add(kisi.Ad + " " + kisi.Adres + " " + kisi.DogumTarihi + "" + kisi.DogumYeri);
+                listListeleme.Items.Add(kisi.Ad + " " + kisi.Adres + " " + kisi.DogumTarihi + "" + kisi.DogumYeri + "" + kisi.egitimDurumu.Bolum);
             }
         }
 
         private void btnOrtalama_Click(object sender, EventArgs e)
         {
-            //listListeleme.Items.Clear();
-            //İkiliAramaAgacDugumu bstn = ;
-            //if (bstn == null)
-            //    MessageBox.Show("Aranan kişi bulunamadı...");
-            //else
-            //{
-            //    Kisi kisi = (Kisi)bstn.veri;
-            //    if (kisi.egitimDurumu.ortalama > 85) 
-            //    {       
-            //         listListeleme.Items.Add(kisi.Ad + "="+ kisi.egitimDurumu.ortalama.ToString()+Environment.NewLine);
-            //    }
-            //}
+
+            listListeleme.Items.Clear();
+            listListeleme.Items.Add(ik.doksanUstu());
+            
 
         }
 
         private void btnIseAl_Click(object sender, EventArgs e)
         {
-            string s =lbilanBasvurulariListele.GetItemText(lbilanBasvurulariListele.SelectedItem);
+            string s = lbilanBasvurulariListele.GetItemText(lbilanBasvurulariListele.SelectedItem);
             //string parse edilip heap sınıfı içersinde remove edilecek ek olarak ilgili şirketin eleman kadrosuna dahil edilecek...
             //şimdilik 
             MessageBox.Show(s + "\nİşe alındınız.");
             lbilanBasvurulariListele.Items.Remove(lbilanBasvurulariListele.SelectedItem);
+        }
+
+        private void btnPre_Click(object sender, EventArgs e)
+        {
+            listListeleme.Items.Clear();
+            listListeleme.Items.Add(ik.preOrderListele());
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            listListeleme.Items.Clear();
+            listListeleme.Items.Add(ik.inOrderListeleme());
+        }
+
+        private void btnPost_Click(object sender, EventArgs e)
+        {
+            listListeleme.Items.Clear();
+            listListeleme.Items.Add(ik.postOrderListeleme());
         }
     }
 }
