@@ -99,10 +99,6 @@ namespace vyDonemProjesi
             //this.kisi.isYeri.Email = kisi.isYeri.Email;
             //this.kisi.isYeri.Gorev = kisi.isYeri.Gorev;
             //this.kisi.isYeri.Pozisyon = kisi.isYeri.Pozisyon;
-
-
-
-
         }
         public void kisiListele()
         {

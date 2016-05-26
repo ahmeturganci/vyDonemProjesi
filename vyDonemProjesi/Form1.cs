@@ -239,7 +239,7 @@ namespace vyDonemProjesi
 
             listListeleme.Items.Clear();
             listListeleme.Items.Add(ik.doksanUstu());
-            
+
 
         }
 

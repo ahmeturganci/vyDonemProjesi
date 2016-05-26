@@ -1771,7 +1771,9 @@
             this.Controls.Add(this.btnIseBasvur);
             this.Controls.Add(this.listIsIlanlari);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "İş Arayan ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
