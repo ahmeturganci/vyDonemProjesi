@@ -22,7 +22,7 @@ namespace vyDonemProjesi
             string s = "";
             foreach (var item in doksanUstu)
             {
-                s += item.Ad + "" + item.egitimDurumu.ortalama.ToString()+" "+item.egitimDurumu.MezunOlunanOkul+Environment.NewLine;
+                s += item.Ad + "" + item.egitimDurumu.ortalama.ToString() + " " + item.egitimDurumu.MezunOlunanOkul + Environment.NewLine;
             }
             return s;
         }
@@ -117,10 +117,12 @@ namespace vyDonemProjesi
                 tempParent = tempSearch;
                 k = (Kisi)deger;
                 k2 = (Kisi)tempSearch.veri;
+
                 if (string.Compare(k.Ad, k2.Ad) == 0)
                     return;
                 else if (string.Compare(k.Ad, k2.Ad) < 0)
                     tempSearch = tempSearch.sol;
+
                 else
                     tempSearch = tempSearch.sag;
             }
@@ -129,8 +131,6 @@ namespace vyDonemProjesi
                 kok = eklenecek;
             else if (k.Ad.CompareTo(k2.Ad) < 0)
                 tempParent.sol = eklenecek;
-            else if (k.egitimDurumu.ortalama > 90)
-                doksanUstu.Add(k);
             else
                 tempParent.sag = eklenecek;
         }
