@@ -11,6 +11,7 @@ namespace vyDonemProjesi
         private BaglıListe blEgitimDurumu;
         private IkiliArama ikiliArama;
         Kisi kisi;
+        public List<Kisi> doksanUstu = new List<Kisi>();
 
         public IsKontroller()
         {
@@ -35,14 +36,22 @@ namespace vyDonemProjesi
             return ikiliArama.DugumleriYazdir();
         }
 
+        public string ortListele()
+        {
+            string s = "";
+            foreach (var item in doksanUstu)
+            {
+                s += item.Ad + "" + item.egitimDurumu.ortalama.ToString() + " " + item.egitimDurumu.MezunOlunanOkul + Environment.NewLine;
+            }
+            return s;
+        }
         public void kisiEkle(Kisi kisi)
         {
+            if (kisi.egitimDurumu.ortalama > 90)
+                doksanUstu.Add(kisi);
             ikiliArama.Ekle(kisi);
         }
-        public string doksanUstu()
-        {
-            return ikiliArama.ortListele();
-        }
+        
         public İkiliAramaAgacDugumu kisiAra(string ad)
         {
             İkiliAramaAgacDugumu bstn = ikiliArama.Ara(ad);
