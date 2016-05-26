@@ -179,7 +179,6 @@
             this.lbilanBasvurulariListele = new System.Windows.Forms.ListBox();
             this.listKisi = new System.Windows.Forms.ListBox();
             this.listListeleme = new System.Windows.Forms.ListBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.txtList = new System.Windows.Forms.TextBox();
             this.btnListeleme = new System.Windows.Forms.Button();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
@@ -1677,14 +1676,6 @@
             this.listListeleme.Size = new System.Drawing.Size(336, 108);
             this.listListeleme.TabIndex = 28;
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(723, 139);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(175, 238);
-            this.listBox1.TabIndex = 29;
-            // 
             // txtList
             // 
             this.txtList.Location = new System.Drawing.Point(15, 22);
@@ -1713,7 +1704,7 @@
             this.groupBox15.Size = new System.Drawing.Size(366, 163);
             this.groupBox15.TabIndex = 31;
             this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "groupBox15";
+            this.groupBox15.Text = "Ağaç İşlemleri";
             // 
             // btnOrtalama
             // 
@@ -1765,7 +1756,6 @@
             this.Controls.Add(this.groupBox15);
             this.Controls.Add(this.btnPre);
             this.Controls.Add(this.btnIn);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.listKisi);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnIseBasvur);
@@ -1969,7 +1959,6 @@
         private System.Windows.Forms.ListBox lbilanBasvurulariListele;
         private System.Windows.Forms.ListBox listKisi;
         private System.Windows.Forms.ListBox listListeleme;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox txtList;
         private System.Windows.Forms.Button btnListeleme;
         private System.Windows.Forms.GroupBox groupBox15;

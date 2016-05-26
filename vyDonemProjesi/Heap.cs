@@ -43,11 +43,11 @@ namespace vyDonemProjesi
             }
             heapArray[index] = bottom;
         }
-        public HeapDugumu RemoveMax()
+        public HeapDugumu Remove(int index) // ilana başvuran kişiyi heapten siliyoruz
         {
-            HeapDugumu root = heapArray[0];
-            heapArray[0] = heapArray[--currentSize];
-            MoveToDown(0);
+            HeapDugumu root = heapArray[index];
+            heapArray[index] = heapArray[--currentSize];
+            MoveToDown(index);
             return root;
         }
         public void MoveToDown(int index)
@@ -84,6 +84,19 @@ namespace vyDonemProjesi
                 }
             }
             return kontrol;
+        }
+        public void kisiSil(string kisiAd)
+        {
+            int m;
+            for (m = 0; m < currentSize; m++)
+            {
+                if (heapArray[m] != null)
+                {
+                    if (kisiAd == heapArray[m].Deger.Ad)
+                        break;
+                }
+            }
+            Remove(m);
         }
     }
 }

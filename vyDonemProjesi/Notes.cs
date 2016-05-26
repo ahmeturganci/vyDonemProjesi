@@ -29,6 +29,7 @@ namespace vyDonemProjesi
      *  sistem genel olarak çalışıyor işe tekrar başvurmama biraz daha geliştirilecek testlerde eksik olursa duruma göre düzeltilecek...
      *  işe tekrar başvurmama düzeltildi
      *  uygun kişiyi şirket kadrosuna dahil etme eklenecek...
+     *  uygun kişinin bilgileri ekrana yazıldı listbox ve heapten silindi
      */
     }
 }

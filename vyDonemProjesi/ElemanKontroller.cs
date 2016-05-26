@@ -44,10 +44,13 @@ namespace vyDonemProjesi
             sirket.isIlani = new IsIlani();
             sirket.isIlani.isTanimi = isTanimi;
             sirket.isIlani.arananOzellikler = arananOzellikler;
-            sirket.tamAdres = this.sirket.tamAdres;
-            sirket.Telefon = this.sirket.Telefon;
-            sirket.Faks = this.sirket.Faks;
-            sirket.Telefon = this.sirket.Telefon;
+            if (this.sirket != null)
+            {
+                sirket.tamAdres = this.sirket.tamAdres;
+                sirket.Telefon = this.sirket.Telefon;
+                sirket.Faks = this.sirket.Faks;
+                sirket.Telefon = this.sirket.Telefon;
+            }
             hash.Add(ilanNo, sirket);
             ilanNo++;
         }
@@ -89,6 +92,14 @@ namespace vyDonemProjesi
                 hd = ilan.isIlani.heap.heapArray;
 
             return hd;
+        }
+        public void iseAl(int ilanNo,string kisiAd)
+        {
+            Sirket ilan = getSirket();
+            ilan = hash.isIlaniGetir(ilanNo);
+
+            if (ilan != null)
+                ilan.isIlani.heap.kisiSil(kisiAd);
         }
     }
 }

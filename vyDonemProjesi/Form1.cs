@@ -20,6 +20,8 @@ namespace vyDonemProjesi
         Kisi mehmet = new Kisi();
         Kisi kamil = new Kisi();
         Kisi nuri = new Kisi();
+
+        int ilanNo;
         public void textTemizle(Control clt)
         {
             foreach (Control item in clt.Controls)
@@ -174,9 +176,8 @@ namespace vyDonemProjesi
 
         private void btnIseBasvur_Click(object sender, EventArgs e)
         {
-            int ilanNo = listIsIlanlari.SelectedIndex; //ilk değer 0 = 100
+            ilanNo = listIsIlanlari.SelectedIndex; //ilk değer 0 = 100
             ilanNo += 100;
-            MessageBox.Show(ilanNo.ToString());
             Sirket s = ek.isIlaniGetirCast(ilanNo);
             if (kisi == null)
                 MessageBox.Show("Kişi seçmediniz.");
@@ -196,7 +197,7 @@ namespace vyDonemProjesi
                 for (int j = 0; j < hd.Length; j++)
                 {
                     if (hd[j] != null)
-                        lbilanBasvurulariListele.Items.Add(i + " " + hd[j].Deger.Ad + " " + hd[j].Deger.iseUygunluk);
+                        lbilanBasvurulariListele.Items.Add(hd[j].Deger.Ad + " " + hd[j].Deger.iseUygunluk);
                 }
             }
         }
@@ -207,10 +208,7 @@ namespace vyDonemProjesi
             Kisi kisi = new Kisi();
             kisi = (Kisi)bstn.veri;
             if (kisi != null)
-            {
                 this.kisi = kisi;
-                MessageBox.Show(kisi.Ad);
-            }
             else
                 MessageBox.Show("Kişi seçilemedi.");
         }
@@ -218,7 +216,8 @@ namespace vyDonemProjesi
         private void listKisi_SelectedIndexChanged(object sender, EventArgs e)
         {
             kisi = null;
-            kisiTakas();
+            if (listKisi.SelectedIndex != -1)
+                kisiTakas();
         }
 
         private void btnListeleme_Click(object sender, EventArgs e)
@@ -236,11 +235,8 @@ namespace vyDonemProjesi
 
         private void btnOrtalama_Click(object sender, EventArgs e)
         {
-
             listListeleme.Items.Clear();
             listListeleme.Items.Add(ik.ortListele());
-
-
         }
 
         private void btnIseAl_Click(object sender, EventArgs e)
@@ -248,7 +244,16 @@ namespace vyDonemProjesi
             string s = lbilanBasvurulariListele.GetItemText(lbilanBasvurulariListele.SelectedItem);
             //string parse edilip heap sınıfı içersinde remove edilecek ek olarak ilgili şirketin eleman kadrosuna dahil edilecek...
             //şimdilik 
+            string[] ad = s.Split(' ');
+            string kisiAd = "";
+            foreach (string i in ad)
+            {
+                kisiAd = i;
+                break;
+            }
+            ek.iseAl(ilanNo, kisiAd);
             MessageBox.Show(s + "\nİşe alındınız.");
+
             lbilanBasvurulariListele.Items.Remove(lbilanBasvurulariListele.SelectedItem);
         }
 
