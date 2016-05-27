@@ -241,6 +241,7 @@ namespace vyDonemProjesi
         private void btnOrtalama_Click(object sender, EventArgs e)
         {
             listListeleme.Items.Clear();
+            listListeleme.Items.Add(ik.ortalamaListele());
         }
 
         private void btnIseAl_Click(object sender, EventArgs e)

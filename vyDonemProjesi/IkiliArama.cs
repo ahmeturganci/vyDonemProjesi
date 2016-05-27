@@ -82,6 +82,19 @@ namespace vyDonemProjesi
             IngilizceBilenlerInt(dugum.sol);
             IngilizceBilenlerInt(dugum.sag);
         }
+        public void OrtalamaListele()
+        {
+            dugumler = "";
+            OrtalamaListeleInt(kok);
+        }
+        private void OrtalamaListeleInt(İkiliAramaAgacDugumu dugum)
+        {
+            if (dugum == null)
+                return;
+            ZiyaretOrtalama(dugum);
+            OrtalamaListeleInt(dugum.sol);
+            OrtalamaListeleInt(dugum.sag);
+        }
         public void PreOrder()
         {
             dugumler = "";
@@ -115,6 +128,11 @@ namespace vyDonemProjesi
         private void ZiyaretIngilizce(İkiliAramaAgacDugumu dugum)
         {
             if (dugum.veri.YabanciDil == "ingilizce")
+                dugumler += dugum.veri.Ad + " " + dugum.veri.Adres + "" + dugum.veri.DogumTarihi + " " + dugum.veri.DogumYeri + " " + dugum.veri.egitimDurumu.MezunOlunanOkul + " " + dugum.veri.egitimDurumu.ortalama.ToString() + " " + dugum.veri.isYeri.Adi + " " + dugum.veri.isYeri.Gorev + Environment.NewLine;
+        }
+        private void ZiyaretOrtalama(İkiliAramaAgacDugumu dugum)
+        {
+            if (dugum.veri.egitimDurumu.ortalama > 89)
                 dugumler += dugum.veri.Ad + " " + dugum.veri.Adres + "" + dugum.veri.DogumTarihi + " " + dugum.veri.DogumYeri + " " + dugum.veri.egitimDurumu.MezunOlunanOkul + " " + dugum.veri.egitimDurumu.ortalama.ToString() + " " + dugum.veri.isYeri.Adi + " " + dugum.veri.isYeri.Gorev + Environment.NewLine;
         }
         public void PostOrder()

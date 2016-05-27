@@ -31,7 +31,8 @@ namespace vyDonemProjesi
          *  uygun kişiyi şirket kadrosuna dahil etme eklenecek...
          *  uygun kişinin bilgileri ekrana yazıldı listbox ve heapten silindi
          *  ingilizce eklendi
-         *  ortalama ve kullanıcı silindiğinde iş başvurusu yaptıysa ordan da silmeyi ekleyecez..
+         *  ortalama eklendi
+         *  kullanıcı silindiğinde iş başvurusu yaptıysa heap tarafında silmeyi ekleyecez.. (heap remove problemli)
          */
     }
 }

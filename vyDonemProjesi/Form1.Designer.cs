@@ -1826,7 +1826,7 @@
             this.btnOrtalama.Name = "btnOrtalama";
             this.btnOrtalama.Size = new System.Drawing.Size(120, 26);
             this.btnOrtalama.TabIndex = 32;
-            this.btnOrtalama.Text = "Ort. Göre Sırala";
+            this.btnOrtalama.Text = "Ort. Göre Listele";
             this.btnOrtalama.UseVisualStyleBackColor = true;
             this.btnOrtalama.Click += new System.EventHandler(this.btnOrtalama_Click);
             // 

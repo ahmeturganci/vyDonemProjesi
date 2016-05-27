@@ -39,6 +39,11 @@ namespace vyDonemProjesi
             ikiliArama.IngilizceBilenler();
             return (ikiliArama.DugumleriYazdir());
         }
+        public string ortalamaListele()
+        {
+            ikiliArama.OrtalamaListele();
+            return (ikiliArama.DugumleriYazdir());
+        }
         public void kisiEkle(Kisi kisi)
         {
             ikiliArama.Ekle(kisi);
