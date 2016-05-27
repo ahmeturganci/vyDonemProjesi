@@ -18,10 +18,6 @@ namespace vyDonemProjesi
         {
             if (!heap.basvuruKontrol(kisi))
             {
-                //Kisi k = new Kisi();
-                //k = kisi;
-                //k.iseUygunluk = uygunluk;
-                //heap.Insert(k);
                 double uygunluk = GetRandomNumber(0.0, 10.0);
                 kisi.iseUygunluk = uygunluk;
                 heap.Insert(kisi);

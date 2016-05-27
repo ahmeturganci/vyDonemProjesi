@@ -11,7 +11,6 @@ namespace vyDonemProjesi
         private BaglıListe blEgitimDurumu;
         private IkiliArama ikiliArama;
         Kisi kisi;
-        public List<Kisi> doksanUstu = new List<Kisi>();
 
         public IsKontroller()
         {
@@ -35,23 +34,16 @@ namespace vyDonemProjesi
             ikiliArama.PostOrder();
             return ikiliArama.DugumleriYazdir();
         }
-
-        public string ortListele()
+        public string ingilizceBilenler()
         {
-            string s = "";
-            foreach (var item in doksanUstu)
-            {
-                s += item.Ad + "" + item.egitimDurumu.ortalama.ToString() + " " + item.egitimDurumu.MezunOlunanOkul + Environment.NewLine;
-            }
-            return s;
+            ikiliArama.IngilizceBilenler();
+            return (ikiliArama.DugumleriYazdir());
         }
         public void kisiEkle(Kisi kisi)
         {
-            if (kisi.egitimDurumu.ortalama > 90)
-                doksanUstu.Add(kisi);
             ikiliArama.Ekle(kisi);
         }
-        
+
         public İkiliAramaAgacDugumu kisiAra(string ad)
         {
             İkiliAramaAgacDugumu bstn = ikiliArama.Ara(ad);
@@ -63,6 +55,7 @@ namespace vyDonemProjesi
         }
         public void blIsyeriEkle(IsYeri iy)
         {
+            iy = new IsYeri();
             if (blIsyeri.Head == null)
                 blIsyeri.InsertFirst(iy);
             else
@@ -70,6 +63,7 @@ namespace vyDonemProjesi
         }
         public void blEgitimEkle(EgitimDurumu ed)
         {
+            ed = new EgitimDurumu();
             if (blEgitimDurumu.Head == null)
                 blEgitimDurumu.InsertFirst(ed);
             else
@@ -112,6 +106,18 @@ namespace vyDonemProjesi
         public void kisiListele()
         {
             ikiliArama.PostOrder();
+        }
+        public bool kisiSil(İkiliAramaAgacDugumu kisi)
+        {
+            return (ikiliArama.Sil(kisi));
+        }
+        public int dugumSayisi()
+        {
+            return (ikiliArama.DugumSayisi());
+        }
+        public int derinlikSayisi()
+        {
+            return (ikiliArama.Derinlik());
         }
     }
 }

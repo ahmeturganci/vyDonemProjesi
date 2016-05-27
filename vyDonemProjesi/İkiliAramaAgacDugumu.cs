@@ -7,14 +7,14 @@ namespace vyDonemProjesi
 {
     public class İkiliAramaAgacDugumu
     {
-        public object veri;
+        public Kisi veri;
         public İkiliAramaAgacDugumu sol;
         public İkiliAramaAgacDugumu sag;
         public İkiliAramaAgacDugumu()
         {
         }
 
-        public İkiliAramaAgacDugumu(object veri)
+        public İkiliAramaAgacDugumu(Kisi veri)
         {
             this.veri = veri;
             sol = null;

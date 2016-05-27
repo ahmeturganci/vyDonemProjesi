@@ -129,6 +129,10 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.btnKisiSil = new System.Windows.Forms.Button();
+            this.label57 = new System.Windows.Forms.Label();
+            this.txtKisiAdiSil = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -182,10 +186,13 @@
             this.txtList = new System.Windows.Forms.TextBox();
             this.btnListeleme = new System.Windows.Forms.Button();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.btnOrtalama = new System.Windows.Forms.Button();
+            this.btnIngBilenler = new System.Windows.Forms.Button();
+            this.btnDerinlik = new System.Windows.Forms.Button();
+            this.btnDugumSayisi = new System.Windows.Forms.Button();
+            this.btnPost = new System.Windows.Forms.Button();
             this.btnPre = new System.Windows.Forms.Button();
             this.btnIn = new System.Windows.Forms.Button();
-            this.btnPost = new System.Windows.Forms.Button();
+            this.btnOrtalama = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -199,6 +206,7 @@
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage9.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -216,9 +224,9 @@
             // 
             // btnIseBasvur
             // 
-            this.btnIseBasvur.Location = new System.Drawing.Point(642, 381);
+            this.btnIseBasvur.Location = new System.Drawing.Point(626, 419);
             this.btnIseBasvur.Name = "btnIseBasvur";
-            this.btnIseBasvur.Size = new System.Drawing.Size(75, 23);
+            this.btnIseBasvur.Size = new System.Drawing.Size(91, 23);
             this.btnIseBasvur.TabIndex = 25;
             this.btnIseBasvur.Text = "Başvur";
             this.btnIseBasvur.UseVisualStyleBackColor = true;
@@ -229,7 +237,7 @@
             this.listIsIlanlari.FormattingEnabled = true;
             this.listIsIlanlari.Location = new System.Drawing.Point(492, 20);
             this.listIsIlanlari.Name = "listIsIlanlari";
-            this.listIsIlanlari.Size = new System.Drawing.Size(225, 355);
+            this.listIsIlanlari.Size = new System.Drawing.Size(225, 394);
             this.listIsIlanlari.TabIndex = 24;
             // 
             // groupBox2
@@ -1158,6 +1166,7 @@
             // 
             this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Controls.Add(this.tabPage9);
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
@@ -1185,6 +1194,45 @@
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Güncelle";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(this.btnKisiSil);
+            this.tabPage9.Controls.Add(this.label57);
+            this.tabPage9.Controls.Add(this.txtKisiAdiSil);
+            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(460, 382);
+            this.tabPage9.TabIndex = 2;
+            this.tabPage9.Text = "Silme";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // btnKisiSil
+            // 
+            this.btnKisiSil.Location = new System.Drawing.Point(211, 22);
+            this.btnKisiSil.Name = "btnKisiSil";
+            this.btnKisiSil.Size = new System.Drawing.Size(75, 23);
+            this.btnKisiSil.TabIndex = 2;
+            this.btnKisiSil.Text = "Sil";
+            this.btnKisiSil.UseVisualStyleBackColor = true;
+            this.btnKisiSil.Click += new System.EventHandler(this.btnKisiSil_Click);
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(6, 27);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(41, 13);
+            this.label57.TabIndex = 1;
+            this.label57.Text = "Kişi Adı";
+            // 
+            // txtKisiAdiSil
+            // 
+            this.txtKisiAdiSil.Location = new System.Drawing.Point(64, 24);
+            this.txtKisiAdiSil.Name = "txtKisiAdiSil";
+            this.txtKisiAdiSil.Size = new System.Drawing.Size(131, 20);
+            this.txtKisiAdiSil.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -1673,7 +1721,7 @@
             this.listListeleme.FormattingEnabled = true;
             this.listListeleme.Location = new System.Drawing.Point(15, 48);
             this.listListeleme.Name = "listListeleme";
-            this.listListeleme.Size = new System.Drawing.Size(336, 108);
+            this.listListeleme.Size = new System.Drawing.Size(520, 108);
             this.listListeleme.TabIndex = 28;
             // 
             // txtList
@@ -1689,73 +1737,106 @@
             this.btnListeleme.Name = "btnListeleme";
             this.btnListeleme.Size = new System.Drawing.Size(104, 23);
             this.btnListeleme.TabIndex = 30;
-            this.btnListeleme.Text = "Kisi Bilgileri Gerit";
+            this.btnListeleme.Text = "Kisi Bilgileri Getir";
             this.btnListeleme.UseVisualStyleBackColor = true;
             this.btnListeleme.Click += new System.EventHandler(this.btnListeleme_Click);
             // 
             // groupBox15
             // 
+            this.groupBox15.Controls.Add(this.btnIngBilenler);
+            this.groupBox15.Controls.Add(this.btnDerinlik);
+            this.groupBox15.Controls.Add(this.btnDugumSayisi);
+            this.groupBox15.Controls.Add(this.btnPost);
+            this.groupBox15.Controls.Add(this.btnPre);
+            this.groupBox15.Controls.Add(this.btnIn);
             this.groupBox15.Controls.Add(this.btnOrtalama);
             this.groupBox15.Controls.Add(this.listListeleme);
             this.groupBox15.Controls.Add(this.btnListeleme);
             this.groupBox15.Controls.Add(this.txtList);
-            this.groupBox15.Location = new System.Drawing.Point(492, 432);
+            this.groupBox15.Location = new System.Drawing.Point(723, 12);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(366, 163);
+            this.groupBox15.Size = new System.Drawing.Size(541, 240);
             this.groupBox15.TabIndex = 31;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Ağaç İşlemleri";
             // 
-            // btnOrtalama
+            // btnIngBilenler
             // 
-            this.btnOrtalama.Location = new System.Drawing.Point(231, 20);
-            this.btnOrtalama.Name = "btnOrtalama";
-            this.btnOrtalama.Size = new System.Drawing.Size(120, 23);
-            this.btnOrtalama.TabIndex = 32;
-            this.btnOrtalama.Text = "Ortalamya göre sırala";
-            this.btnOrtalama.UseVisualStyleBackColor = true;
-            this.btnOrtalama.Click += new System.EventHandler(this.btnOrtalama_Click);
+            this.btnIngBilenler.Location = new System.Drawing.Point(25, 201);
+            this.btnIngBilenler.Name = "btnIngBilenler";
+            this.btnIngBilenler.Size = new System.Drawing.Size(75, 26);
+            this.btnIngBilenler.TabIndex = 43;
+            this.btnIngBilenler.Text = "Ing. Bilenler";
+            this.btnIngBilenler.UseVisualStyleBackColor = true;
+            this.btnIngBilenler.Click += new System.EventHandler(this.btnIngBilenler_Click);
+            // 
+            // btnDerinlik
+            // 
+            this.btnDerinlik.Location = new System.Drawing.Point(326, 169);
+            this.btnDerinlik.Name = "btnDerinlik";
+            this.btnDerinlik.Size = new System.Drawing.Size(75, 26);
+            this.btnDerinlik.TabIndex = 42;
+            this.btnDerinlik.Text = "Derinlik";
+            this.btnDerinlik.UseVisualStyleBackColor = true;
+            this.btnDerinlik.Click += new System.EventHandler(this.btnDerinlik_Click);
+            // 
+            // btnDugumSayisi
+            // 
+            this.btnDugumSayisi.Location = new System.Drawing.Point(245, 169);
+            this.btnDugumSayisi.Name = "btnDugumSayisi";
+            this.btnDugumSayisi.Size = new System.Drawing.Size(75, 26);
+            this.btnDugumSayisi.TabIndex = 41;
+            this.btnDugumSayisi.Text = "Düğüm";
+            this.btnDugumSayisi.UseVisualStyleBackColor = true;
+            this.btnDugumSayisi.Click += new System.EventHandler(this.btnDugumSayisi_Click);
+            // 
+            // btnPost
+            // 
+            this.btnPost.Location = new System.Drawing.Point(25, 169);
+            this.btnPost.Name = "btnPost";
+            this.btnPost.Size = new System.Drawing.Size(66, 26);
+            this.btnPost.TabIndex = 40;
+            this.btnPost.Text = "PostOrder";
+            this.btnPost.UseVisualStyleBackColor = true;
+            this.btnPost.Click += new System.EventHandler(this.btnPost_Click);
             // 
             // btnPre
             // 
-            this.btnPre.Location = new System.Drawing.Point(674, 601);
+            this.btnPre.Location = new System.Drawing.Point(166, 169);
             this.btnPre.Name = "btnPre";
-            this.btnPre.Size = new System.Drawing.Size(55, 26);
-            this.btnPre.TabIndex = 33;
+            this.btnPre.Size = new System.Drawing.Size(73, 26);
+            this.btnPre.TabIndex = 38;
             this.btnPre.Text = "PreOrder";
             this.btnPre.UseVisualStyleBackColor = true;
             this.btnPre.Click += new System.EventHandler(this.btnPre_Click);
             // 
             // btnIn
             // 
-            this.btnIn.Location = new System.Drawing.Point(613, 601);
+            this.btnIn.Location = new System.Drawing.Point(97, 169);
             this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(55, 26);
-            this.btnIn.TabIndex = 34;
+            this.btnIn.Size = new System.Drawing.Size(63, 26);
+            this.btnIn.TabIndex = 39;
             this.btnIn.Text = "InOrder";
             this.btnIn.UseVisualStyleBackColor = true;
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
-            // btnPost
+            // btnOrtalama
             // 
-            this.btnPost.Location = new System.Drawing.Point(552, 601);
-            this.btnPost.Name = "btnPost";
-            this.btnPost.Size = new System.Drawing.Size(55, 26);
-            this.btnPost.TabIndex = 35;
-            this.btnPost.Text = "PostOrder";
-            this.btnPost.UseVisualStyleBackColor = true;
-            this.btnPost.Click += new System.EventHandler(this.btnPost_Click);
+            this.btnOrtalama.Location = new System.Drawing.Point(407, 169);
+            this.btnOrtalama.Name = "btnOrtalama";
+            this.btnOrtalama.Size = new System.Drawing.Size(120, 26);
+            this.btnOrtalama.TabIndex = 32;
+            this.btnOrtalama.Text = "Ort. Göre Sırala";
+            this.btnOrtalama.UseVisualStyleBackColor = true;
+            this.btnOrtalama.Click += new System.EventHandler(this.btnOrtalama_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(910, 678);
-            this.Controls.Add(this.btnPost);
+            this.ClientSize = new System.Drawing.Size(1276, 678);
             this.Controls.Add(this.groupBox15);
-            this.Controls.Add(this.btnPre);
-            this.Controls.Add(this.btnIn);
             this.Controls.Add(this.listKisi);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnIseBasvur);
@@ -1784,6 +1865,8 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
@@ -1963,9 +2046,16 @@
         private System.Windows.Forms.Button btnListeleme;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.Button btnOrtalama;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.Button btnKisiSil;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.TextBox txtKisiAdiSil;
+        private System.Windows.Forms.Button btnDerinlik;
+        private System.Windows.Forms.Button btnDugumSayisi;
         private System.Windows.Forms.Button btnPost;
         private System.Windows.Forms.Button btnPre;
         private System.Windows.Forms.Button btnIn;
+        private System.Windows.Forms.Button btnIngBilenler;
 
     }
 }

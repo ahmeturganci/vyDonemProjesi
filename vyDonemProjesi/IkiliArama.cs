@@ -9,7 +9,6 @@ namespace vyDonemProjesi
     {
         private İkiliAramaAgacDugumu kok;
         private string dugumler;
-        private List<Kisi> doksanUstu = new List<Kisi>();
         public IkiliArama()
         {
         }
@@ -17,20 +16,11 @@ namespace vyDonemProjesi
         {
             this.kok = kok;
         }
-        public string ortListele()
-        {
-            string s = "";
-            foreach (var item in doksanUstu)
-            {
-                s += item.Ad + "" + item.egitimDurumu.ortalama.ToString() + " " + item.egitimDurumu.MezunOlunanOkul + Environment.NewLine;
-            }
-            return s;
-        }
         public int DugumSayisi()
         {
             return DugumSayisi(kok);
         }
-        public int DugumSayisi(İkiliAramaAgacDugumu dugum)
+        private int DugumSayisi(İkiliAramaAgacDugumu dugum)
         {
             int count = 0;
             if (dugum != null)
@@ -44,7 +34,7 @@ namespace vyDonemProjesi
         {
             return YaprakSayisi(kok);
         }
-        public int YaprakSayisi(İkiliAramaAgacDugumu dugum)
+        private int YaprakSayisi(İkiliAramaAgacDugumu dugum)
         {
             int count = 0;
             if (dugum != null)
@@ -56,11 +46,41 @@ namespace vyDonemProjesi
             }
             return count;
         }
-
+        public int Derinlik()
+        {
+            return (Derinlik(kok));
+        }
+        private int Derinlik(İkiliAramaAgacDugumu kok)
+        {
+            if (kok == null)
+                return 0;
+            else
+            {
+                int solDerinlik = Derinlik(kok.sol);
+                int sagDerinlik = Derinlik(kok.sag);
+                if (solDerinlik > sagDerinlik)
+                    return (solDerinlik + 1);
+                else
+                    return (sagDerinlik + 1);
+            }
+        }
 
         public string DugumleriYazdir()
         {
             return dugumler;
+        }
+        public void IngilizceBilenler()
+        {
+            dugumler = "";
+            IngilizceBilenlerInt(kok);
+        }
+        private void IngilizceBilenlerInt(İkiliAramaAgacDugumu dugum)
+        {
+            if (dugum == null)
+                return;
+            ZiyaretIngilizce(dugum);
+            IngilizceBilenlerInt(dugum.sol);
+            IngilizceBilenlerInt(dugum.sag);
         }
         public void PreOrder()
         {
@@ -90,8 +110,12 @@ namespace vyDonemProjesi
         }
         private void Ziyaret(İkiliAramaAgacDugumu dugum)
         {
-            Kisi k = (Kisi)dugum.veri;
-            dugumler += k.Ad + " " + k.Adres + "" + k.DogumTarihi + " " + k.DogumYeri + " " + k.egitimDurumu.MezunOlunanOkul + " " + k.egitimDurumu.ortalama.ToString() + " " + k.isYeri.Adi + " " + k.isYeri.Gorev + "\n";
+            dugumler += dugum.veri.Ad + " " + dugum.veri.Adres + "" + dugum.veri.DogumTarihi + " " + dugum.veri.DogumYeri + " " + dugum.veri.egitimDurumu.MezunOlunanOkul + " " + dugum.veri.egitimDurumu.ortalama.ToString() + " " + dugum.veri.isYeri.Adi + " " + dugum.veri.isYeri.Gorev + Environment.NewLine;
+        }
+        private void ZiyaretIngilizce(İkiliAramaAgacDugumu dugum)
+        {
+            if (dugum.veri.YabanciDil == "ingilizce")
+                dugumler += dugum.veri.Ad + " " + dugum.veri.Adres + "" + dugum.veri.DogumTarihi + " " + dugum.veri.DogumYeri + " " + dugum.veri.egitimDurumu.MezunOlunanOkul + " " + dugum.veri.egitimDurumu.ortalama.ToString() + " " + dugum.veri.isYeri.Adi + " " + dugum.veri.isYeri.Gorev + Environment.NewLine;
         }
         public void PostOrder()
         {
@@ -106,21 +130,16 @@ namespace vyDonemProjesi
             PostOrderInt(dugum.sag);
             Ziyaret(dugum);
         }
-        public void Ekle(object deger)
+        public void Ekle(Kisi deger)
         {
             İkiliAramaAgacDugumu tempParent = new İkiliAramaAgacDugumu();
             İkiliAramaAgacDugumu tempSearch = kok;
-            Kisi k = new Kisi();
-            Kisi k2 = new Kisi();
             while (tempSearch != null)
             {
                 tempParent = tempSearch;
-                k = (Kisi)deger;
-                k2 = (Kisi)tempSearch.veri;
-
-                if (string.Compare(k.Ad, k2.Ad) == 0)
+                if (string.Compare(deger.Ad, tempSearch.veri.Ad) == 0)
                     return;
-                else if (string.Compare(k.Ad, k2.Ad) < 0)
+                else if (string.Compare(deger.Ad, tempSearch.veri.Ad) < 0)
                     tempSearch = tempSearch.sol;
 
                 else
@@ -129,7 +148,7 @@ namespace vyDonemProjesi
             İkiliAramaAgacDugumu eklenecek = new İkiliAramaAgacDugumu(deger);
             if (kok == null)
                 kok = eklenecek;
-            else if (k.Ad.CompareTo(k2.Ad) < 0)
+            else if (deger.Ad.CompareTo(tempParent.veri.Ad) < 0)
                 tempParent.sol = eklenecek;
             else
                 tempParent.sag = eklenecek;
@@ -154,6 +173,89 @@ namespace vyDonemProjesi
                 else
                     return (AraInt(dugum.sag, anahtarAd));
             }
+        }
+        private İkiliAramaAgacDugumu Successor(İkiliAramaAgacDugumu silDugum)
+        {
+            İkiliAramaAgacDugumu successorParent = silDugum;
+            İkiliAramaAgacDugumu successor = silDugum;
+            İkiliAramaAgacDugumu current = silDugum.sag;
+            while (current != null)
+            {
+                successorParent = successor;
+                successor = current;
+                current = current.sol;
+            }
+            if (successor != silDugum.sag)
+            {
+                successorParent.sol = successor.sag;
+                successor.sag = silDugum.sag;
+            }
+            return successor;
+        }
+        public bool Sil(İkiliAramaAgacDugumu deger)
+        {
+            İkiliAramaAgacDugumu current = kok;
+            İkiliAramaAgacDugumu parent = kok;
+            bool issol = true;
+            //DÜĞÜMÜ BUL
+            while ((current.veri.Ad.CompareTo(deger.veri.Ad) != 0))
+            {
+                parent = current;
+                if (deger.veri.Ad.CompareTo(current.veri.Ad) < 0)
+                {
+                    issol = true;
+                    current = current.sol;
+                }
+                else
+                {
+                    issol = false;
+                    current = current.sag;
+                }
+                if (current == null)
+                    return false;
+            }
+            //DURUM 1: YAPRAK DÜĞÜM
+            if (current.sol == null && current.sag == null)
+            {
+                if (current == kok)
+                    kok = null;
+                else if (issol)
+                    parent.sol = null;
+                else
+                    parent.sag = null;
+            }
+            //DURUM 2: TEK ÇOCUKLU DÜĞÜM
+            else if (current.sag == null)
+            {
+                if (current == kok)
+                    kok = current.sol;
+                else if (issol)
+                    parent.sol = current.sol;
+                else
+                    parent.sag = current.sol;
+            }
+            else if (current.sol == null)
+            {
+                if (current == kok)
+                    kok = current.sag;
+                else if (issol)
+                    parent.sol = current.sag;
+                else
+                    parent.sag = current.sag;
+            }
+            //DURUM 3: İKİ ÇOCUKLU DÜĞÜM
+            else
+            {
+                İkiliAramaAgacDugumu successor = Successor(current);
+                if (current == kok)
+                    kok = successor;
+                else if (issol)
+                    parent.sol = successor;
+                else
+                    parent.sag = successor;
+                successor.sol = current.sol;
+            }
+            return true;
         }
     }
 }

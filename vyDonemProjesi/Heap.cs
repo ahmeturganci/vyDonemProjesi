@@ -69,6 +69,19 @@ namespace vyDonemProjesi
             }
             heapArray[index] = top;
         }
+        //public void kisiBasvuruKontrol(string eskiKisiAdi, Kisi yeniKisi)
+        //{
+        //    for (int m = 0; m < currentSize; m++)
+        //    {
+        //        if (heapArray[m] != null)
+        //        {
+        //            if (eskiKisiAdi == heapArray[m].Deger.Ad)
+        //            {
+        //                heapArray[m].Deger = yeniKisi;
+        //            }
+        //        }
+        //    }
+        //}
         public bool basvuruKontrol(Kisi kisi)
         {
             bool kontrol = false;

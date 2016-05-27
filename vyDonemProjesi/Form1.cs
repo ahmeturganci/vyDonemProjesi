@@ -22,6 +22,7 @@ namespace vyDonemProjesi
         Kisi nuri = new Kisi();
 
         int ilanNo;
+        string eskiKisiAdi = "";
         public void textTemizle(Control clt)
         {
             foreach (Control item in clt.Controls)
@@ -52,6 +53,7 @@ namespace vyDonemProjesi
             kisi.MedeniDurum = txtMedeniDurum.Text;
             kisi.IlgiAlanlari = txtIlgiAlani.Text;
             kisi.Referans = txtReferans.Text;
+            kisi.YabanciDil = txtYabanciDil.Text;
 
             kisi.egitimDurumu = new EgitimDurumu();
             kisi.egitimDurumu.BaslangicYil = txtBaslangic.Text;
@@ -65,10 +67,9 @@ namespace vyDonemProjesi
             kisi.isYeri.Adres = txtEskiAdres.Text;
             kisi.isYeri.Gorev = txtGorev.Text;
             kisi.isYeri.Pozisyon = txtPo.Text;
-
-            ik.kisiEkle(kisi);
             ik.blEgitimEkle(kisi.egitimDurumu);
             ik.blIsyeriEkle(kisi.isYeri);
+            ik.kisiEkle(kisi);
             MessageBox.Show("kayıt işlemi başarılı");
             textTemizle(this);//textboxları temizleme
             listKisi.Items.Add(kisi.Ad);
@@ -82,6 +83,7 @@ namespace vyDonemProjesi
             {
                 Kisi kisi = (Kisi)bstn.veri;
                 txtGad.Text = kisi.Ad;
+                eskiKisiAdi = kisi.Ad;
                 txtGadres.Text = kisi.Adres;
                 txtGmail.Text = kisi.Email;
                 txtGtel.Text = kisi.Telefon;
@@ -114,13 +116,17 @@ namespace vyDonemProjesi
         private void btnKisiGuncelle_Click(object sender, EventArgs e)
         {
             Kisi k = ik.getKisi(kisi);
+            İkiliAramaAgacDugumu bstn = ik.kisiAra(k.Ad);
+            ik.kisiSil(bstn);
             k.Ad = txtGad.Text;
             k.egitimDurumu = new EgitimDurumu();
             k.egitimDurumu.ortalama = Convert.ToDouble(txtGort.Text);
-            textTemizle(this);
-            ik.kisiGuncelle(k);
             ik.kisiEkle(k);
-            listKisi.Update();
+            //ek.kisiBasvuruGuncelle(eskiKisiAdi, k);
+            textTemizle(this);
+            listKisi.Items.Remove(eskiKisiAdi);
+            listKisi.Items.Add(k.Ad);
+            basvuruListele();
             MessageBox.Show("Güncelleme başarılı");
         }
         private void btnSirketEkle_Click(object sender, EventArgs e)
@@ -144,14 +150,12 @@ namespace vyDonemProjesi
 
         private void btnSirketGuncelle_Click(object sender, EventArgs e)
         {
-            //form textbox dolu boş kontrol eklenebilir..
             Sirket s = ek.getSirket();
             s.tamAdres = txtTamAdresGuncelle.Text;
             s.Telefon = txtTelefonGuncelle.Text;
             s.Faks = txtFaksGuncelle.Text;
             s.EPosta = txtEmailGuncelle.Text;
             ek.sirketGuncelle(s);
-
         }
 
         private void btnIlanVer_Click(object sender, EventArgs e)
@@ -229,14 +233,14 @@ namespace vyDonemProjesi
             else
             {
                 Kisi kisi = (Kisi)bstn.veri;
-                listListeleme.Items.Add(kisi.Ad + " " + kisi.Adres + " " + kisi.DogumTarihi + "" + kisi.DogumYeri + "" + kisi.egitimDurumu.Bolum);
+                string s = kisi.Ad + " " + kisi.Adres + " " + kisi.DogumTarihi + "" + kisi.DogumYeri + "" + kisi.egitimDurumu.Bolum;
+                listListeleme.Items.Add(s);
             }
         }
 
         private void btnOrtalama_Click(object sender, EventArgs e)
         {
             listListeleme.Items.Clear();
-            listListeleme.Items.Add(ik.ortListele());
         }
 
         private void btnIseAl_Click(object sender, EventArgs e)
@@ -273,6 +277,47 @@ namespace vyDonemProjesi
         {
             listListeleme.Items.Clear();
             listListeleme.Items.Add(ik.postOrderListeleme());
+        }
+
+        private void btnKisiSil_Click(object sender, EventArgs e)
+        {
+            string kisiAd = txtKisiAdiSil.Text;
+            İkiliAramaAgacDugumu bstn = ik.kisiAra(kisiAd);
+            if (bstn == null)
+                MessageBox.Show("Aranan kişi bulunamadı...");
+            else
+            {
+                if (ik.kisiSil(bstn))
+                {
+                    listKisi.Items.Remove(kisiAd);
+                    for (int i = 100; i < ek.ilanNo; i++)
+                    {
+                        ek.iseAl(i, kisiAd);
+                    }
+
+                    MessageBox.Show("Kişi siindi.");
+                }
+                else
+                    MessageBox.Show("Kişi silinemedi...");
+
+            }
+            basvuruListele();
+        }
+
+        private void btnDugumSayisi_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(ik.dugumSayisi().ToString());
+        }
+
+        private void btnDerinlik_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(ik.derinlikSayisi().ToString());
+        }
+
+        private void btnIngBilenler_Click(object sender, EventArgs e)
+        {
+            listListeleme.Items.Clear();
+            listListeleme.Items.Add(ik.ingilizceBilenler());
         }
     }
 }

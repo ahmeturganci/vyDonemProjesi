@@ -93,6 +93,18 @@ namespace vyDonemProjesi
 
             return hd;
         }
+        //public void kisiBasvuruGuncelle(string eskiKisiAdi, Kisi yeniKisi)
+        //{
+        //    Sirket ilan = getSirket();
+        //    for (int i = 100; i < this.ilanNo; i++)
+        //    {
+        //        ilan = hash.isIlaniGetir(i);
+        //        if (ilan != null)
+        //        {
+        //            ilan.isIlani.heap.kisiBasvuruKontrol(eskiKisiAdi, yeniKisi);
+        //        }
+        //    }
+        //}
         public void iseAl(int ilanNo,string kisiAd)
         {
             Sirket ilan = getSirket();
