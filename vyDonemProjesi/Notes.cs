@@ -33,6 +33,7 @@ namespace vyDonemProjesi
          *  ingilizce eklendi
          *  ortalama eklendi
          *  kullanıcı silindiğinde iş başvurusu yaptıysa heap tarafında silmeyi ekleyecez.. (heap remove problemli)
+         *  heap çözüldü
          */
     }
 }
