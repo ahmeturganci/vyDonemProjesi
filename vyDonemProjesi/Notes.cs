@@ -34,6 +34,7 @@ namespace vyDonemProjesi
          *  ortalama eklendi
          *  kullanıcı silindiğinde iş başvurusu yaptıysa heap tarafında silmeyi ekleyecez.. (heap remove problemli)
          *  heap çözüldü
+         *  ikiliağaç işlemleri listbox a sıralı biçiminde eklenme eklendi
          */
     }
 }

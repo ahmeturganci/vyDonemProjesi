@@ -16,11 +16,6 @@ namespace vyDonemProjesi
         IsKontroller ik = new IsKontroller();
         ElemanKontroller ek = new ElemanKontroller();
 
-        Kisi ahmet = new Kisi();
-        Kisi mehmet = new Kisi();
-        Kisi kamil = new Kisi();
-        Kisi nuri = new Kisi();
-
         int ilanNo;
         string eskiKisiAdi = "";
         public void textTemizle(Control clt)
@@ -115,17 +110,40 @@ namespace vyDonemProjesi
 
         private void btnKisiGuncelle_Click(object sender, EventArgs e)
         {
-            Kisi k = ik.getKisi(kisi);
-            İkiliAramaAgacDugumu bstn = ik.kisiAra(k.Ad);
+            Kisi kisi = new Kisi();
+            İkiliAramaAgacDugumu bstn = ik.kisiAra(eskiKisiAdi);
             ik.kisiSil(bstn);
-            k.Ad = txtGad.Text;
-            k.egitimDurumu = new EgitimDurumu();
-            k.egitimDurumu.ortalama = Convert.ToDouble(txtGort.Text);
-            ik.kisiEkle(k);
+            kisi.Ad = txtGad.Text;
+            kisi.Adres = txtGadres.Text;
+            kisi.Email = txtGmail.Text;
+            kisi.Telefon = txtGtel.Text;
+            kisi.Uyruk = txtGuyruk.Text;
+            kisi.DogumYeri = txtGdogumYeri.Text;
+            kisi.DogumTarihi = txtGdogumTarih.Text;
+            kisi.MedeniDurum = txtGmedeniDurum.Text;
+            kisi.IlgiAlanlari = txtGilgiAlani.Text;
+            kisi.Referans = txtGreferans.Text;
+            kisi.YabanciDil = txtGyabanciDil.Text;
+
+            kisi.egitimDurumu = new EgitimDurumu();
+            kisi.egitimDurumu.BaslangicYil = txtGbaslamaYili.Text;
+            kisi.egitimDurumu.BittisYil = txtGbitisYili.Text;
+            kisi.egitimDurumu.Bolum = txtGbolum.Text;
+            kisi.egitimDurumu.MezunOlunanOkul = txtGokul.Text;
+            kisi.egitimDurumu.ortalama = Convert.ToDouble(txtGort.Text);
+
+            kisi.isYeri = new IsYeri();
+            kisi.isYeri.Adi = txtGisyeriAdi.Text;
+            kisi.isYeri.Adres = txtGisAdres.Text;
+            kisi.isYeri.Gorev = txtGgorev.Text;
+            kisi.isYeri.Pozisyon = txtGpo.Text;
+            ik.blEgitimEkle(kisi.egitimDurumu);
+            ik.blIsyeriEkle(kisi.isYeri);
+            ik.kisiEkle(kisi);
             //ek.kisiBasvuruGuncelle(eskiKisiAdi, k);
             textTemizle(this);
             listKisi.Items.Remove(eskiKisiAdi);
-            listKisi.Items.Add(k.Ad);
+            listKisi.Items.Add(kisi.Ad);
             basvuruListele();
             MessageBox.Show("Güncelleme başarılı");
         }
@@ -232,8 +250,8 @@ namespace vyDonemProjesi
                 MessageBox.Show("Aranan kişi bulunamadı...");
             else
             {
-                Kisi kisi = (Kisi)bstn.veri;
-                string s = kisi.Ad + " " + kisi.Adres + " " + kisi.DogumTarihi + "" + kisi.DogumYeri + "" + kisi.egitimDurumu.Bolum;
+                Kisi kisi = bstn.veri;
+                string s = kisi.Ad + " " + kisi.Adres + " " + kisi.DogumTarihi + " " + kisi.DogumYeri + " " + kisi.egitimDurumu.Bolum + " " + kisi.YabanciDil;
                 listListeleme.Items.Add(s);
             }
         }
@@ -241,7 +259,12 @@ namespace vyDonemProjesi
         private void btnOrtalama_Click(object sender, EventArgs e)
         {
             listListeleme.Items.Clear();
-            listListeleme.Items.Add(ik.ortalamaListele());
+            string s = ik.ortalamaListele();
+            string[] str = s.Split('/');
+            foreach (string i in str)
+            {
+                listListeleme.Items.Add(i);
+            }
         }
 
         private void btnIseAl_Click(object sender, EventArgs e)
@@ -265,19 +288,34 @@ namespace vyDonemProjesi
         private void btnPre_Click(object sender, EventArgs e)
         {
             listListeleme.Items.Clear();
-            listListeleme.Items.Add(ik.preOrderListele());
+            string s = ik.preOrderListele();
+            string[] str = s.Split('/');
+            foreach (string i in str)
+            {
+                listListeleme.Items.Add(i);
+            }
         }
 
         private void btnIn_Click(object sender, EventArgs e)
         {
             listListeleme.Items.Clear();
-            listListeleme.Items.Add(ik.inOrderListeleme());
+            string s = ik.inOrderListeleme();
+            string[] str = s.Split('/');
+            foreach (string i in str)
+            {
+                listListeleme.Items.Add(i);
+            }
         }
 
         private void btnPost_Click(object sender, EventArgs e)
         {
             listListeleme.Items.Clear();
-            listListeleme.Items.Add(ik.postOrderListeleme());
+            string s = ik.postOrderListeleme();
+            string[] str = s.Split('/');
+            foreach (string i in str)
+            {
+                listListeleme.Items.Add(i);
+            }
         }
 
         private void btnKisiSil_Click(object sender, EventArgs e)
@@ -318,7 +356,13 @@ namespace vyDonemProjesi
         private void btnIngBilenler_Click(object sender, EventArgs e)
         {
             listListeleme.Items.Clear();
-            listListeleme.Items.Add(ik.ingilizceBilenler());
+            listListeleme.Items.Clear();
+            string s = ik.ingilizceBilenler();
+            string[] str = s.Split('/');
+            foreach (string i in str)
+            {
+                listListeleme.Items.Add(i);
+            }
         }
     }
 }

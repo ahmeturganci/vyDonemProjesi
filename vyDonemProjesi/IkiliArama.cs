@@ -123,17 +123,17 @@ namespace vyDonemProjesi
         }
         private void Ziyaret(İkiliAramaAgacDugumu dugum)
         {
-            dugumler += dugum.veri.Ad + " " + dugum.veri.Adres + "" + dugum.veri.DogumTarihi + " " + dugum.veri.DogumYeri + " " + dugum.veri.egitimDurumu.MezunOlunanOkul + " " + dugum.veri.egitimDurumu.ortalama.ToString() + " " + dugum.veri.isYeri.Adi + " " + dugum.veri.isYeri.Gorev + Environment.NewLine;
+            dugumler += dugum.veri.Ad + " " + dugum.veri.Adres + " " + dugum.veri.DogumTarihi + " " + dugum.veri.DogumYeri + " " + dugum.veri.egitimDurumu.MezunOlunanOkul + " " + dugum.veri.egitimDurumu.ortalama.ToString() + " " + dugum.veri.isYeri.Adi + " " + dugum.veri.isYeri.Gorev + "/";
         }
         private void ZiyaretIngilizce(İkiliAramaAgacDugumu dugum)
         {
             if (dugum.veri.YabanciDil == "ingilizce")
-                dugumler += dugum.veri.Ad + " " + dugum.veri.Adres + "" + dugum.veri.DogumTarihi + " " + dugum.veri.DogumYeri + " " + dugum.veri.egitimDurumu.MezunOlunanOkul + " " + dugum.veri.egitimDurumu.ortalama.ToString() + " " + dugum.veri.isYeri.Adi + " " + dugum.veri.isYeri.Gorev + Environment.NewLine;
+                dugumler += dugum.veri.Ad + " " + dugum.veri.Adres + " " + dugum.veri.DogumTarihi + " " + dugum.veri.DogumYeri + " " + dugum.veri.egitimDurumu.MezunOlunanOkul + " " + dugum.veri.egitimDurumu.ortalama.ToString() + " " + dugum.veri.isYeri.Adi + " " + dugum.veri.isYeri.Gorev + "/";
         }
         private void ZiyaretOrtalama(İkiliAramaAgacDugumu dugum)
         {
             if (dugum.veri.egitimDurumu.ortalama > 89)
-                dugumler += dugum.veri.Ad + " " + dugum.veri.Adres + "" + dugum.veri.DogumTarihi + " " + dugum.veri.DogumYeri + " " + dugum.veri.egitimDurumu.MezunOlunanOkul + " " + dugum.veri.egitimDurumu.ortalama.ToString() + " " + dugum.veri.isYeri.Adi + " " + dugum.veri.isYeri.Gorev + Environment.NewLine;
+                dugumler += dugum.veri.Ad + " " + dugum.veri.Adres + " " + dugum.veri.DogumTarihi + " " + dugum.veri.DogumYeri + " " + dugum.veri.egitimDurumu.MezunOlunanOkul + " " + dugum.veri.egitimDurumu.ortalama.ToString() + " " + dugum.veri.isYeri.Adi + " " + dugum.veri.isYeri.Gorev + "/";
         }
         public void PostOrder()
         {
