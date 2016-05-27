@@ -198,7 +198,7 @@ namespace vyDonemProjesi
             for (int i = 100; i < ek.ilanNo; i++)
             {
                 HeapDugumu[] hd = ek.basvurulariListele(i);
-                for (int j = 0; j < hd.Length; j++)
+                for (int j = 0; j < ek.currentSize; j++)
                 {
                     if (hd[j] != null)
                         lbilanBasvurulariListele.Items.Add(hd[j].Deger.Ad + " " + hd[j].Deger.iseUygunluk);

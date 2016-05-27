@@ -12,6 +12,7 @@ namespace vyDonemProjesi
         Sirket sirket;
         HashMapChain hash;
         public int ilanNo { get; private set; }
+        public int currentSize { get; private set; }
         public ElemanKontroller()
         {
             sirketler = new List<Sirket>();
@@ -89,7 +90,11 @@ namespace vyDonemProjesi
             ilan = hash.isIlaniGetir(i);
             HeapDugumu[] hd = new HeapDugumu[ilan.isIlani.heap.heapArray.Length];
             if (ilan != null)
+            {
                 hd = ilan.isIlani.heap.heapArray;
+                currentSize = ilan.isIlani.heap.currentSize;
+            }
+
 
             return hd;
         }

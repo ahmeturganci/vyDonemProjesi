@@ -10,7 +10,7 @@ namespace vyDonemProjesi
     {
         public HeapDugumu[] heapArray;
         private int maxSize;
-        private int currentSize;
+        public int currentSize { get; private set; }
         public Heap(int maxHeapSize)
         {
             maxSize = maxHeapSize;
